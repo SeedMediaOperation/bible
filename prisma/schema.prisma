@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                      String                   @id @default(cuid())
+  username                String                   @unique
+  email                   String                   @unique
+  password                String
+  profile                 String?                  @db.Text
+  role                    Role                     @default(USER)
+  refreshToken            String?                  @db.VarChar(255)
+  createdAt               DateTime                 @default(now())
+  updatedAt               DateTime                 @updatedAt
+  resetTokenExpiry        DateTime?
+  resetToken              String?
+  isVerifyEmail           Boolean                  @default(false)
+  emailVerificationTokens EmailVerificationToken[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model EmailVerificationToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([token])
+}
+
+model Version {
+  id        String   @id @default(cuid())
+  titleEn   String
+  titleKm   String
+  slug      String   @unique
+  book      Book[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Book {
+  id        String    @id @default(cuid())
+  nameEn    String
+  nameKm    String
+  slug      String    @unique
+  versionId String
+  version   Version   @relation(fields: [versionId], references: [slug], onDelete: Cascade)
+  chapter   Chapter[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now())
+}
+
+model Chapter {
+  id          String   @id @default(cuid())
+  bookId      String
+  book        Book     @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  nameEn      String
+  nameKm      String
+  titleEn     String
+  titleKm     String
+  paragraphEn Json
+  paragraphKm Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Media {
+  id          String   @id @default(cuid())
+  pro_name_En String
+  pro_name_Km String
+  video_url   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Catalogue {
+  id             String          @id @default(cuid())
+  catalogue_book CatalogueBook[]
+  name_en        String
+  name_km        String
+  image          String          @db.Text
+  slug           String
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model CatalogueBook {
+  id          String    @id @default(cuid())
+  catalogueId String
+  version     String
+  catalogue   Catalogue @relation(fields: [catalogueId], references: [id], onDelete: Cascade)
+  name_en     String
+  name_km     String
+  type_en     String
+  type_km     String
+  size_en     String
+  size_km     String
+  code        String
+  isbn        String
+  image       String    @db.Text
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Vlog {
+  id           String @id @default(cuid())
+  title_en     String
+  title_km     String
+  paragraph_en String @db.Text
+  paragraph_km String @db.Text
+  video_Url    String @db.Text
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+

@@ -1,0 +1,6 @@
+// components/ReactQuillWrapper.tsx
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
+export default ReactQuill;

@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Highlight` ADD COLUMN `bookId` VARCHAR(191) NULL,
+    ADD COLUMN `chapterId` VARCHAR(191) NULL,
+    ADD COLUMN `lineIndex` INTEGER NULL,
+    ADD COLUMN `version` VARCHAR(191) NULL;

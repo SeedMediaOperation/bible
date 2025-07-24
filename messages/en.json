@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "mission": "Mission",
+    "catalogues": "Catalogues",
+    "contact": "Contact Us",
+    "vlogs": "Vlogs"
+  },
+  "home":{
+    "welcome":"The Bible Society in Cambodia.",
+    "quote":"GOD’S WORD Living Hope for All.",
+    "sop":"Statement of Purpose",
+    "sop_content":"The Bible Society in Cambodia is an affiliated member of the United Bible Societies, registered in Cambodia with the Ministry of Cults and Religions as a religious organization. Bible Society began its ministry in Cambodia in 1892, with the purpose of making God’s Word available to people in Cambodia, in a language they can understand, and in media that meet people’s needs. The ministry of Bible Society focuses primarily on Bible translation, publishing and distribution, and also on Scripture engagement, advocacy and literacy."
+  }
+}
