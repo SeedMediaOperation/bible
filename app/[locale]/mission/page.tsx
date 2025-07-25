@@ -1,9 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
+import { useTranslations } from 'next-intl';
 
 const Mission = () => {
+  const t = useTranslations('mission');
+
   return (
     <div>
       <Navbar />
@@ -59,14 +61,13 @@ const Mission = () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`400`}
-                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>What makes us unique</h1>
+                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title')}</h1>
                 <p data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`600`}
                 className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
-                  We are the integrated Bible agency  we translate, publish and distribute Bibles, we help people understand its message and we help to ensure the continuing credibility of the Bible in society
-                  We have unprecedented global reach  we meet people’s needs for Holy Scriptures in more than 200 countries and territories
+                  {t('content')}
                 </p>
              </div>
           </div>
@@ -77,14 +78,13 @@ const Mission = () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`400`}
-                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>What makes us unique</h1>
+                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title')}</h1>
                 <p data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`600`}
                  className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
-                  We are the integrated Bible agency  we translate, publish and distribute Bibles, we help people understand its message and we help to ensure the continuing credibility of the Bible in society
-                  We have unprecedented global reach  we meet people’s needs for Holy Scriptures in more than 200 countries and territories
+                  {t('content')}
                 </p>
              </div>
              <div className='w-[30%] md:w-[40%]'>
@@ -127,16 +127,13 @@ const Mission = () => {
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration={`400`}
-                className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>What makes us unique</h1>
+                className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title')}</h1>
                 <p data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration={`600`}
                 className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
-                  We are the integrated Bible agency – we translate, publish and distribute Bibles, we help people understand its message and we help to ensure the continuing credibility of the Bible in society
-                  We have unprecedented global reach – we meet people’s needs for Holy Scriptures in more than 200 countries and territories
-                  We are inter-confessional – we work with all Christian churches
-                  We are developing leading technology – we apply the best technological solutions in order to make the Bible’s message available and accessible to everyone
+                  {t('content')}
                 </p>
              </div>
           </div>
@@ -149,12 +146,11 @@ const Mission = () => {
                 data-aos-offset="500"
                 data-aos-duration={`400`}
                className='text-[12px] md:text-[18px] text-pretty'>
-                …I heard every creature in heaven, on earth, in the world below, and in the seas – all living beings in the universe – and they were singing: 
-                To him who sits on the throne and to the Lamb, be praise and honour, glory and might, forever and ever!
+                 {t('content')}
               </p>
               <div className='flex items-center justify-between'>
                 <span className={`text-[50px] font-[700] text-[#4FC9EE] font-instrument`}>“”</span>
-                <span className='text-[16px] text-[#4FC9EE] font-bold italic'>Revelation 5:13</span>
+                <span className='text-[16px] text-[#4FC9EE] font-bold italic'>{t('Revelation')} 5:13</span>
               </div>
           </div>
       </div>

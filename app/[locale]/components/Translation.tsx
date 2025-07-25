@@ -15,7 +15,7 @@ const Translation = () => {
 
         // Get locale from localStorage
     const getFromLocalStorage = () => {
-        return localStorage.getItem("locale") || "km"; // Default to "kh"
+        return localStorage.getItem("locale") || "en"; // Default to "kh"
     };
 
     // Initialize locale from localStorage
@@ -51,9 +51,9 @@ const Translation = () => {
                                 />
         </div>
         <div className='inline-flex space-x-2'>
-                    <button onClick={triggerKmClick}
+                    <button onClick={triggerKmClick} disabled={isKmActive}
                     className={!isKmActive ? 'text-gray-300' : 'text-white font-bold' }>Khmer</button>
-                    <button onClick={triggerKmClick}
+                    <button onClick={triggerKmClick} disabled={!isKmActive}
                             className={isKmActive ? 'text-gray-300' : 'text-white font-bold' }>English
                     </button>
         </div>

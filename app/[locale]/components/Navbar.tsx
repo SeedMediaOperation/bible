@@ -13,7 +13,6 @@ export function getLocale(pathname: string) {
     return match ? match[1] : "en";
 }
   
-
 export function getNavLinks(locale: string) {
     return [
         {
@@ -81,10 +80,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav data-aos="fade-down"
-        data-aos-anchor="#example-anchor"
-        data-aos-offset="500"
-        data-aos-duration={`400`}
+    <nav
     className='relative w-full h-fit z-[50] xl:fixed top-0 left-0 right-0'>
         {/* Desktop && Tablet */}
         <div className='hidden xl:block w-full fixed top-[1%] left-0 right-0'>
@@ -141,6 +137,7 @@ const Navbar = () => {
                                     <Link
                                     href={link.href} 
                                     className={`relative before:absolute before:-bottom-9 before:w-full before:h-[4px] before:bg-[#32CDF0] before:rounded-full before:scale-x-[0] before:origin-bottom-right hover:before:scale-x-[1] hover:before:origin-bottom-left before:transition-all before:duration-[300]
+                                        ${locale === 'km' ? 'font-[krasar]' : 'font-[gotham]'}
                                         ${isActive(link) ? 'text-[#32CDF0] font-bold before:scale-x-[1]' : ''}
                                     `}>
                                         {t(link.name)}
@@ -165,7 +162,7 @@ const Navbar = () => {
         </div>
         {/* Mobile */}
         {/* menu */}
-        <button onClick={handleClickOpen} className='xl:hidden fixed top-[30%] left-0 w-fit h-fit bg-[linear-gradient(85.15deg,_rgba(30,_30,_30,_0.8)_0.43%,_rgba(7,_32,_39,_0.64)_98.29%)] backdrop-blur-[10px] hover:bg-[#32CDF0] opacity-70 hover:opacity-100 text-white rounded-box shadow-sm drop-shadow-md  transition-all duration-300 p-2 rounded-r-full'>
+        <button onClick={handleClickOpen} className='xl:hidden fixed top-[30%] left-[-1%] w-fit h-fit bg-[linear-gradient(85.15deg,_rgba(30,_30,_30,_0.8)_0.43%,_rgba(7,_32,_39,_0.64)_98.29%)] backdrop-blur-[10px] hover:bg-[#32CDF0] opacity-70 hover:opacity-100 text-white rounded-box shadow-sm drop-shadow-md  transition-all duration-300 p-2 rounded-r-full'>
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
         </button>
 
@@ -219,6 +216,7 @@ const Navbar = () => {
                     <li key={index} className={`${!isMenu ? 'translate-x-[-100%]':'translate-x-0'} transition-all duraction-[500] ease-in-out`}>
                         <Link href={link.href} 
                         className={`relative before:absolute before:-bottom-1 before:w-full before:h-[3px] before:bg-[#32CDF0] before:rounded-full before:scale-x-[0] before:origin-bottom-right hover:before:scale-x-[1] hover:before:origin-bottom-left before:transition-all before:duration-[300]
+                             ${locale === 'km' ? 'font-[krasar]' : 'font-[gotham]'}
                         ... ${pathname === link.href ? 'text-[#32CDF0] font-bold before:scale-x-[1]' : ''}
                         `}>
                             {t(link.name)}

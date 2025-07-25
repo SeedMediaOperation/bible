@@ -3,11 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
+import {useLocale, useTranslations} from "use-intl";
 
 const generateOrderId = () => Date.now().toString();
 const MERCHANT_ID = "ec000262";
 const getPaywayApiUrl =
   "https://checkout-sandbox.payway.com.kh/api/payment-gateway/v1/payments/purchase";
+  
 
 const DonationForm = () => {
   const [form, setForm] = useState({
@@ -25,6 +27,8 @@ const DonationForm = () => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const t = useTranslations('donation');
+  const locale = useLocale();
 
   useEffect(() => {
     const newId = generateOrderId();
@@ -115,7 +119,7 @@ const DonationForm = () => {
       <form onSubmit={handleSubmit} className="w-full md:flex md:gap-2">
         <div className="w-full md:w-[60%]">
           <div className="flex items-center justify-center space-x-2">
-          {["USD", "KHR"].map((option) => (
+          {["usd", "real"].map((option) => (
             <label
               key={option}
               className={`w-full p-2 md:p-3 rounded-full cursor-pointer transition-all ${
@@ -125,9 +129,10 @@ const DonationForm = () => {
               <h1
                 className={`text-[15px] xl:text-[24px] font-[600] text-center ${
                   form.currency === option ? "text-white" : "text-[#4FC9EE]"
-                }`}
+                }                       
+                ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}
               >
-                {option.charAt(0).toUpperCase() + option.slice(1)}
+                {t(option)}
               </h1>
               <input
                 type="radio"
@@ -210,12 +215,14 @@ const DonationForm = () => {
             <input
               type="number"
               name="amount"
-              placeholder="Enter amount"
+              placeholder={t('amount')}
               value={form.amount === 0 ? "" : form.amount}
               onChange={handleChange}
               required
               min={1}
-              className="w-full xl:text-[30px] py-2 rounded-full text-white placeholder:text-white bg-[#4FC9EE] px-6 outline-none"
+              className={`w-full xl:text-[30px] py-2 rounded-full text-white placeholder:text-white bg-[#4FC9EE] px-6 outline-none
+                      ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}
+                `}
             />
           </div>
         </div>

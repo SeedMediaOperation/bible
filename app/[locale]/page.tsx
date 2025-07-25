@@ -8,10 +8,11 @@ import Footer from "@/app/[locale]/components/Footer";
 import {routing} from "@/lib/i18n/routing";
 import {Version} from "@/types/book";
 import {useEffect, useState} from "react";
-import {useLocale} from "use-intl";
+import {useLocale, useTranslations} from "use-intl";
 
 export default function Home() {
     const [version, setVersion] = useState<Version[]>([]);
+    const t = useTranslations('home');
     const locale = useLocale();
     useEffect(() => {
         const fetchVersion = async () => {
@@ -53,21 +54,22 @@ export default function Home() {
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration={`400`}
-              className="text-[14px] md:text-[30px] text-[#4FC9EE] font-light ">សមាគមព្រះគម្ពីរកម្ពុជា</p>
+              className={`text-[14px] md:text-[30px] text-[#4FC9EE] font-light font-[krasar]`}>សមាគមព្រះគម្ពីរកម្ពុជា</p>
               <h1 data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`500`}
-              className="text-[30px] leading-[30px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem] font-bold text-wrap text-[#ffffff]">
-                The Bible Society
-                in Cambodia.
+              className={`text-[30px] leading-[30px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem] font-bold text-wrap text-[#ffffff]
+                  font-[gotham]
+                `}>
+                {t('welcome')}
               </h1>
             </div>
             <p data-aos="fade-left"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration={`600`}
-            className="text-[14px] xl:text-[24px] text-[#ffffff] font-[400]">
+            className="text-[14px] xl:text-[24px] text-[#ffffff] font-[400] font-[gotham]">
               GOD’S WORD
               Living Hope for All.
             </p>
@@ -95,15 +97,16 @@ export default function Home() {
               <h1 data-aos="fade-right"
               data-aos-offset="500"
               data-aos-duration={`500`}
-              className="text-[20px] md:text-[30px] xl:text-[40px] text-[#4FC9EE] font-[700] text-wrap">Statement of Purpose</h1>
+              className="text-[20px] md:text-[30px] xl:text-[40px] text-[#4FC9EE] font-[700] text-wrap">
+                {t('sop')}
+              </h1>
             </div>
             <div data-aos="fade-left"
               data-aos-offset="500"
               data-aos-duration={`500`}
             className="w-full md:w-[70%]">
                 <p className="text-[10px] md:text-[14px] xl:text-[20px] text-justify text-[#000]">
-                  The Bible Society in Cambodia is an affiliated member of the United Bible Societies, registered in Cambodia with the Ministry of Cults and Religions as a religious organization.
-                  Bible Society began its ministry in Cambodia in 1892, with the purpose of making God’s Word available to people in Cambodia, in a language they can understand, and in media that meet people’s needs. The ministry of Bible Society focuses primarily on Bible translation, publishing and distribution, and also on Scripture engagement, advocacy and literacy.
+                  {t('sop_content')}
                 </p>
             </div>
          </div>
@@ -144,35 +147,35 @@ export default function Home() {
                         className="w-[50px] h-[50px] xl:w-[100px] xl:h-[100px] object-cover object-center p-2"
                     />
                     </span>
-                    <h1 className="text-[16px] xl:text-[30px] text-[#000000] font-[700] text-wrap">Daily Scripture Reading</h1>
+                    <h1 className="text-[16px] xl:text-[30px] text-[#000000] font-[700] text-wrap">{t('dsr')}</h1>
                   </div>
                   <div className="w-[100%] xl:w-[70%]">
                     <ul className="text-[#fff] space-y-1">
                       <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`600`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 rounded-full">
+                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
                         ថ្ងៃអាទិត្យ ១៧ វិច្ឆិកា Sun 17 November
                         ទំនុកតម្កើង / Psalm 18.1-24
                       </li>
                       <li data-aos="fade-left"
                 data-aos-offset="600"
                 data-aos-duration={`600`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 rounded-full">
+                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
                         ថ្ងៃច័ន្ទ ១៨ វិច្ឆិកា Mon 18 November
                         ទំនុកតម្កើង / Psalm 18.25-50
                       </li>
                       <li data-aos="fade-left"
                 data-aos-offset="600"
                 data-aos-duration={`700`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 rounded-full">
+                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
                         ថ្ងៃអង្គារ ១៩ វិច្ឆិកា Tue 19 November
                         ទំនុកតម្កើង / Psalm 21
                       </li>
                       <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`800`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 rounded-full">
+                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
                         ថ្ងៃពុធ ២០ វិច្ឆិកា Wed 20 November
                         ទំនុកតម្កើង / Psalm 50
                       </li>
@@ -188,16 +191,13 @@ export default function Home() {
                 data-aos-offset="500"
                 data-aos-duration={`200`}
               className="text-[20px] xl:text-[40px] xl:w-[300px] text-[#fff] font-bold">
-                Read Khmer Bible Online 
+                {t('rkbo')}
               </h1>
               <p data-aos="fade-right"
                 data-aos-offset="500"
                 data-aos-duration={`300`}
               className="text-[12px] xl:text-[18px] text-[#fff]">
-                You can access the two Khmer Bible texts on Bible Society on Cambodia website:
-                Khmer Standard Version (KHSV) &
-                Khmer Old Version (KHOV).
-                or YouVersion app.
+                {t('rkbo_content')}
               </p>
               <div className="flex gap-2 mt-2">
                 <Link href="/">
@@ -258,7 +258,7 @@ export default function Home() {
                           href={`${routing.defaultLocale}/${category.slug}`}
                           className="w-fit bg-white text-[12px] xl:text-[24px] text-black rounded-full px-[15px] py-[2px] xl:px-[24px] mt-2"
                         >
-                          Read
+                          {t('read')}
                         </Link>
                       </div>
                     </li>
@@ -306,8 +306,7 @@ export default function Home() {
                 data-aos-offset="500"
                 data-aos-duration={`400`}
                       className="text-[16px] xl:text-[34px] text-[#4FC9EE] font-[700] text-wrap">Our
-                        Foundational
-                        Beliefs
+                         {t('ofb')}
                       </h1>
                 </div>
               </div>
@@ -317,38 +316,38 @@ export default function Home() {
                 data-aos-offset="500"
                 data-aos-duration={`200`} 
                   className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    The Bible Society movement has as its motivation the fulfilment of the Great Commission (Matthew 28:18-20)
+                     {t('ofb_content_1')}
                   </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`300`} 
                   className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    Bible Societies understand their task as participation in the mission of God −Father, Son and Holy Spirit −as witnessed in the Holy Scriptures
-                  </li>
+                    {t('ofb_content_2')}                  
+                    </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`400`} 
                   className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    Bible Societies provide resources to equip churches and their partner organisations; we do not usurp the mission of churches
+                      {t('ofb_content_3')}
                   </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`500`} 
                   className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    Bible Societies affirm that the Holy Scriptures belong to all churches, recognising that doctrinal interpretation of the Scriptures belongs to them
-                  </li>
+                      {t('ofb_content_4')}
+                      </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`600`} 
                   className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    Bible Societies believe that the Bible is for all people, in every living language, therefore they see Bible translation as one of their key activities
-                  </li>
+                      {t('ofb_content_5')}
+                      </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`700`} 
                   className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
-                    Bible Societies recognise that the Bible has direct relevance in addressing the world’s problems and in reaching out to people’s needs in word and deed, following in the footsteps of Jesus.
-                  </li>
+                      {t('ofb_content_6')}
+                      </li>
                 </ul>
               </div>
            </div>
@@ -375,14 +374,13 @@ export default function Home() {
                 data-aos-duration={`600`}
                       className="w-full md:w-[50%] p-4 bg-[#00AFD7] space-y-[1rem] transition-all duration-300">
                           <h1 className="text-[16px] text-[#ffffff] text-balance font-bold">
-                            Palestinian-Israeli Experience gives Cambodian Church leaders fresh motivation. 
+                          {t('ofb_title')}
                           </h1>
-                          <p className="text-[14px] text-[#ffffff] text-balance my-3">
-                            Forgiveness & Reconciliation Pastoral Conference. Around 270 pastors and church leaders from 15 provinces came to Phnom Penh for the 2 day seminar.
-                          </p>
-                          <button className="w-fit bg-white text-[16px] text-[#000] rounded-full px-5 py-2">
-                            Read More
-                          </button>
+                          <div className="w-full h-[120px] md:h-[130px] xl:h-[200px] overflow-x-hidden overflow-y-auto">
+                            <p className="text-[14px] text-[#ffffff] text-balance my-3">
+                            {t('ofb_content_7')}
+                            </p>
+                          </div>
                       </div>
                   </div>
                 </div>
@@ -406,21 +404,20 @@ export default function Home() {
                         data-aos-duration={`600`}
                       className="w-full md:w-[50%] md:order-first xl:order-last p-4 bg-[#71c7a5] space-y-[1rem] transition-all duration-300">
                           <h1 className="text-[16px] text-[#ffffff] text-balance font-bold">
-                            The Bible’s peace and reconciliation, Cambodian style 
+                          {t('ofb_title_1')}
                           </h1>
-                          <p className="text-[14px] text-[#ffffff] text-balance my-3">
-                            The Bible Society’s ‘Spean Metrey’ show is aimed at helping to bring healing to Cambodians through sharing God’s love for them, and teaching that his peace and forgiveness is available to everyone. 
-                          </p>
-                          <button className="w-fit bg-white text-[16px] text-[#000] rounded-full px-5 py-2">
-                            Read More
-                          </button>
+                          <div className="w-full h-[120px] md:h-[130px] xl:h-[200px] overflow-x-hidden overflow-y-auto">
+                            <p className="text-[14px] text-[#ffffff] text-balance my-3">
+                            {t('ofb_content_8')}
+                            </p>
+                          </div>
                       </div>
                   </div>
                 </div>
               </div>
               <div
                className="w-full h-full xl:w-[40%]">
-                <div className="w-full h-full flex flex-col md:flex-row xl:flex-col">
+                <div className="w-full md:h-[30vh] xl:h-full flex flex-col md:flex-row xl:flex-col">
                     <Image 
                         data-aos="fade-down"
                         data-aos-offset="500"
@@ -437,14 +434,13 @@ export default function Home() {
                           data-aos-duration={`500`}
                      className="w-full md:w-[50%] xl:w-full h-full xl:h-[30vh] p-4 bg-[#456eb6] space-y-[1rem] transition-all duration-300">
                         <h1 className="text-[16px] text-[#ffffff] text-balance font-bold">
-                          The long journey of the Bunong New Testament 
+                        {t('ofb_title_2')}
                         </h1>
-                        <p className="text-[14px] text-[#ffffff] text-balance my-3">
-                          Tot Nhernh, 93, vividly remembers the panic he and his family felt as the bombs started falling on their village in north-east Cambodia.
-                        </p>
-                        <button className="w-fit bg-white text-[16px] text-[#000] rounded-full px-5 py-2">
-                          Read More
-                        </button>
+                        <div className="w-full h-[120px] md:h-[130px] xl:h-[200px] overflow-x-hidden overflow-y-auto">
+                          <p className="text-[14px] text-[#ffffff] text-balance my-3">
+                          {t('ofb_content_9')}
+                          </p>
+                        </div>
                     </div>
                 </div>
               </div>

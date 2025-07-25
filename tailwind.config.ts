@@ -15,6 +15,8 @@ const config: Config = {
       },
       fontFamily: {
         instrument: ['var(--font-instrument-sans)', 'sans-serif'],
+        gotham: ['var(--font-gotham-sans)', 'sans-serif'],
+        krasar: ['var(--font-krasar-sans)', 'sans-serif'],
       },
     },
   },

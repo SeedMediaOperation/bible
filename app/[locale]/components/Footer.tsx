@@ -13,6 +13,8 @@ const Footer = () => {
     const locale = getLocale(pathname); 
     const navLinks = getNavLinks(locale);
     const t = useTranslations('nav');
+    const footer = useTranslations('footer');
+
   return (
     <footer className='w-full bg-[#4FC9EE] p-0'>
         <div className='w-full max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto'>
@@ -25,7 +27,9 @@ const Footer = () => {
                     height={500}
                     className="w-[100px] h-[100px] mx-auto "
                 />
-                <h1 className="text-[20px] text-[#ffffff] text-center font-bold my-1">Act Now</h1>
+                <h1 className="text-[20px] text-[#ffffff] text-center font-bold my-1">
+                    {footer('actnow')}
+                </h1>
                 <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[3rem] w-fit mx-auto  bg-[#ffffff] rounded-full justify-between items-center ps-3 pe-2 py-1'>
                     <span className='text-[16px] text-[#4FC9EE] text-center font-bold ms-3'>Donate</span>
                     <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
@@ -44,21 +48,25 @@ const Footer = () => {
                 </Link>
             </li>
             <li className='space-y-2'>
-                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">Bible Society Office</h1>
+                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">
+                    {footer('bsf')}
+                </h1>
                 <p className="text-[14px] text-[#fff]">
-                    ផ្ទះលេខ 34 ផ្លូវ 104P6, សង្កាត់ភ្នំពេញថ្មី ខ័ណ្ឌសែនសុខ (ភ្នំពេញ)
-                    34, Street 104P6,  Phnom Penh Thmey, Khan Sen Sok 
-                    Phnom Penh
+                    {footer('address')}
                 </p>
                 <p className="text-[14px] text-[#fff]">
-                    ម៉ោងធ្វើការ Office Hours: ថ្ងៃច័ន្ទ - សុក្រ: ម៉ោង ៨:០០ - ១៦:៣០ MON - FRI : 08:00 - 16:30
-                    ថ្ងៃសៅរ៍:​សូមទូរស័ព្ទណាត់ពេលទុកជាមុន​
-                    Saturday: by appointment only
+                    {footer('office_hour')}
+                    <br/>
+                    {footer('date_1')}
+                    <br/>
+                    {footer('date_2')}
                 </p>
                 <Link href="https://biblecambodia.org/id.html" className='text-[12px] underline'>ព័ន្ធកិច្ចរបស់សមាគមព្រះគម្ពីរនៅព្រះរាជាណាចក្រកម្ពុជា</Link>
             </li>
             <li className='space-y-2 list-none'>
-            <h1 className="text-[20px] text-[#000] text-start font-bold my-1">Infomation</h1>
+            <h1 className="text-[20px] text-[#000] text-start font-bold my-1">
+            {footer('information')}
+            </h1>
                 <ul className='flex flex-col space-y-3 text-white'>
                     { navLinks.map((link,index)=>
                         <li key={index}>
@@ -68,7 +76,9 @@ const Footer = () => {
                         </li>
                     )}
                 </ul>
-                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">Follow Us</h1>
+                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">
+                {footer('follow_us')}
+                </h1>
                 <ul className='flex space-x-2 py-5'>
                     <li>
                         <Link href="/" className="shadow-sm drop-shadow-lg">
@@ -128,23 +138,22 @@ const Footer = () => {
                 </ul>
             </li>
             <li className="space-y-[1rem] list-none py-5 xl:py-0">
-                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">Infomation</h1>   
+                <h1 className="text-[20px] text-[#000] text-start font-bold my-1">
+                {footer('information')}
+                </h1>   
                 <ul className="space-y-[1rem]">
                     <li className="text-[#fff]">
                         <p>www.biblecambodia.org</p>
                         <p>Email: info@biblecambodia.org</p>
                     </li>
                     <li className="text-[#fff]">
-                        <p className="text-[16px] font-bold">Siem Reap Branch</p>
-                        <p>Salakanseng Village, Sangakat Svay Dangkum- SIEM REAP 
-                        Tel: 014- 73 74 59 / 069- 73 74 59</p>
+                        <p className="text-[16px] font-bold">{footer('siem_reap')}</p>
+                        <p>{footer('sr_address')}</p>
                     </li>
                     <li className="text-[#fff]">
-                        <p className="text-[16px] font-bold">Bible Distribution Center</p>
+                        <p className="text-[16px] font-bold">{footer('Bible_Distribution_Center')}</p>
                         <p>
-                            Ecumenical Diakonia Center 
-                            No 19-21, Steet 330 Beung Keng Kang (opposit Tuol Sleng Museum) 
-                            023-220 475
+                        {footer('bdc_address')}
                         </p>
                     </li>
                 </ul>

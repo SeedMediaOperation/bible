@@ -15,14 +15,14 @@ const instrumentSans = Instrument_Sans({
   variable: '--font-instrument-sans', // optional (for Tailwind custom properties)
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const gotham = localFont({
+  src: "./fonts/Gotham-UltraItalic.otf",
+  variable: "--font-gotham-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const krasar = localFont({
+  src: "./fonts/Krasar-Bold.ttf",
+  variable: "--font-krasar-sans",
   weight: "100 900",
 });
 
@@ -51,7 +51,9 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSans.variable} antialiased h-full min-h-screen overflow-y-auto  !scroll-smooth`}
+        className={`${gotham.variable} ${krasar.variable} ${instrumentSans.variable} antialiased h-full min-h-screen overflow-y-auto  !scroll-smooth
+          ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}
+        `}
       >
         <NextIntlClientProvider messages={messages}>
           <AOSWrapper>
