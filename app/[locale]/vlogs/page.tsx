@@ -29,7 +29,7 @@ const Vlogs = async () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`${300 * 100}`}
-               className={`text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] font-bold text-wrap text-[#ffffff] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+               className={`text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] font-bold text-wrap text-[#ffffff] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                 {locale === 'km' ? 'វ្លុក':'Vlogs'}
               </h1>
             </div>

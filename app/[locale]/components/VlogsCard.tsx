@@ -48,7 +48,7 @@ const VlogsCard = ({vlog}:VlogProps) => {
                                 sizes="100vw"
                                 className='w-full h-fit object-contain object-center rounded-[5%]' />
                         </div>
-                        <div className={`p-1 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+                        <div className={`p-1 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                             <h1 className='text-[14px] font-bold'>{vlog.title_en}</h1>
                             {isClient && (
                                 <div

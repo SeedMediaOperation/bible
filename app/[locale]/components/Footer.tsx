@@ -16,7 +16,7 @@ const Footer = () => {
     const footer = useTranslations('footer');
 
   return (
-    <footer className={`w-full bg-[#4FC9EE] p-0 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+    <footer className={`w-full bg-[#4FC9EE] p-0 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
         <div className='w-full max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto'>
           <ul className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-4 xl:justify-center xl:items-start xl:gap-[1vw] list-none py-5">
             <li className='space-y-3'>
@@ -31,7 +31,7 @@ const Footer = () => {
                     {footer('actnow')}
                 </h1>
                 <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[3rem] w-fit mx-auto  bg-[#ffffff] rounded-full justify-between items-center ps-3 pe-2 py-1'>
-                    <span className={`text-[16px] text-[#4FC9EE] text-center font-bold ms-3 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
+                    <span className={`text-[16px] text-[#4FC9EE] text-center font-bold ms-3 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
                     <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
                         <svg width="24" height="24" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_1_148)">

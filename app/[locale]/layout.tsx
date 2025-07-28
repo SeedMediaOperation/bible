@@ -16,15 +16,21 @@ const instrumentSans = Instrument_Sans({
 });
 
 const gotham = localFont({
-  src: "./fonts/Gotham-UltraItalic.otf",
-  variable: "--font-gotham-sans",
-  weight: "100 900",
+  src: '../fonts/gotham-rounded-light.otf',
+  variable: '--font-gotham-sans',
 });
+
 const krasar = localFont({
-  src: "./fonts/Krasar-Bold.ttf",
-  variable: "--font-krasar-sans",
-  weight: "100 900",
+  src: [
+    {
+      path: '../fonts/KantumruyPro-Regular.ttf',
+      weight: '700', // Adjust based on actual weight
+      style: 'normal',
+    },
+  ],
+  variable: '--font-krasar-sans',
 });
+
 
 export const metadata: Metadata = {
   title: "The Bible Society in Cambodia",

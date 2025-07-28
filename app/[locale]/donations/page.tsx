@@ -130,7 +130,7 @@ const DonationForm = () => {
                 className={`text-[15px] xl:text-[24px] font-[600] text-center ${
                   form.currency === option ? "text-white" : "text-[#4FC9EE]"
                 }                       
-                ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}
+                ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
               >
                 {t(option)}
               </h1>
@@ -221,7 +221,7 @@ const DonationForm = () => {
               required
               min={1}
               className={`w-full xl:text-[30px] py-2 rounded-full text-white placeholder:text-white bg-[#4FC9EE] px-6 outline-none
-                      ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}
+                      ${locale === 'km' ? 'font-krasar':'font-gotham'}
                 `}
             />
           </div>

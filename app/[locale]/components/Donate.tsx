@@ -12,7 +12,7 @@ const Donate = () => {
       <h1 data-aos="fade-down"
     data-aos-duration={`400`}
       className={`text-[14px] xl:text-[30px] font-normal text-[#4FC9EE] text-center text-wrap mb-14
-      ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}
+      ${locale === 'km' ? 'font-krasar':'font-gotham'}
       `}>
         {t('title')}
       </h1>

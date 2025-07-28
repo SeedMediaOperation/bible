@@ -108,7 +108,7 @@ const Navbar = () => {
                                     />
                             </Link>
                             <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[1rem] w-fit mx-auto md:mx-0 bg-[#50bbed] rounded-full justify-between items-center ps-3 pe-2 py-1'>
-                                <span className={`text-[16px] text-[#fff] text-center font-bold ms-3 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
+                                <span className={`text-[16px] text-[#fff] text-center font-bold ms-3 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
                                 <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
                                     <svg width="24" height="24" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_148)">
@@ -137,7 +137,7 @@ const Navbar = () => {
                                     <Link
                                     href={link.href} 
                                     className={`relative before:absolute before:-bottom-9 before:w-full before:h-[4px] before:bg-[#32CDF0] before:rounded-full before:scale-x-[0] before:origin-bottom-right hover:before:scale-x-[1] hover:before:origin-bottom-left before:transition-all before:duration-[300]
-                                        ${locale === 'km' ? 'font-[krasar]' : 'font-[gotham]'}
+                                        ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
                                         ${isActive(link) ? 'text-[#32CDF0] font-bold before:scale-x-[1]' : ''}
                                     `}>
                                         {t(link.name)}
@@ -216,7 +216,7 @@ const Navbar = () => {
                     <li key={index} className={`${!isMenu ? 'translate-x-[-100%]':'translate-x-0'} transition-all duraction-[500] ease-in-out`}>
                         <Link href={link.href} 
                         className={`relative before:absolute before:-bottom-1 before:w-full before:h-[3px] before:bg-[#32CDF0] before:rounded-full before:scale-x-[0] before:origin-bottom-right hover:before:scale-x-[1] hover:before:origin-bottom-left before:transition-all before:duration-[300]
-                             ${locale === 'km' ? 'font-[krasar]' : 'font-[gotham]'}
+                             ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
                         ... ${pathname === link.href ? 'text-[#32CDF0] font-bold before:scale-x-[1]' : ''}
                         `}>
                             {t(link.name)}

@@ -38,7 +38,7 @@ const CatalogueMore = async ({ params } : { params: { slug: string } })  => {
                       data-aos-duration={`${300 * 100}`}
                        className='w-full max-w-[340px] md:max-w-[720px] lg:max-w-[820px] xl:max-w-[1100px] mx-auto'>
                 <span className="text-[14px] md:text-[22px] text-[#4FC9EE] font-light ">{locale === 'km' ? 'ប្រភេទ' : 'Catalogue'}</span>
-                <h1 className={`text-[40px] leading-[40px] md:text-[50px] md:leading-[50px] lg:text-[60px] lg:leading-[60px] font-bold text-wrap text-[#ffffff] capitalize ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+                <h1 className={`text-[40px] leading-[40px] md:text-[50px] md:leading-[50px] lg:text-[60px] lg:leading-[60px] font-bold text-wrap text-[#ffffff] capitalize ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                   {locale === 'km' ? singleData?.name_km : singleData?.name_en}
                 </h1>
               </div>

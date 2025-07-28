@@ -51,7 +51,7 @@ const Translation = () => {
                                 className={`w-full h-full object-cover object-center rounded-full`}
                                 />
         </div>
-        <div className={`inline-flex space-x-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+        <div className={`inline-flex space-x-2 font-normal ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                     <button onClick={triggerKmClick} disabled={isKmActive}
                     className={!isKmActive ? 'text-gray-300' : 'text-white font-bold' }>{locale ==='km' ? 'ភាសាខ្មែរ':'Khmer'}</button>
                     <button onClick={triggerKmClick} disabled={!isKmActive}
