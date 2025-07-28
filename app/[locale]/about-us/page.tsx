@@ -152,7 +152,7 @@ export default function AboutUs () {
                   </ul>
                 </div>
                 <div className='w-full h-full xl:flex xl:space-x-5'>
-                  <span className='w-[20%] 2xl:w-[10%] mx-auto  xl:mx-0'>
+                  <span className='w-[40%] 2xl:w-[20%] mx-auto  xl:mx-0'>
                   <Image 
                   data-aos="fade-left"
                   data-aos-anchor="#example-anchor"
