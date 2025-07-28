@@ -90,7 +90,7 @@ const AdminLayout = ({ children, profile }: Props) => {
                                 className="object-contain"
                             />
                         </Link>
-                        <h1 className="text-white text-xl font-bold hidden sm:block">Bible Admin Panel</h1>
+                        <h1 className="text-white text-xl font-bold hidden sm:block">Bible Panel</h1>
                     </div>
 
                     <div className="flex items-center gap-2">
@@ -162,7 +162,7 @@ const AdminLayout = ({ children, profile }: Props) => {
 
             {/* Footer */}
             <footer className="w-full py-4 bg-gray-100 text-center text-sm">
-                &copy; {new Date().getFullYear()} Bible Admin Panel
+                &copy; {new Date().getFullYear()} Bible Panel
             </footer>
         </div>
     );
