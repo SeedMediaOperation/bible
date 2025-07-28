@@ -5,10 +5,12 @@ import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import {apiGet} from "@/utils/apiHelpers";
 import {Vlog} from "@/types/vlog";
+import { getLocale } from 'next-intl/server';
 
 const Vlogs = async () => {
     const res = await apiGet<{data:Vlog[]}>('/api/vlogs');
     const data = res.data;
+    const locale = await getLocale();
   return (
     <div>
       <Navbar />
@@ -27,8 +29,8 @@ const Vlogs = async () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`${300 * 100}`}
-               className="text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] font-bold text-wrap text-[#ffffff]">
-                Vlogs
+               className={`text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] font-bold text-wrap text-[#ffffff] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+                {locale === 'km' ? 'វ្លុក':'Vlogs'}
               </h1>
             </div>
         </div>

@@ -8,7 +8,7 @@
     "vlogs": "Vlogs"
   },
   "home":{
-    "welcome":"The Bible Society in Cambodia.",
+    "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All.",
     "sop":"Statement of Purpose",
     "sop_content":"The Bible Society in Cambodia is an affiliated member of the United Bible Societies, registered in Cambodia with the Ministry of Cults and Religions as a religious organization. Bible Society began its ministry in Cambodia in 1892, with the purpose of making God’s Word available to people in Cambodia, in a language they can understand, and in media that meet people’s needs. The ministry of Bible Society focuses primarily on Bible translation, publishing and distribution, and also on Scripture engagement, advocacy and literacy.",
@@ -31,26 +31,31 @@
     "ofb_content_9":"Tot Nhernh, 93, vividly remembers the panic he and his family felt as the bombs started falling on their village in north-east Cambodia."
   },
   "about_us":{
-    "welcome":"The Bible Society in Cambodia.",
+    "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All.",
     "about_us_title":"About The Bible Society in Cambodia",
     "about_us_content":"The Bible Society in Cambodia is an organization affiliated to the United Bible Societies. The United Bible Societies is made up of Bible Societies operating in over 200 countries and territories. Together, we are the biggest translator, publisher and distributor of the Bible in the world. We are also active in areas such as literacy training, HIV and AIDS prevention and disaster relief. Bible Societies work with all Christian Churches and many international non-governmental organisations.",
-    "1892":"1892",
-    "1892_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1993":"1993",
-    "1993_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1899":"1899",
-    "1899_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1804":"1804",
-    "1804_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1923":"1923",
-    "1923_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1954":"1954",
-    "1954_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1962":"1962",
-    "1962_content":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
-    "1955":"1955",
-    "our_mission":"The Bible Society started its ministry in Cambodia as early as 1892 when a British & Foreign Bible Society’s missionary from Hong Kong visited the kingdom for the first time.",
+    "1892": "១៨៩២",
+    "1892_content": "សមាគមព្រះគម្ពីរបានចាប់ផ្តើមសកម្មភាពផ្សព្វផ្សាយព្រះគម្ពីរនៅក្នុងប្រទេសកម្ពុជាកាលពីឆ្នាំ ១៨៩២ នៅពេលមានបុគ្គលិកមួយរបស់សមាគមព្រះគម្ពីរប្រទេសបរទេស និងចក្រភពអង់គ្លេសដែលមកពីហុងកុងបានចូលទស្សនាប្រទេសកម្ពុជាលើកដំបូង។",
+    "1993": "១៩៩៣",
+    "1993_content": "ក្នុងឆ្នាំ ១៩៩៣ ជាមួយនឹងការជួយគាំទ្រពីអ្នកដឹកនាំសាសនាជាតិនៅកម្ពុជា សមាគមព្រះគម្ពីរសាកលបានបញ្ចប់ការចាប់ផ្តើមសកម្មភាពព្រះគម្ពីរ នៅក្នុងប្រទេសនេះវិញ។ ហេតុនេះហើយបានជាសមាគមព្រះគម្ពីរ នៅកម្ពុជា ត្រូវបានបង្កើតឡើង។",
+    "1899": "១៨៩៩",
+    "1899_content": "សកម្មភាពត្រូវបានចាប់ផ្តើមដោយការបកប្រែព្រះគម្ពីរ។ អំណត់ព្រះគម្ពីរដំបូងគឺជាសៀវភៅសេចក្តីស៊ុម ដែលត្រូវបានបោះពុម្ពជាភាសាខ្មែរនៅឆ្នាំ ១៨៩៩។",
+    "1804": "១៤០៤",      
+    "1804_content": "សមាគមព្រះគម្ពីរ ក្នុងប្រទេសកម្ពុជាគឺជាការិយាល័យជាតិរបស់សមាគមព្រះគម្ពីរសាកល (UBS) ដែលគឺជាអង្គការជាសាសនាអន្តរជាតិចាស់បំផុតនិងធំបំផុត។ បានចាប់ផ្តើមនៅក្នុងឆ្នាំ ១៨០៤ ការវិវត្ដន៍សមាគមព្រះគម្ពីរនេះបច្ចុប្បន្នមានសកម្មភាពនៅក្នុងប្រទេសនិងតំបន់ជាង ២០០ ប្រទេសទូទាំងពិភពលោក។",
+    "1923": "១៩២៣",
+    "1923_content": "នៅពេលដែលអ្នកប៉ះពាល់ពីសហភាពគ្រិស្ត និងសមាជិកដំណើរការបុរសបានចាប់ផ្តើមសកម្មភាពនៅក្នុងប្រទេសកម្ពុជា ក្នុងឆ្នាំ១៩២៣ លោកសង្ឃ អាធើ ហេមិនដ៍ ត្រូវបានកំណត់ឲ្យមានភារកិច្ចបកប្រែព្រះគម្ពីរទាំងមូលជាភាសាខ្មែរ។ លោកសង្ឃ  ហេមិនដ៍ បានធ្វើការជាមួយក្រុមសមាជិកនិងជនជាតិខ្មែរនៅក្នុងព្រះសាសនាខ្មែរ និងបញ្ចប់ការបកប្រែព្រះគម្ពីរខ្មែរដំបូង។",
+    "1954": "១៩៥៤",
+    "1954_content": "សមាគមព្រះគម្ពីរប្រទេសអង់គ្លេស និងបរទេសត្រូវបានផ្ដល់អធិការកិច្ចក្នុងការបោះពុម្ព និងចែកចាយព្រះគម្ពីរ ខ្មែរ។ ព្រះគម្ពីរ ខ្មែរ លើកដំបូងត្រូវបានបោះពុម្ពនៅក្នុងប្រទេសអង់គ្លេសក្នុងឆ្នាំ ១៩៥៤។",
+    "1962": "១៩៦២",
+    "1962_content": "អត្ថបទចេញទីពីរដោយមានការកែតម្រូវតិចតួច ត្រូវបានបោះពុម្ពក្នុងឆ្នាំ ១៩៦២ ដោយសមាគមព្រះគម្ពីរ។",
+    "1955": "១៩៥៥",
+    "1955_content": "ក្នុងឆ្នាំ ១៩៥៥, ការិយាល័យសាខាមួយនៃសមាគមព្រះគម្ពីរ ត្រូវបានបង្កើតនៅស្ពានព្រះសីហនុ ភ្នំពេញ។",
+    "1968": "១៩៦៨",
+    "1968_content": "សមាគមព្រះគម្ពីរជាតិត្រូវបានបង្កើតក្នុងឆ្នាំ ១៩៦៨, ដឹកនាំដោយលោកភរិយាការដ្ឋានសម្ដេចសោន សុន, ដែលមកពីក្រុមជំនួសគ្រិស្តខ្មែរ។",
+    "1975_1992": "១៩៧៥-១៩៩២",
+    "1975_1992_content": "ចាប់ពីឆ្នាំ ១៩៧៥ ដល់ ១៩៩២ ការិយាល័យសមាគមព្រះគម្ពីរត្រូវបានបិទ។ ក្នុងរយៈពេលនោះ សកម្មភាពព្រះគម្ពីរនៅក្នុងប្រទេសកម្ពុជាត្រូវបានអនុវត្តដោយសមាគមព្រះគម្ពីរថៃ សមាគមព្រះគម្ពីរអាមេរិក សមាគមព្រះគម្ពីរពារ៉ុច និងផ្សេងទៀត ហើយត្រូវបានសម្របសម្រួលដោយសមាគមព្រះគម្ពីរអាស៊ីប៉ាស៊ីហ្វិកនៅហុងកុង។",
+    "our_mission":"Our Mission",
     "our_mission_content":"The Bible Society exists is to equip churches to share God’s Word.",
     "our_vision":"Our Vision",
     "our_vision_content":"The Bible Society exists is to equip churches to share God’s Word.",
@@ -69,7 +74,7 @@
     "our_board_content":"The Bible Society is an expression of the fellowship of God's people from different Church traditions and background working together towards the same objective: bringing the Word of hope and salvation to the Cambodian people. In order to meet the needs of Christian communities in Cambodia, the BSC Board of Directors and the Advisory Committee are composed of Christian representatives from almost all Church traditions: Evangelical, Methodist, Presbyterian, Anglican, Assemblies of God, Baptist, Church of Christ, Seventh Day Adventist, Roman Catholic, as well as parachurch organizations."
   },
   "mission":{
-    "welcome":"The Bible Society in Cambodia.",
+    "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All.",
     "title":"What makes us unique",
     "content":"We are the integrated Bible agency we translate, publish and distribute Bibles, we help people understand its message and we help to ensure the continuing credibility of the Bible in society We have unprecedented global reach we meet people’s needs for Holy Scriptures in more than 200 countries and territories",
@@ -81,12 +86,12 @@
     "Revelation":"Revelation"
   },
   "catalogue":{
-    "welcome":"The Bible Society in Cambodia.",
+    "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All.",
     "title":"Category"
   },
   "contact_us":{
-    "welcome":"The Bible Society in Cambodia.",
+    "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All."
   },
   "donation":{

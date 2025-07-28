@@ -4,10 +4,11 @@ import React, {useEffect,useState} from 'react'
 import Image from 'next/image'
 import {VlogProps} from "@/types/vlog";
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 const VlogsCard = ({vlog}:VlogProps) => {
     const [isClient, setIsClient] = useState(false);
-
+    const locale = useLocale();
     useEffect(() => {
       setIsClient(true);
     }, []);
@@ -47,7 +48,7 @@ const VlogsCard = ({vlog}:VlogProps) => {
                                 sizes="100vw"
                                 className='w-full h-fit object-contain object-center rounded-[5%]' />
                         </div>
-                        <div className='p-1'>
+                        <div className={`p-1 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
                             <h1 className='text-[14px] font-bold'>{vlog.title_en}</h1>
                             {isClient && (
                                 <div

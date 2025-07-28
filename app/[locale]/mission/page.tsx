@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 const Mission = () => {
   const t = useTranslations('mission');
-
+  const locale = useLocale();
   return (
     <div>
       <Navbar />
@@ -18,28 +19,32 @@ const Mission = () => {
           sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="relative flex justify-between items-center md:max-w-[720px] xl:max-w-[1200px]">
-            <div data-aos="fade-right"
-                data-aos-anchor="#example-anchor"
-                data-aos-duration={`400`}
-            >
-              <span className="text-[14px] md:text-[22px] text-[#4FC9EE] font-light ">សមាគមព្រះគម្ពីរកម្ពុជា</span>
-              <h1 className="text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] lg:text-[60px] lg:leading-[60px] xl:text-[70px] xl:leading-[70px] font-bold text-wrap text-[#ffffff] capitalize">
-                The Bible Society in Cambodia.
-              </h1>
-            </div>
-            <p data-aos="fade-left"
+         <div className="relative flex justify-between items-center max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] md:space-x-[8rem] xl:space-x-[14rem]">
+            <div>
+              <p data-aos="fade-right"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration={`400`}
+              className={`text-[14px] md:text-[30px] text-[#4FC9EE] font-light font-[krasar]`}>សមាគមព្រះគម្ពីរកម្ពុជា</p>
+              <h1 data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`500`}
-            className="text-[14px] md:text-[24px] text-[#ffffff] font-[400]">
-              GOD’S WORD
-              Living Hope for All.
+              className={`font-bold text-wrap text-[#ffffff]
+                  font-[gotham] md:whitespace-pre-line ${locale === 'km' ? 'font-[krasar] text-[20px] md:text-[50px] xl:text-[5rem]':'font-[gotham] text-[20px] leading-[20px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem]'}
+                `}>{t('welcome')}</h1>
+            </div>
+            <p data-aos="fade-left"
+              data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
+              data-aos-duration={`600`}
+            className={`w-fit text-[14px] xl:text-[24px] text-[#ffffff] font-[400] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+              {t('quote')}
             </p>
         </div>
       </div>
 
-      <div className='w-full h-fit bg-[#292929] p-5'>
+      <div className={`w-full h-fit bg-[#292929] p-5 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className='flex gap-2 md:gap-[1rem] p-3 md:max-w-[720px] xl:max-w-[1200px] mx-auto'>
              <div className='w-[30%] md:w-[40%]'>
               <Image 
@@ -105,7 +110,7 @@ const Mission = () => {
           </div>
       </div>
 
-      <div className='w-full h-fit bg-[#446EB6]'>
+      <div className={`w-full h-fit bg-[#446EB6] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className='flex flex-col md:flex-row'>
              <div data-aos="fade-right"
                   data-aos-anchor="#example-anchor"
@@ -139,7 +144,7 @@ const Mission = () => {
           </div>
       </div>
 
-      <div className='w-full h-fit bg-[#fff]'>
+      <div className={`w-full h-fit bg-[#fff] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className='w-full p-4 md:max-w-[720px] xl:max-w-[1200px] mx-auto'>
               <p data-aos="fade-left"
                 data-aos-anchor="#example-anchor"

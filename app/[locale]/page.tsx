@@ -48,7 +48,7 @@ export default function Home() {
           sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="relative flex justify-between items-center max-w-[350px] md:max-w-[720px] xl:max-w-[1200px]">
+        <div className="relative flex justify-between items-center max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] md:space-x-[8rem] xl:space-x-[14rem]">
             <div>
               <p data-aos="fade-right"
               data-aos-anchor="#example-anchor"
@@ -59,26 +59,23 @@ export default function Home() {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`500`}
-              className={`text-[30px] leading-[30px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem] font-bold text-wrap text-[#ffffff]
-                  font-[gotham]
-                `}>
-                {t('welcome')}
-              </h1>
+              className={`font-bold text-wrap text-[#ffffff]
+                  font-[gotham] md:whitespace-pre-line ${locale === 'km' ? 'font-[krasar] text-[20px] md:text-[50px] xl:text-[5rem]':'font-[gotham] text-[20px] leading-[20px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem]'}
+                `}>{t('welcome')}</h1>
             </div>
             <p data-aos="fade-left"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration={`600`}
-            className="text-[14px] xl:text-[24px] text-[#ffffff] font-[400] font-[gotham]">
-              GOD’S WORD
-              Living Hope for All.
+            className={`w-fit text-[14px] xl:text-[24px] text-[#ffffff] font-[400] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+              {t('quote')}
             </p>
         </div>
       </section>
 
       <div className="w-full h-fit pb-[10rem] xl:pb-[12rem]">
          <Donate />
-         <div className="w-full max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto px-3 flex flex-wrap">
+         <div className={`w-full max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto px-3 flex flex-wrap ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
             <div className="w-full md:w-[30%]">
               <span
               >
@@ -147,7 +144,7 @@ export default function Home() {
                         className="w-[50px] h-[50px] xl:w-[100px] xl:h-[100px] object-cover object-center p-2"
                     />
                     </span>
-                    <h1 className="text-[16px] xl:text-[30px] text-[#000000] font-[700] text-wrap">{t('dsr')}</h1>
+                    <h1 className={`text-[16px] xl:text-[30px] text-[#000000] font-[700] text-wrap ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{t('dsr')}</h1>
                   </div>
                   <div className="w-[100%] xl:w-[70%]">
                     <ul className="text-[#fff] space-y-1">
@@ -186,7 +183,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row w-full max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto gap-4 pb-10 xl:pb-0 md:translate-y-[-30%] xl:translate-x-0">
-          <div className="max-sm:translate-y-[-40%] xl:w-[30%]">
+          <div className={`max-sm:translate-y-[-40%] xl:w-[30%] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
               <h1 data-aos="fade-right"
                 data-aos-offset="500"
                 data-aos-duration={`200`}
@@ -200,7 +197,7 @@ export default function Home() {
                 {t('rkbo_content')}
               </p>
               <div className="flex gap-2 mt-2">
-                <Link href="/">
+                <Link href="https://play.google.com/store/apps/details?id=khmerbible.khm.org&hl=en&pli=1">
                   <Image 
                   data-aos="fade-right"
                   data-aos-offset="500"
@@ -214,7 +211,7 @@ export default function Home() {
                     className="w-[10vh] h-full object-cover object-center"
                   />
                 </Link>
-                <Link href="/">
+                <Link href="https://apps.apple.com/kh/app/khmer-bible-app/id1409575588">
                   <Image 
                   data-aos="fade-right"
                   data-aos-offset="500"
@@ -230,7 +227,7 @@ export default function Home() {
                 </Link>
               </div>
           </div>
-          <div className="flex xl:w-[70%] shadow-sm drop-shadow-lg">
+          <div className={`flex xl:w-[70%] shadow-sm drop-shadow-lg ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
             <div className="w-[60%]">
               <ul className="grid grid-cols-2 justify-center w-full h-full items-center">
                 {version.map((category, index) => {
@@ -285,7 +282,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full h-fit max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto py-10 px-5">
+      <div className={`w-full h-fit max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto py-10 px-5 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
            <div className="flex flex-col xl:flex-row space-y-5 xl:space-x-5">
               <div className="w-full xl:w-[20%]">
                 <div className="flex flex-row xl:flex-col space-x-2 justify-center items-center xl:justify-start xl:items-start">
@@ -305,7 +302,7 @@ export default function Home() {
                       <h1 data-aos="fade-right"
                 data-aos-offset="500"
                 data-aos-duration={`400`}
-                      className="text-[16px] xl:text-[34px] text-[#4FC9EE] font-[700] text-wrap">Our
+                      className="text-[16px] xl:text-[34px] text-[#4FC9EE] font-[700] text-wrap">
                          {t('ofb')}
                       </h1>
                 </div>
@@ -353,7 +350,7 @@ export default function Home() {
            </div>
       </div>
 
-       <div className="w-full h-fit max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto my-[1.5rem] px-3 py-[2rem] overflow-hidden">
+       <div className={`w-full h-fit max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] mx-auto my-[1.5rem] px-3 py-[2rem] overflow-hidden ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className="flex flex-col xl:flex-row gap-5 w-full h-full overflow-hidden">
               <div className="flex flex-col gap-5 w-full xl:w-[60%]">
                 <div className="w-full h-full">

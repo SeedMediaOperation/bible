@@ -52,7 +52,7 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
     <html lang={locale}>
       <body
         className={`${gotham.variable} ${krasar.variable} ${instrumentSans.variable} antialiased h-full min-h-screen overflow-y-auto  !scroll-smooth
-          ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}
+          
         `}
       >
         <NextIntlClientProvider messages={messages}>

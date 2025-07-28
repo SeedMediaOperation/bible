@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from 'react'
 import Image from "next/image";
 import { usePathname, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 
 const Translation = () => {
     const [isKmActive, setIsKmActive] = useState<boolean>(true);
     const pathname = usePathname();
     const router = useRouter();
-
+    const locale = useLocale();
     const setToLocalStorage = (locale:string) => {
         localStorage.setItem("locale", locale);
       };
@@ -50,11 +51,11 @@ const Translation = () => {
                                 className={`w-full h-full object-cover object-center rounded-full`}
                                 />
         </div>
-        <div className='inline-flex space-x-2'>
+        <div className={`inline-flex space-x-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
                     <button onClick={triggerKmClick} disabled={isKmActive}
-                    className={!isKmActive ? 'text-gray-300' : 'text-white font-bold' }>Khmer</button>
+                    className={!isKmActive ? 'text-gray-300' : 'text-white font-bold' }>{locale ==='km' ? 'ភាសាខ្មែរ':'Khmer'}</button>
                     <button onClick={triggerKmClick} disabled={!isKmActive}
-                            className={isKmActive ? 'text-gray-300' : 'text-white font-bold' }>English
+                            className={isKmActive ? 'text-gray-300' : 'text-white font-bold' }>{locale ==='km' ? 'ភាសាអង់គ្លេស':'English'}
                     </button>
         </div>
     </div>

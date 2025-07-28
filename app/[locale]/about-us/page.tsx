@@ -2,27 +2,23 @@ import Image from 'next/image';
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 const Experience = [
   {id:1,year:'1892', content:'1892_content'},
-  {id:2,year:'1993', content:'1892_content'},
-  {id:3,year:'1899', content:'1892_content'},
-  {id:4,year:'1804', content:'1892_content'},
-  {id:5,year:'1923', content:'1892_content'},
-  {id:6,year:'1954', content:'1892_content'},
-  {id:7,year:'1954', content:'1892_content'},
-  {id:8,year:'1954', content:'1892_content'},
-  {id:9,year:'1962', content:'1892_content'},
-  {id:10,year:'1954', content:'1892_content'},
-  {id:11,year:'1955', content:'1892_content'},
-  {id:12,year:'1954', content:'1892_content'},
-  {id:13,year:'1954', content:'1892_content'},
-  {id:14,year:'1954', content:'1892_content'},
+  {id:2,year:'1899', content:'1899_content'},
+  {id:3,year:'1923', content:'1923_content'},
+  {id:4,year:'1954', content:'1954_content'},
+  {id:5,year:'1962', content:'1962_content'},
+  {id:6,year:'1955', content:'1955_content'},
+  {id:7,year:'1968', content:'1968_content'},
+  {id:8,year:'1975_1992', content:'1975_1992_content'},
+  {id:9,year:'1804', content:'1804_content'}
 ]
 
 export default function AboutUs () {
   const t = useTranslations('about_us');
-
+  const locale = useLocale();
   return (
     <div>
       <Navbar />
@@ -35,26 +31,32 @@ export default function AboutUs () {
           sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="relative flex justify-between items-center max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto">
-            <div data-aos="fade-right"
+         <div className="relative flex justify-between items-center max-w-[350px] md:max-w-[720px] xl:max-w-[1200px] md:space-x-[8rem] xl:space-x-[14rem]">
+            <div>
+              <p data-aos="fade-right"
               data-aos-anchor="#example-anchor"
-              data-aos-duration={`400`}>
-              <span className="text-[14px] md:text-[20px] text-[#4FC9EE] font-light ">សមាគមព្រះគម្ពីរកម្ពុជា</span>
-              <h1 className="text-[30px] leading-[30px] md:text-[50px] md:leading-[50px] xl:text-[5rem] xl:leading-[5rem] font-bold text-wrap text-[#ffffff] capitalize">
-                The Bible Society in Cambodia.
-              </h1>
+              data-aos-offset="500"
+              data-aos-duration={`400`}
+              className={`text-[14px] md:text-[30px] text-[#4FC9EE] font-light font-[krasar]`}>សមាគមព្រះគម្ពីរកម្ពុជា</p>
+              <h1 data-aos="fade-right"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration={`500`}
+              className={`font-bold text-wrap text-[#ffffff]
+                  font-[gotham] md:whitespace-pre-line ${locale === 'km' ? 'font-[krasar] text-[20px] md:text-[50px] xl:text-[5rem]':'font-[gotham] text-[20px] leading-[20px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem]'}
+                `}>{t('welcome')}</h1>
             </div>
             <p data-aos="fade-left"
               data-aos-anchor="#example-anchor"
+              data-aos-offset="500"
               data-aos-duration={`600`}
-            className="text-[14px] md:text-[20px] text-[#ffffff] font-[400]">
-              GOD’S WORD
-              Living Hope for All.
+            className={`w-fit text-[14px] xl:text-[24px] text-[#ffffff] font-[400] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+              {t('quote')}
             </p>
         </div>
       </div>
 
-      <div className="w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto h-full translate-y-[-15%] xl:translate-y-[-30%] shadow-sm drop-shadow-md">
+      <div className={`w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto h-full translate-y-[-15%] xl:translate-y-[-30%] shadow-sm drop-shadow-md ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className="w-full h-full md:h-[36vh] xl:h-[60vh] 2xl:h-[50vh] flex flex-col md:flex-row overflow-hidden">
               <div className="w-full md:w-[50%] h-[25vh] md:h-full">
                 <Image 
@@ -84,7 +86,7 @@ export default function AboutUs () {
       </div>
 
       <div className='w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto h-full pb-10'>
-        <ul className='space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap justify-center items-start'>
+        <ul className={`space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap justify-center items-start ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           {Experience.map((items, index) =>
             <li key={index} 
             className='flex flex-col md:flex-row gap-2 w-full md:w-[48%]'>
@@ -130,7 +132,7 @@ export default function AboutUs () {
                     className="w-[40px] md:w-[60px] mx-auto md:mx-0 xl:w-[70px] object-cover object-center"
                   />
                   </span>
-                  <ul>
+                  <ul className={`${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
                       <li data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
@@ -160,7 +162,7 @@ export default function AboutUs () {
                     className="w-[40px] md:w-[60px] mx-auto md:mx-0 xl:w-[70px] object-cover object-center"
                   />
                   </span>
-                  <ul>
+                  <ul className={`${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
                       <li data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
@@ -179,7 +181,7 @@ export default function AboutUs () {
           </div>
       </div>
 
-      <div className='w-full bg-gradient-to-r from-[#1E1E1E] to-[#413F3F] p-3 shadow drop-shadow-2xl'>
+      <div className={`w-full bg-gradient-to-r from-[#1E1E1E] to-[#413F3F] p-3 shadow drop-shadow-2xl ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <div className='p-3'>
             <span>
                     <Image 
@@ -256,7 +258,7 @@ export default function AboutUs () {
           </ul>
       </div>
 
-      <div className='w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto p-3 md:p-8'>
+      <div className={`w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto p-3 md:p-8 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <h1 data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
@@ -285,7 +287,7 @@ export default function AboutUs () {
           />  
       </div>
 
-      <div className='w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto p-3 md:p-8'>
+      <div className={`w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto p-3 md:p-8 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           <h1 data-aos="fade-right"
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
