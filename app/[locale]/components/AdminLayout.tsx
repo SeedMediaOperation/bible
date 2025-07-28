@@ -3,9 +3,10 @@
 import React, { ReactNode, useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { routing } from '@/lib/i18n/routing';
 import { UserProfile } from "@/types/auth";
+import clsx from 'clsx';
 
 interface Props {
     children: ReactNode;
@@ -15,7 +16,9 @@ interface Props {
 const AdminLayout = ({ children, profile }: Props) => {
     const router = useRouter();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+    const pathname = usePathname();
+    const locale = routing.defaultLocale;
+  
     const handleLogout = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -30,6 +33,30 @@ const AdminLayout = ({ children, profile }: Props) => {
             alert("Invalid credentials");
         }
     };
+
+
+    const menuLinks = [
+      { href: `/${locale}/dashboard`, label: 'Dashboard' },
+      { href: `/${locale}/dashboard/users`, label: 'Users' },
+      { href: `/${locale}/dashboard/version`, label: 'Versions' },
+      { href: `/${locale}/dashboard/reading-date`, label: 'Reading Date' },
+      { href: `/${locale}/dashboard/media`, label: 'Medias' },
+      { href: `/${locale}/dashboard/departments`, label: 'Departments' },
+      { href: `/${locale}/dashboard/vlogs`, label: 'Vlogs' },
+    ];
+  
+    const isActive = (href: string) => {
+        const cleanPath = pathname.replace(/\/$/, '');
+        const cleanHref = href.replace(/\/$/, '');
+      
+        // If the link is for the dashboard root, match exactly
+        if (cleanHref.endsWith('/dashboard')) {
+          return cleanPath === cleanHref;
+        }
+      
+        // For others, allow startsWith to support subpaths
+        return cleanPath === cleanHref || cleanPath.startsWith(cleanHref + '/');
+      };
 
     return (
         <div className="w-full min-h-screen flex flex-col bg-base-100">
@@ -105,13 +132,20 @@ const AdminLayout = ({ children, profile }: Props) => {
                     }`}
                 >
                     <ul className="menu space-y-2">
-                        <li><Link href={`/${routing.defaultLocale}/dashboard`}>Dashboard</Link></li>
-                        <li><Link href={`/${routing.defaultLocale}/dashboard/users`}>Users</Link></li>
-                        <li><Link href={`/${routing.defaultLocale}/dashboard/version`}>Versions</Link></li>
-                        <li><Link href={`/${routing.defaultLocale}/dashboard/media`}>Medias</Link></li>
-                        <li><Link href={`/${routing.defaultLocale}/dashboard/departments`}>Departments</Link></li>
-                        <li><Link href={`/${routing.defaultLocale}/dashboard/vlogs`}>Vlogs</Link></li>
-                    </ul>
+                        {menuLinks.map(({ href, label }) => (
+                            <li key={href}>
+                            <Link
+                                href={href}
+                                className={clsx(
+                                'block px-4 py-2 rounded hover:bg-gray-500',
+                                isActive(href) && 'bg-blue-100 text-blue-600 font-semibold'
+                                )}
+                            >
+                                {label}
+                            </Link>
+                            </li>
+                        ))}
+                        </ul>
                 </aside>
 
                 {/* Overlay for mobile sidebar */}

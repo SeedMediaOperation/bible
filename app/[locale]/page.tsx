@@ -5,13 +5,14 @@ import Donate from "./components/Donate";
 import  Link  from 'next/link';
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
-import {routing} from "@/lib/i18n/routing";
 import {Version} from "@/types/book";
 import {useEffect, useState} from "react";
 import {useLocale, useTranslations} from "use-intl";
+import { ReadingDate } from "@/types/reading";
 
 export default function Home() {
     const [version, setVersion] = useState<Version[]>([]);
+    const [rod, setROD] = useState<ReadingDate[]>([]);
     const t = useTranslations('home');
     const locale = useLocale();
     useEffect(() => {
@@ -33,6 +34,24 @@ export default function Home() {
             }
         };
 
+        const fetchDOR = async () => {
+          try {
+              const res = await fetch('/api/reading-date', {
+                  method: 'GET',
+                  headers: { 'Content-Type': 'application/json' },
+              });
+
+              if (!res.ok) {
+                  throw new Error('Failed to fetch versions');
+              }
+
+              const data = await res.json();
+              setROD(data.data); // Adjust this based on your actual response structure
+          } catch (error) {
+              console.error('Error fetching date of reading:', error);
+          }
+      };
+        fetchDOR();
         fetchVersion();
     }, []);
 
@@ -148,34 +167,14 @@ export default function Home() {
                   </div>
                   <div className="w-[100%] xl:w-[70%]">
                     <ul className="text-[#fff] space-y-1">
-                      <li data-aos="fade-left"
-                data-aos-offset="500"
-                data-aos-duration={`600`} 
+                      {rod && rod.map((item) => 
+                      <li key={item.id} data-aos="fade-left"
+                        data-aos-offset="500"
+                        data-aos-duration={`600`} 
                       className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
-                        ថ្ងៃអាទិត្យ ១៧ វិច្ឆិកា Sun 17 November
-                        ទំនុកតម្កើង / Psalm 18.1-24
+                        {locale === 'km' ? item.title_km : item.title_en}
                       </li>
-                      <li data-aos="fade-left"
-                data-aos-offset="600"
-                data-aos-duration={`600`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
-                        ថ្ងៃច័ន្ទ ១៨ វិច្ឆិកា Mon 18 November
-                        ទំនុកតម្កើង / Psalm 18.25-50
-                      </li>
-                      <li data-aos="fade-left"
-                data-aos-offset="600"
-                data-aos-duration={`700`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
-                        ថ្ងៃអង្គារ ១៩ វិច្ឆិកា Tue 19 November
-                        ទំនុកតម្កើង / Psalm 21
-                      </li>
-                      <li data-aos="fade-left"
-                data-aos-offset="500"
-                data-aos-duration={`800`} 
-                      className="text-[14px] xl:text-[23px] hover:bg-[#00AFD7]/70 py-2 px-5 xl:px-10 font-[krasar] rounded-full">
-                        ថ្ងៃពុធ ២០ វិច្ឆិកា Wed 20 November
-                        ទំនុកតម្កើង / Psalm 50
-                      </li>
+                      )}
                     </ul>
                   </div>
               </div>
@@ -252,7 +251,7 @@ export default function Home() {
                           </h1>
                         </div>
                         <Link
-                          href={`${routing.defaultLocale}/${category.slug}`}
+                          href={`${locale}/${category.slug}`}
                           className="w-fit bg-white text-[12px] xl:text-[24px] text-black rounded-full px-[15px] py-[2px] xl:px-[24px] mt-2"
                         >
                           {t('read')}

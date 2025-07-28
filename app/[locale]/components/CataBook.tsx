@@ -5,12 +5,13 @@ import React, {useEffect} from "react";
 import {CataProps} from "@/types/catalogue";
 import Link from "next/link";
 import {useRouter, useSearchParams} from "next/navigation";
+import { useLocale } from "next-intl";
 
 export default function CataBook({params, versions,catabook, catalogue}:CataProps) {
     const searchParams = useSearchParams();
     const version = searchParams.get('version');
     const router = useRouter();
-
+    const locale = useLocale();
     
     // ✅ Redirect if no versions query
     useEffect(() => {
@@ -42,9 +43,9 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
                             version === vs.slug
                                 ? 'bg-[#32CDF0] text-white'
                                 : 'bg-white text-black'
-                        }`}
+                        } ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}
                     >
-                        {vs.name_en}
+                        {locale === 'km'? vs.name_km : vs.name_en}
                     </Link>
                 ))}
             </div>
@@ -71,13 +72,13 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
                                     className="w-[15vh] h-[15vh] md:w-[16vh] md:h-[16vh] xl:w-[20vh] xl:h-[20vh] mx-auto object-contain object-center"
                                 />
                             </div>
-                            <h1 className="w-fit text-[12px] md:text-[18px] xl:text-[20px] text-[#000] uppercase text-wrap font-bold my-2">
-                                {cata.name_en}
+                            <h1 className={`w-fit text-[12px] md:text-[18px] xl:text-[20px] text-[#000] uppercase text-wrap font-bold my-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+                                {locale === 'km' ? cata.name_km : cata.name_en}
                             </h1>
-                            <p className='text-[14px] md:text-[16px]'>({cata.type_en})</p>
-                            <p className='text-[14px] md:text-[16px]'>Size: {cata.size_en}</p>
-                            <p className='text-[14px] md:text-[16px]'>UBS Code: {cata.code}</p>
-                            <p className='text-[14px] md:text-[16px]'>ISBN: {cata.isbn}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>({locale === 'km' ? cata.type_km :cata.type_en})</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>Size: {locale === 'km' ? cata.size_km :cata.size_en}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>UBS Code: {locale === 'km' ? cata.code :cata.code}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>ISBN: {locale === 'km' ? cata.isbn :cata.isbn}</p>
                         </div>
                     ))
                 )}

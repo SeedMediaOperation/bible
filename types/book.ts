@@ -87,6 +87,7 @@ export interface ChapterProps {
 }
 
 export interface ReadingProps {
+    singleVersion?:Version;
     versions: Version[];
     books: Book[];
     chapters: Chapters[];

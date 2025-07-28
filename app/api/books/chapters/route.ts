@@ -24,7 +24,7 @@ export async function GET(req:NextRequest) {
     }
 
     // Calculate pagination
-    const totalUsers = await prisma.user.count();
+    const totalUsers = await prisma.chapter.count();
 
     // Handle empty results
     if (totalUsers === 0) {

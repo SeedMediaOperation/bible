@@ -1,10 +1,10 @@
 import {NextRequest, NextResponse} from "next/server";
-import {prisma} from "@/prisma/client";
-import schema from "@/app/api/medias/schema";
+import { prisma } from "@/prisma/client";
+import schema from "./schema";
 
-export async function GET(req:NextRequest){
-    try {
-        // Extract and validate query parameters
+export async function GET(req:NextRequest) {
+   try {
+    // Extract and validate query parameters
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get('page') || '1', 10);
     const limit = parseInt(searchParams.get('limit') || '10', 10);
@@ -24,7 +24,7 @@ export async function GET(req:NextRequest){
     }
 
     // Calculate pagination
-    const totalUsers = await prisma.media.count();
+    const totalUsers = await prisma.readingDate.count();
 
     // Handle empty results
     if (totalUsers === 0) {
@@ -59,12 +59,13 @@ export async function GET(req:NextRequest){
           );
       }
 
-        const medias = await prisma.media.findMany({
-            skip,
-            take: limit,
-            orderBy: { createdAt: 'asc' }
-        });
-         // Calculate pagination metadata
+       const readingDate = await prisma.readingDate.findMany({
+        skip,
+        take: limit,
+        orderBy: { createdAt: 'asc' }
+    });
+
+       // Calculate pagination metadata
       const pagination = {
         totalUsers,
         totalPages,
@@ -76,53 +77,56 @@ export async function GET(req:NextRequest){
         prevPage: page > 1 ? page - 1 : null,
         serialNumberStartFrom: skip + 1
     };
-        return NextResponse.json(
-            {
-                data: medias,
-                message: "Successfully Getting Medias",
-                pagination,
-                status: 200
-            },
-            {status:200}
-        )
-    }catch(error){
-        const message = error instanceof Error ? error.message : String(error);
-        return new NextResponse("Error in fetching Media: " + message, {
-            status:500
-        });
-    }
+
+       return NextResponse.json(
+           {
+               data: readingDate,
+               message: "Reading Date fetched successfully",
+               pagination,
+               success:true
+           },
+           { status: 200 });
+   }catch (error){
+       const message = error instanceof Error ? error.message : String(error);
+       return new NextResponse("Error in fetching Version: " + message, {
+           status: 500
+       });
+   }
 }
 
-export async function POST(req:NextRequest){
-    try {
-        const body = await req.json();
-        const validation = schema.safeParse(body);
+export async function POST(req: NextRequest){
+   try {
+       const body = await req.json();
+       const validation = schema.safeParse(body);
 
-        if(!validation.success){
-            return NextResponse.json(validation.error.message, {status:400});
-        }
+       if(!validation.success){
+           return NextResponse.json(validation.error.message, {status:400});
+       }
 
-        const newMedia = await prisma.media.create({
-            data:{
-                pro_name_En: body.pro_name_En,
-                pro_name_Km: body.pro_name_Km,
-                video_url: body.video_url
-            }
-        });
+       const readingDate = await prisma.readingDate.create({
+           data: {
+               title_en: body.title_en,
+               title_km: body.title_km
+           }
+       });
 
-        if(!newMedia){
-            return NextResponse.json({
-                message: "Failed to created media"
-            },{status:500})
-        }
+       if (!readingDate){
+           return NextResponse.json({
+                   message: "Failed to create Reading Date"
+               },
+               { status: 500 });
+       }
 
-        return NextResponse.json({
-            data: newMedia,
-            message: "Media Created Successfully",
-            status: 200
-        },{status:201});
-    }catch(error){
-        const message = error instanceof Error ? error.message : String(error);
-        return new NextResponse("Error in fetching media: " + message, {status:500})
-    }
+       return NextResponse.json({
+           data: readingDate,
+           message: "Reading Date created successfully",
+           status: 201,
+           success: true,
+       },{status: 201})
+   }catch (error){
+       const message = error instanceof Error ? error.message : String(error);
+       return new NextResponse("Error in Posted Reading Date: " + message, {
+           status: 500
+       });
+   }
 }

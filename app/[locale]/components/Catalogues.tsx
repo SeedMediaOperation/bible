@@ -27,7 +27,7 @@ const CatalogueCard = ({catalogue}:CatalogueProps) => {
                                 className="w-full h-full object-contain object-center"
                             />
                         </div>
-                        <h1 className={`w-[90px] mx-auto text-center text-[12px] text-[#fff] uppercase text-wrap my-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{cata.name_en}</h1>
+                        <h1 className={`w-[90px] mx-auto text-center text-[12px] text-[#fff] uppercase text-wrap my-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale === 'km'? cata.name_km : cata.name_en}</h1>
                     </Link>
                 )}
             </div>

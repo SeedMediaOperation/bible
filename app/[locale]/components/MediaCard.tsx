@@ -10,8 +10,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {MediaProps} from "@/types/book";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 export default function MediaCard({medias}:MediaProps) {
+    const locale = useLocale();
     const getYoutubeVideoId = (url: string) => {
         try {
             const parsed = new URL(url);
@@ -64,7 +66,7 @@ export default function MediaCard({medias}:MediaProps) {
                                         className="w-full h-full object-cover"
                                     />
                                     <div className='absolute bottom-0 left-0 right-0 w-full h-[50px] bg-[#4FC9EE] shadow drop-shadow-lg'>
-                                        <h1 className='font-bold px-2 mt-3'>{services.pro_name_En}</h1>
+                                        <h1 className={`font-bold px-2 mt-3 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale ? services.pro_name_Km : services.pro_name_En}</h1>
                                     </div>
                                 </Link>
                             </div>

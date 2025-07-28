@@ -61,7 +61,7 @@ const Mission = () => {
                   className="w-[30vh] h-[20vh] md:w-full md:h-full object-cover object-center"
                 />
              </div>
-             <div className='w-[70%] md:w-[60%] pe-2'>
+             <div data-tip="Scroll For Read More" className='tooltip w-[70%] md:w-[60%] pe-2'>
                 <h1 data-aos="fade-left"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
@@ -71,14 +71,14 @@ const Mission = () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`600`}
-                className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
+                className='text-[12px] md:text-[18px] text-pretty text-[#fff] whitespace-pre-line w-full h-[14vh] lg:h-[20vh] overflow-y-auto'>
                   {t('content')}
                 </p>
              </div>
           </div>
 
           <div className='flex gap-2 md:gap-[1rem] p-3 md:max-w-[720px] xl:max-w-[1200px] mx-auto'>
-            <div className='w-[70%] md:w-[60%] pe-2'>
+            <div  data-tip="Scroll For Read More" className='tooltip w-[70%] md:w-[60%] pe-2'>
                 <h1 data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
@@ -88,7 +88,8 @@ const Mission = () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`600`}
-                 className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
+                
+                 className='text-[12px] md:text-[18px] text-pretty text-[#fff] whitespace-pre-line w-full h-[14vh] lg:h-[20vh] overflow-y-auto'>
                   {t('content')}
                 </p>
              </div>
@@ -132,13 +133,13 @@ const Mission = () => {
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration={`400`}
-                className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title')}</h1>
+                className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title_2')}</h1>
                 <p data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration={`600`}
-                className='text-[12px] md:text-[18px] text-pretty text-[#fff]'>
-                  {t('content')}
+                className='text-[12px] md:text-[18px] text-pretty text-[#fff] whitespace-pre-line'>
+                  {t('content_2')}
                 </p>
              </div>
           </div>
@@ -151,7 +152,7 @@ const Mission = () => {
                 data-aos-offset="500"
                 data-aos-duration={`400`}
                className='text-[12px] md:text-[18px] text-pretty'>
-                 {t('content')}
+                 {t('content_3')}
               </p>
               <div className='flex items-center justify-between'>
                 <span className={`text-[50px] font-[700] text-[#4FC9EE] font-instrument`}>“”</span>

@@ -5,6 +5,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model User {
@@ -125,4 +126,10 @@ model Vlog {
   updatedAt   DateTime  @updatedAt
 }
 
-
+model ReadingDate{
+  id           String @id @default(cuid())
+  title_en     String
+  title_km     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

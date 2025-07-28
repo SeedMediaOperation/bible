@@ -1,4 +1,3 @@
-import { formatSplit } from "@/utils/formatSplit";
 import ReadingPage from '@/app/[locale]/components/ReadingPage';
 import Image from 'next/image';
 import Navbar from "@/app/[locale]/components/Navbar";
@@ -7,6 +6,7 @@ import MediaCard from "@/app/[locale]/components/MediaCard";
 import {apiGet} from "@/utils/apiHelpers";
 
 import type {Book, Chapters, Media, Version} from "@/types/book";
+import { getLocale } from 'next-intl/server';
 
 interface Props {
   params: { book: string };
@@ -16,9 +16,14 @@ const Book = async ({ params }: Props) => {
     // Version
     const res = await apiGet<{ data:Version[] }>('/api/books/versions');
     const versions = res.data;
+    const locale = await getLocale();
   // Book
     const resBook = await apiGet<{ data:Book[] }>(`/api/books`);
-    const allBooks = resBook.data;
+    const allBooks =  resBook.data;
+    // VersionID
+    const singleVersion = versions.find((item) => {
+      return item.slug === params.book;
+    })
     // Filtered books
     const books = allBooks.filter(book => {
         return book.versionId === params.book;
@@ -39,7 +44,7 @@ const Book = async ({ params }: Props) => {
     <div>
       <Navbar />
       {/* Banner */}
-      <div className="relative flex flex-col justify-center w-full h-fit overflow-hidden py-[6rem] md:py-[10rem] px-10 z-1">
+      <div className="relative flex flex-col justify-center w-full h-fit overflow-hidden py-[6rem] md:py-[12rem] px-10 z-1">
         <Image
           src="/images/Banners/read_banner.png"
           alt="banner"
@@ -53,8 +58,8 @@ const Book = async ({ params }: Props) => {
           <h1 data-aos="fade-right"
               data-aos-offset="500"
               data-aos-duration={`500`}
-          className="w-[140px] text-[30px] leading-[30px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem] font-bold text-white">
-            {formatSplit(params.book)}
+          className={`font-bold text-white ${locale === 'km' ? 'font-[krasar] w-[250px] text-[30px] md:text-[40px]  xl:text-[3rem]':'font-[gotham] w-[150px] text-[30px] leading-[30px] md:text-[40px] md:leading-[40px]  xl:text-[3rem] xl:leading-[3rem]'}`}>
+            {locale === "km" ? singleVersion?.titleKm : singleVersion?.titleEn}
           </h1>
         </div>
       </div>
@@ -63,6 +68,7 @@ const Book = async ({ params }: Props) => {
       <div className="w-full max-w-[350px] md:max-w-[520px] lg:max-w-[820px]  mx-auto">
         <ReadingPage
             versions={versions}
+            singleVersion={singleVersion}
             books={books}
             chapters={chapters}
             params={params.book}

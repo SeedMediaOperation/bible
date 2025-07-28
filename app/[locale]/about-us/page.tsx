@@ -13,7 +13,12 @@ const Experience = [
   {id:6,year:'1955', content:'1955_content'},
   {id:7,year:'1968', content:'1968_content'},
   {id:8,year:'1975_1992', content:'1975_1992_content'},
-  {id:9,year:'1804', content:'1804_content'}
+  {id:9,year:'1804', content:'1804_content'},
+  {id:10,year:'year_1', content:'year_1_content'},
+  {id:11,year:'year_2', content:'year_2_content'},
+  {id:12,year:'year_3', content:'year_3_content'},
+  {id:13,year:'year_4', content:'year_4_content'},
+  {id:14,year:'year_5', content:'year_5_content'},
 ]
 
 export default function AboutUs () {
@@ -89,7 +94,7 @@ export default function AboutUs () {
         <ul className={`space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap justify-center items-start ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
           {Experience.map((items, index) =>
             <li key={index} 
-            className='flex flex-col md:flex-row gap-2 w-full md:w-[48%]'>
+            className={`flex flex-col xl:flex-row gap-2 w-full md:w-[48%] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
               <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap'>{t(items.year)}</h1>
               <p className='text-[14px] text-balance'>
                   {t(items.content)}
@@ -116,8 +121,8 @@ export default function AboutUs () {
           </div>
           <div className='w-full md:w-[60%] h-full bg-[#50c9ee]'>
               <div className='flex flex-col gap-3 xl:gap-[5rem] p-3 md:p-10 xl:p-28'>
-                <div className='md:flex md:space-x-5'>
-                  <span>
+                <div className='w-full h-full xl:flex xl:space-x-5'>
+                  <span className='w-[20%] 2xl:w-[10%] mx-auto xl:mx-0'>
                   <Image 
                     data-aos="fade-right"
                     data-aos-anchor="#example-anchor"
@@ -129,7 +134,7 @@ export default function AboutUs () {
                     height={1080}
                     quality={100}
                     sizes="100vw"
-                    className="w-[40px] md:w-[60px] mx-auto md:mx-0 xl:w-[70px] object-cover object-center"
+                    className="w-[46px] h-[46px] mx-auto xl:mx-0 lg:w-[64px] lg:h-[64px] object-cover object-center"
                   />
                   </span>
                   <ul className={`${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
@@ -137,17 +142,17 @@ export default function AboutUs () {
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
                     data-aos-duration={`500`}>
-                        <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center md:text-start'>
+                        <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center xl:text-start'>
                             {t('our_mission')}
                         </h1>
-                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center md:text-start'>
+                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start'>
                             {t('our_mission_content')}
                         </p>
                       </li>
                   </ul>
                 </div>
-                <div className='md:flex md:space-x-5'>
-                  <span>
+                <div className='w-full h-full xl:flex xl:space-x-5'>
+                  <span className='w-[20%] 2xl:w-[10%] mx-auto  xl:mx-0'>
                   <Image 
                   data-aos="fade-left"
                   data-aos-anchor="#example-anchor"
@@ -159,7 +164,7 @@ export default function AboutUs () {
                     height={1080}
                     quality={100}
                     sizes="100vw"
-                    className="w-[40px] md:w-[60px] mx-auto md:mx-0 xl:w-[70px] object-cover object-center"
+                    className="w-[46px] h-[46px] mx-auto xl:mx-0 lg:w-[64px] lg:h-[64px] object-cover object-center"
                   />
                   </span>
                   <ul className={`${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
@@ -168,10 +173,10 @@ export default function AboutUs () {
                     data-aos-offset="500"
                     data-aos-duration={`500`}
                       >
-                        <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center md:text-start'>
-                          {t('our_vision')}
+                        <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center xl:text-start'>
+                        {t('our_vision')}
                         </h1>
-                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center md:text-start'>
+                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start'>
                           {t('our_vision_content')}
                         </p>
                       </li>
@@ -299,7 +304,7 @@ export default function AboutUs () {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`500`}
-          className='text-[14px] md:text-[20px]'>
+          className='text-[14px] md:text-[20px] whitespace-pre-line'>
             {t('our_board_content')}
           </p>
       </div>

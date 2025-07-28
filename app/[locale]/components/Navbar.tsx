@@ -108,7 +108,7 @@ const Navbar = () => {
                                     />
                             </Link>
                             <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[1rem] w-fit mx-auto md:mx-0 bg-[#50bbed] rounded-full justify-between items-center ps-3 pe-2 py-1'>
-                                <span className={`text-[16px] text-[#fff] text-center font-bold ms-3 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale === 'km' ? 'បរិចាក':'Donate'}</span>
+                                <span className={`text-[16px] text-[#fff] text-center font-bold ms-3 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
                                 <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
                                     <svg width="24" height="24" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_1_148)">
@@ -162,7 +162,7 @@ const Navbar = () => {
         </div>
         {/* Mobile */}
         {/* menu */}
-        <button onClick={handleClickOpen} className='xl:hidden fixed top-[30%] left-[-1%] w-fit h-fit bg-[linear-gradient(85.15deg,_rgba(30,_30,_30,_0.8)_0.43%,_rgba(7,_32,_39,_0.64)_98.29%)] backdrop-blur-[10px] hover:bg-[#32CDF0] opacity-70 hover:opacity-100 text-white rounded-box shadow-sm drop-shadow-md  transition-all duration-300 p-2 rounded-r-full'>
+        <button onClick={handleClickOpen} className='xl:hidden fixed top-[30%] left-[-1%] md:left-[-0.5%] w-fit h-fit bg-[linear-gradient(85.15deg,_rgba(30,_30,_30,_0.8)_0.43%,_rgba(7,_32,_39,_0.64)_98.29%)] backdrop-blur-[10px] hover:bg-[#32CDF0] opacity-70 hover:opacity-100 text-white rounded-box shadow-sm drop-shadow-md  transition-all duration-300 p-2 rounded-r-full'>
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
         </button>
 
