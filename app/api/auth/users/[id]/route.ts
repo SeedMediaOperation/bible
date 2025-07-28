@@ -35,6 +35,7 @@ export async function PUT(req:NextRequest, {params} : {params: {id:string}}) {
                 username:body.username,
                 email:body.email,
                 profile:body.profile,
+                role:body.role,
                 isVerifyEmail:true
             }
         });
