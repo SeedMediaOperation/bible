@@ -375,7 +375,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                         </button>
                     </form>
                     <h3 className="font-bold text-lg mb-4">
-                        {mode === 'add' ? 'Add New Book' : 'Edit Book'}
+                        {mode === 'add' ? 'Add New Catalogue Book' : 'Edit Catalogue Book'}
                     </h3>
                     <form onSubmit={handleSubmit} className="space-y-4">
                           {/* Catalogue Select */}
@@ -561,7 +561,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                     <dialog open className="modal">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
-                            <p className="py-4">Are you sure you want to delete this version?</p>
+                            <p className="py-4">Are you sure you want to delete this record?</p>
                             <div className="modal-action">
                                 <form method="dialog" className="space-x-2">
                                     <button

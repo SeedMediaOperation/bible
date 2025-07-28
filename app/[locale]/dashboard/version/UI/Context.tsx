@@ -345,7 +345,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                     <dialog open className="modal">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
-                            <p className="py-4">Are you sure you want to delete this version?</p>
+                            <p className="py-4">Are you sure you want to delete this record??</p>
                             <div className="modal-action">
                                 <form method="dialog" className="space-x-2">
                                     <button

@@ -320,7 +320,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                         </button>
                     </form>
                     <h3 className="font-bold text-lg mb-4">
-                        {mode === 'add' ? 'Add New Vlogs' : 'Edit Book'}
+                        {mode === 'add' ? 'Add New DOR' : 'Edit DOR'}
                     </h3>
                     <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Input Fields */}
@@ -362,7 +362,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                     <dialog open className="modal">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
-                            <p className="py-4">Are you sure you want to delete this version?</p>
+                            <p className="py-4">Are you sure you want to delete this record??</p>
                             <div className="modal-action">
                                 <form method="dialog" className="space-x-2">
                                     <button
