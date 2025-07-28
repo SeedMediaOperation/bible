@@ -39,7 +39,7 @@ const AdminLayout = ({ children, profile }: Props) => {
       { href: `/${locale}/dashboard`, label: 'Dashboard' },
       { href: `/${locale}/dashboard/users`, label: 'Users' },
       { href: `/${locale}/dashboard/version`, label: 'Versions' },
-      { href: `/${locale}/dashboard/reading-date`, label: 'Reading Date' },
+      { href: `/${locale}/dashboard/reading-date`, label: 'Date Of Reading' },
       { href: `/${locale}/dashboard/media`, label: 'Medias' },
       { href: `/${locale}/dashboard/departments`, label: 'Departments' },
       { href: `/${locale}/dashboard/vlogs`, label: 'Vlogs' },
