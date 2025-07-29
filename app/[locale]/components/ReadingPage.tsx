@@ -282,7 +282,7 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
             </div>
             {/* Book Popup */}
             {showBookPopup && (
-                <div className={`fixed z-10 inset-0 w-full md:w-[50%] md:translate-x-[-47%] translate-y-[10%] mx-auto h-fit flex items-center justify-center 
+                <div className={`fixed z-10 inset-0 w-full md:w-[50%] md:translate-x-[-47%] translate-y-[10%] mx-auto h-full flex items-center justify-center 
                             transition-all duration-500 ease-in-out overflow-hidden
                             ${showBookPopup ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
                     <div className="bg-black/80 backdrop-blur-[50px] rounded-[20px] p-4 shadow-lg w-full h-full overflo-y-hidden">
@@ -371,7 +371,7 @@ transition-all duration-500 ease-in-out overflow-y-auto`}>
             )}
             {/* Version Popup */}
             {showVersionPopup && (
-                <div className={`fixed z-10 inset-0 w-full mx-auto h-fit flex items-center justify-center 
+                <div className={`fixed z-10 inset-0 w-full mx-auto h-full flex items-center justify-center 
                     transition-all duration-500 ease-in-out 
                     ${showVersionPopup ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
 
@@ -417,7 +417,7 @@ transition-all duration-500 ease-in-out overflow-y-auto`}>
             )}
             {/* Chapter Popup */}
             {showChapPopup && (
-                <div className={`fixed z-10 inset-0 translate-x-[47%] translate-y-[50%] w-[50%] mx-auto h-fit flex items-center justify-center 
+                <div className={`fixed z-10 inset-0 translate-x-[47%] translate-y-[50%] w-[50%] mx-auto h-full flex items-center justify-center 
                     transition-all duration-500 ease-in-out 
                     ${showChapPopup ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
 
