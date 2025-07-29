@@ -251,7 +251,9 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                     console.error("Copy failed", err);
                                     }
                                 };
-
+                                const parts = line.split(' ');
+                                const verseNumber = parts[0];
+                                const verseText = parts.slice(1).join(' ');
                                 return (
                                     <span
                                     key={index}
@@ -269,7 +271,8 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                         outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}
                                     tabIndex={0}
                                     >
-                                    {line}
+                                      <span className="text-blue-600 mr-1">{verseNumber}</span>
+                                      {verseText}
                                     </span>
                                 );
                                 })}

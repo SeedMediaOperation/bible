@@ -223,7 +223,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th className="hidden sm:table-cell">Chapter</th>
+                            <th className="hidden sm:table-cell">Verse Number</th>
                             <th className="hidden lg:table-cell">Title</th>
                             <th></th>
                         </tr>
@@ -264,7 +264,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             ))
                         ) : (
                             <tr>
-                                <td colSpan={4} className="text-center py-4">No chapter found.</td>
+                                <td colSpan={4} className="text-center py-4">No Verse Number found.</td>
                             </tr>
                         )}
                     </tbody>
@@ -343,7 +343,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                         </button>
                     </form>
                     <h3 className="font-bold text-lg mb-4">
-                        {mode === 'add' ? 'Add New Chapter' : `Edit Chapter: ${form.nameEn}`}
+                        {mode === 'add' ? 'Add New Verse Number' : `Edit Verse Number: ${form.nameEn}`}
                     </h3>
                     <form onSubmit={handleSubmit} className="space-y-4">
                     <select 
@@ -452,7 +452,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                     <dialog open className="modal">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
-                            <p className="py-4">Are you sure you want to delete this chapters ({form.nameEn})?</p>
+                            <p className="py-4">Are you sure you want to delete this Verse Number ({form.nameEn})?</p>
                             <div className="modal-action">
                                 <form method="dialog" className="space-x-2">
                                     <button

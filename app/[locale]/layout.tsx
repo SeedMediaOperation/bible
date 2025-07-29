@@ -71,4 +71,9 @@ export default async function LocaleLayout({ children, params }: RootLayoutProps
       </body>
     </html>
   );
+  
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }
