@@ -420,7 +420,7 @@ transition-all duration-500 ease-in-out overflow-y-auto`}>
             )}
             {/* Chapter Popup */}
             {showChapPopup && (
-                <div className={`fixed z-10 inset-0 translate-x-[47%] translate-y-[50%] w-[50%] mx-auto h-full flex items-center justify-center 
+                <div className={`fixed z-10 inset-0 translate-x-[47%] translate-y-[10%] w-[50%] mx-auto h-full flex items-center justify-center 
                     transition-all duration-500 ease-in-out 
                     ${showChapPopup ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
 
