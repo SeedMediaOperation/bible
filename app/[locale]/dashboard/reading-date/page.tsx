@@ -4,7 +4,7 @@ import Context from "./UI/Context";
 import { apiResReadingDate, ReadingDate,Pagination } from "@/types/reading";
 
 const Version = async () => {
-    const res = await apiGet<{ data: ReadingDate[]; pagination: Pagination }>('/api/reading-date?page=1&limit=8');
+    const res = await apiGet<{ data: ReadingDate[]; pagination: Pagination }>('/api/reading-date');
     const allVlog = res.data;
     const pagination = res.pagination;
 

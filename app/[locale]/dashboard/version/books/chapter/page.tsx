@@ -4,7 +4,7 @@ import { apiGet,apiPut,apiPost,apiDelete } from "@/utils/apiHelpers";
 import Context from "./UI/Context";
 
 const Chapter = async () => {
-    const res = await apiGet<{data: Chapters[], pagination:Pagination}>('/api/books/chapters?page=1&limit=8');
+    const res = await apiGet<{data: Chapters[], pagination:Pagination}>('/api/books/chapters');
     const resBook = await apiGet<{data: Book[]}>('/api/books');
     const allChapters = res.data;
     const allBooks = resBook.data;

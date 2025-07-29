@@ -4,7 +4,7 @@ import { apiDelete, apiGet, apiPost, apiPut } from "@/utils/apiHelpers";
 import Context from "./UI/Context";
 
 const Version = async () => {
-    const res = await apiGet<{ data: Media[]; pagination: Pagination }>('/api/medias?page=1&limit=8');
+    const res = await apiGet<{ data: Media[]; pagination: Pagination }>('/api/medias');
     const allMedia = res.data;
     const pagination = res.pagination;
 

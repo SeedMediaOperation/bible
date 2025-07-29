@@ -8,7 +8,7 @@ import React, {
     useState,
 } from "react";
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 
 export default function Context({ versions,onDelete, submit,pagination:initialPagination }: VersionProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);

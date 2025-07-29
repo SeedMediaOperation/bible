@@ -13,7 +13,7 @@ import ReactQuill from "../../components/ReactQuillWrapper";
 import 'quill/dist/quill.snow.css';
 
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 
 export default function Context({ vlog, pagination:initialPagination,onDelete, submit }: VlogProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);

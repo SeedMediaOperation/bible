@@ -13,7 +13,7 @@ import React, {
 } from "react";
 
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 export default function Context({ catabook,catalogue, pagination:initialPagination, onDelete, submit }: CataProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [mode, setMode] = useState<'add' | 'edit'>('add');
@@ -181,19 +181,18 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
               });
             }
         
-            // Pagination
-            const currentPage = data.length;
-            const totalPages = Math.ceil(currentPage / ITEMS_PER_PAGE);
-            const start = (page - 1) * ITEMS_PER_PAGE;
-            const end = start + ITEMS_PER_PAGE;
-            const paginated = data.slice(start, end);
-        
-            setFilteredData(paginated);
-            setPagination({
-              currentPage,
-              totalPages,
-              hasNextPage: page < totalPages,
-            });
+                    // Pagination
+                const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
+                const start = (page - 1) * ITEMS_PER_PAGE;
+                const end = start + ITEMS_PER_PAGE;
+                const paginated = data.slice(start, end);
+
+                setFilteredData(paginated);
+                setPagination({
+                    currentPage: page,
+                    totalPages,
+                    hasNextPage: page < totalPages,
+                });
             setLoading(false);
         }, 500); // optional debounce
     
@@ -239,6 +238,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <th>#</th>
                             <th className="hidden sm:table-cell">Image</th>
                             <th className="hidden lg:table-cell">Catalogue Name</th>
+                            <th className="hidden lg:table-cell">Version</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -261,6 +261,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                                             />
                                         </td>
                                         <td className="hidden lg:table-cell">{item.name_en}</td>
+                                        <td className="hidden lg:table-cell capitalize">{item.version?.split('-').join(' ')}</td>
                                         <td className={`dropdown ${catabook.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                             <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
                                             <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">

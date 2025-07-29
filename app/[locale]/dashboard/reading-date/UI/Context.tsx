@@ -9,7 +9,7 @@ import React, {
 import { ReadingDateProps, ReadingDate } from "@/types/reading";
 
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 
 export default function Context({ readingDate, pagination:initialPagination,onDelete, submit }: ReadingDateProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);

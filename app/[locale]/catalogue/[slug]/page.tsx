@@ -19,6 +19,7 @@ const CatalogueMore = async ({ params } : { params: { slug: string } })  => {
       return item.slug === params.slug
     }
   )
+
   return (
     <div>
       <Navbar />

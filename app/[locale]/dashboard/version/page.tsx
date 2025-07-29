@@ -6,7 +6,7 @@ import Link from "next/link";
 import { routing } from "@/lib/i18n/routing";
 
 const VersionPage = async () => {
-  const res = await apiGet<{ data: Version[], pagination:Pagination }>("/api/books/versions?page=1&limit=7");
+  const res = await apiGet<{ data: Version[], pagination:Pagination }>("/api/books/versions");
   const allVersions = res.data;
   const pagination = res.pagination;
 

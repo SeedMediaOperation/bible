@@ -6,7 +6,7 @@ import Link from "next/link";
 import Context from "./UI/Context";
 
 const  Books = async () => {
-    const res = await apiGet<{data: Book[],pagination:Pagination}>('/api/books?page=1&limit=8');
+    const res = await apiGet<{data: Book[],pagination:Pagination}>('/api/books');
     const resVersion = await apiGet<{data: Version[]}>('/api/books/versions');
     const allBooks = res.data;
     const allVersion = resVersion.data;

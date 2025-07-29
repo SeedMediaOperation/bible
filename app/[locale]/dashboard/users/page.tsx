@@ -5,7 +5,7 @@ import { UserProfile, Pagination, apiResProfile } from "@/types/auth";
 
 const User = async () => {
     const response = await apiGet<{ data: UserProfile[]; pagination: Pagination }>(
-        "/api/auth/users?page=1&limit=8"
+        "/api/auth/users"
     );
     const users = response.data;
     const pagination = response.pagination;

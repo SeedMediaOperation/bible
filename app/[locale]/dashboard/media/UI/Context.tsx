@@ -11,7 +11,7 @@ import React, {
 } from "react";
 
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 
 export default function Context({ medias, pagination:initialPagination, onDelete, submit }: MediaProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);

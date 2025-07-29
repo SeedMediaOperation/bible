@@ -7,7 +7,7 @@ import { alertService } from "@/lib/alertServices";
 import { CldUploadWidget, CloudinaryUploadWidgetResults } from "next-cloudinary";
 
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 export default function Context({ users , pagination:initialPagination, submit, onDelete }: UserProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [confirmDeleteUserId, setConfirmDeleteUserId] = useState<string | null>(null);

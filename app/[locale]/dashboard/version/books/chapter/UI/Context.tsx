@@ -8,7 +8,7 @@ import React, {
     useEffect
 } from "react";
 type SortType = 'latest' | 'oldest' | '';
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 5;
 export default function Context({ books,chapters,pagination:initialPagination,onDelete, submit }: ChapterProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [mode, setMode] = useState<'add' | 'edit'>('add');

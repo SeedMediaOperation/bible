@@ -7,7 +7,7 @@ const CataloguePage = async () => {
     const res = await apiGet<{ data: Catalogue[] }>('/api/catalogues');
     const allCatalogue = res.data;
 
-    const resBook = await apiGet<{ data: CatalogueBook[]; pagination: Pagination }>('/api/catalogue-book?page=1&limit=8');
+    const resBook = await apiGet<{ data: CatalogueBook[]; pagination: Pagination }>('/api/catalogue-book');
     const allCatalogueBook = resBook.data;
     const pagination = resBook.pagination;
 
