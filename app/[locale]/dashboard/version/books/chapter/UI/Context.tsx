@@ -365,7 +365,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             required
                             value={form.nameEn}
                             onChange={handleChange}
-                            placeholder="Name English"
+                            placeholder="Verse Number English"
                             className={`input input-bordered w-full`}
                             disabled={loading}
                         />
@@ -376,7 +376,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             required
                             value={form.nameKm}
                             onChange={handleChange}
-                            placeholder="Name Khmer"
+                            placeholder="Verse Number Khmer"
                             className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
@@ -437,7 +437,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                                     <button type="button" className="btn btn-error" onClick={() => removeParagraph('paragraphKm', index)}>✕</button>
                                 </div>
                             ))}
-                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphKm')}>+ បន្ថែមបទ</button>
+                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphKm')}>+ Add Paragraph</button>
                         </div>
                         
                         <button type="submit" className="btn btn-info w-full" disabled={loading}>
