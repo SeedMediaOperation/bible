@@ -110,7 +110,7 @@ export default function LoginForm() {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Enter your username"
-              className={`input input-bordered w-full !text-white ${
+              className={`input input-bordered w-full text-black dark:!text-white ${
                   touched.username && errors.username ? 'input-error' : ''
               }`}
           />
@@ -133,7 +133,7 @@ export default function LoginForm() {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="••••••••"
-              className={`input input-bordered w-full !text-white ${
+              className={`input input-bordered w-full !text-black dark:!text-white ${
                   touched.password && errors.password ? 'input-error' : ''
               }`}
           />
@@ -152,7 +152,7 @@ export default function LoginForm() {
                 name="remember"
                 checked={form.remember}
                 onChange={handleChange}
-                className="checkbox checkbox-sm checkbox-primary"
+                className="checkbox checkbox-sm checkbox-primary text-black dark:!text-white"
                 style={{ accentColor: '#50c9ee' }}
             />
             <span>Remember me</span>
@@ -169,7 +169,7 @@ export default function LoginForm() {
         <button
             type="submit"
             disabled={!isValid || loading}
-            className={`py-2 w-full bg-[#50c9ee] text-white ${
+            className={`py-2 w-full bg-[#50c9ee] text-black dark:!text-white ${
                 !isValid || loading ? 'bg-[#50c9ee] opacity-60 cursor-not-allowed' : 'btn bg-[#50c9ee] hover:bg-[#3bb5db]'
             }`}
         >

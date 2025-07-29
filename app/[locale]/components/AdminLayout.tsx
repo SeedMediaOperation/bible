@@ -61,7 +61,7 @@ const AdminLayout = ({ children, profile }: Props) => {
     return (
         <div className="w-full min-h-screen flex flex-col bg-base-100 font-gotham">
             {/* Header */}
-            <header className="w-full bg-base-300 border-b border-[#575757] z-50 sticky top-0">
+            <header className="w-full bg-gray-900 border-b border-[#575757] z-50 sticky top-0">
                 <div className="flex justify-between items-center gap-3 px-4 py-2">
                     <div className="flex items-center gap-2">
                         {/* Mobile menu button */}
@@ -124,10 +124,10 @@ const AdminLayout = ({ children, profile }: Props) => {
             </header>
 
             {/* Layout Container */}
-            <div className="flex flex-1 flex-col lg:flex-row relative">
+            <div className="flex flex-1 flex-col lg:flex-row relative ">
                 {/* Sidebar (mobile drawer or static) */}
                 <aside
-                    className={`fixed lg:static top-0 left-0 h-full min-h-screen z-40 bg-base-300 text-white w-64 p-5 transform transition-transform duration-300 ease-in-out ${
+                    className={`fixed lg:static top-0 left-0 h-full min-h-screen z-40 bg-gray-900 text-white w-64 p-5 transform transition-transform duration-300 ease-in-out ${
                         isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
                     }`}
                 >
@@ -157,11 +157,11 @@ const AdminLayout = ({ children, profile }: Props) => {
                 )}
 
                 {/* Main content */}
-                <main className="flex-1 p-5">{children}</main>
+                <main className="flex-1 p-5 ">{children}</main>
             </div>
 
             {/* Footer */}
-            <footer className="w-full py-4 bg-gray-100 text-center text-sm">
+            <footer className="w-full py-4 bg-gray-900 text-center text-sm">
                 &copy; {new Date().getFullYear()} Bible Panel
             </footer>
         </div>

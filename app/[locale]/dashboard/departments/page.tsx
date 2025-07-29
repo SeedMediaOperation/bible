@@ -40,7 +40,7 @@ const CataloguePage = async () => {
     return (
         <div className="p-4">
             <div className="flex w-full flex-col lg:flex-row">
-                <div className="card bg-base-300 rounded-box grow text-white p-5">
+                <div className="card bg-gray-900 rounded-box grow text-white p-5">
                     <div className="mb-4">
                         <BreadCrumb />
                     </div>

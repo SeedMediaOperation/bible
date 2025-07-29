@@ -159,7 +159,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                 <label className="input input-bordered flex items-center gap-2 w-fit md:w-auto">
                     <input
                         type="search"
-                        className="grow text-white"
+                        className="grow text-black dark:text-white"
                         placeholder="Search versions..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -167,7 +167,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                 </label>
                 <div className="flex items-center gap-2">
                     <select
-                        className="select select-bordered text-white"
+                        className="select select-bordered text-black dark:text-white"
                         value={sort}
                         onChange={(e) => {
                             setPage(1);
@@ -207,7 +207,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                                     <td className="hidden lg:table-cell font-krasar">{version.titleKm}</td>
                                     <td className={`dropdown ${versions.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                         <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
-                                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                        <ul tabIndex={0} className="dropdown-content menu bg-gray-900 rounded-box z-1 w-52 p-2 shadow-sm">
                                             <li className="w-full">
                                                 <button
                                                     onClick={() => handleOpenModal('edit', version)}
@@ -243,7 +243,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                     <p>Loading...</p>
                 ) : filteredData.length > 0 ? (
                     filteredData.map((item) => (
-                        <div key={item.id} className="bg-base-200 p-4 rounded shadow text-white">
+                        <div key={item.id} className="bg-gray-900 p-4 rounded shadow text-black dark:text-white">
                             <div className="flex items-center gap-3 mb-2">
                                 <div>
                                     <div className="font-bold">{item.titleEn}</div>
@@ -254,7 +254,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                                 <button tabIndex={0} role="button" className="btn btn-xs btn-outline btn-info">
                                     Details
                                 </button>
-                                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                <ul tabIndex={0} className="dropdown-content menu bg-gray-900 rounded-box z-1 w-52 p-2 shadow-sm">
                                     <li className="w-full">
                                         <button
                                             onClick={() => handleOpenModal('edit', item)}
@@ -282,14 +282,14 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
 
                         {/* Pagination */}
                         <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
                     return (
                         <button
                             key={pageNumber}
-                            className={`join-item btn ${pageNumber === page ? 'btn-active' : ''}`}
+                            className={`join-item btn  ${pageNumber === page ? 'btn-active' : ''}`}
                             onClick={() => onPageChange(pageNumber)}
                         >
                             {pageNumber}
@@ -297,17 +297,17 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                     );
                 })}
 
-                <button className="join-item btn" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
-            <dialog ref={dialogRef} className="modal">
+            <dialog ref={dialogRef} className="modal text-black dark:bg-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                             ✕
                         </button>
                     </form>
-                    <h3 className="font-bold text-lg mb-4">
+                    <h3 className="font-bold text-lg mb-4 ">
                         {mode === 'add' ? 'Add New Book' : 'Edit Book'}
                     </h3>
                     <form onSubmit={handleSubmit} className="space-y-4">

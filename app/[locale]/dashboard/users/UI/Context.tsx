@@ -171,7 +171,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                     {/* Search icon */}
                     <input
                         type="search"
-                        className="grow text-white"
+                        className="grow text-black dark:text-white"
                         placeholder="Search users..."
                         value={search}
                         onChange={(e) => {
@@ -182,7 +182,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                 </label>
                 <div className="flex items-center gap-2">
                     <select
-                        className="select select-bordered text-white"
+                        className="select select-bordered text-black dark:text-white"
                         value={sort}
                         onChange={(e) => {
                             setPage(1);
@@ -250,7 +250,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                                     </td>
                                     <td className={`dropdown ${users.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                         <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
-                                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                        <ul tabIndex={0} className="dropdown-content menu bg-gray-900 rounded-box z-1 w-52 p-2 shadow-sm">
                                             <li className="w-full">
                                                 <button
                                                     onClick={() => handleOpenModal('edit', user)}
@@ -286,7 +286,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                     <p>Loading...</p>
                 ) : filteredData.length > 0 ? (
                     filteredData.map((user) => (
-                        <div key={user.id} className="bg-base-200 p-4 rounded shadow text-white">
+                        <div key={user.id} className="bg-gray-900 p-4 rounded shadow text-white">
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="avatar">
                                     <div className="mask mask-squircle h-12 w-12">
@@ -315,7 +315,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                                 <button tabIndex={0} role="button" className="btn btn-xs btn-outline btn-info">
                                     Details
                                 </button>
-                                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                <ul tabIndex={0} className="dropdown-content menu bg-gray-900 rounded-box z-1 w-52 p-2 shadow-sm">
                                     <li className="w-full">
                                         <button
                                             onClick={() => handleOpenModal('edit', user)}
@@ -343,7 +343,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -358,11 +358,11 @@ export default function Context({ users , pagination:initialPagination, submit, 
                     );
                 })}
 
-                <button className="join-item btn" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
             {/* Modal */}
-            <dialog ref={dialogRef} className="modal">
+            <dialog ref={dialogRef} className="modal text-black dark:bg-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -467,7 +467,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
             </dialog>
             {/* Delete Confirmation Dialog */}
             {confirmDeleteUserId && (
-                <div role="alert" className="alert alert-vertical sm:alert-horizontal fixed top-2 right-5 z-50 bg-base-300 p-4 rounded shadow-lg">
+                <div role="alert" className="alert alert-vertical sm:alert-horizontal fixed top-2 right-5 z-50 bg-gray-900 p-4 rounded shadow-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

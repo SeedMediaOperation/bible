@@ -184,7 +184,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                 <label className="input input-bordered flex items-center gap-2 w-fit md:w-auto">
                     <input
                         type="search"
-                        className="grow text-white"
+                        className="grow text-black dark:text-white"
                         placeholder="Search Data..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -192,7 +192,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                 </label>
                 <div className="flex items-center gap-2">
                 <select
-                        className="select select-bordered text-white"
+                        className="select select-bordered text-black dark:text-white"
                         value={sort}
                         onChange={(e) => {
                             setPage(1);
@@ -276,7 +276,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                     <p>Loading...</p>
                 ) : filteredData.length > 0 ? (
                     filteredData.map((item) => (
-                        <div key={item.id} className="bg-base-200 p-4 rounded shadow text-white">
+                        <div key={item.id} className="bg-gray-900 p-4 rounded shadow text-white">
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="avatar">
                                     <div className="mask mask-squircle h-12 w-12">
@@ -326,7 +326,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -341,10 +341,10 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                     );
                 })}
 
-                <button className="join-item btn" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
-            <dialog ref={dialogRef} className="modal">
+            <dialog ref={dialogRef} className="modal text-black dark:text-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">

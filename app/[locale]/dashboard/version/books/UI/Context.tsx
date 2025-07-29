@@ -179,7 +179,7 @@ export default function Context({ books,versions,pagination:initialPagination,on
                 <label className="input input-bordered flex md:items-center gap-2 w-fit md:w-auto">
                     <input
                         type="search"
-                        className="grow text-white"
+                        className="grow text-black dark:bg-white"
                         placeholder="Search books..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -187,7 +187,7 @@ export default function Context({ books,versions,pagination:initialPagination,on
                 </label>
                 <div className="flex md:items-center gap-2">
                     <select
-                            className="select select-bordered text-white w-fit"
+                            className="select select-bordered text-black dark:text-white w-fit"
                             value={sort}
                             onChange={(e) => {
                                 setPage(1);
@@ -302,7 +302,7 @@ export default function Context({ books,versions,pagination:initialPagination,on
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -317,10 +317,10 @@ export default function Context({ books,versions,pagination:initialPagination,on
                     );
                 })}
 
-                <button className="join-item btn" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
-            <dialog ref={dialogRef} className="modal">
+            <dialog ref={dialogRef} className="modal text-black dark:text-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
