@@ -58,7 +58,7 @@ const Book = async ({ params }: Props) => {
           <h1 data-aos="fade-right"
               data-aos-offset="500"
               data-aos-duration={`500`}
-          className={`font-bold text-white ${locale === 'km' ? 'font-[krasar] w-[250px] text-[30px] md:text-[40px]  xl:text-[3rem]':'font-[gotham] w-[150px] text-[30px] leading-[30px] md:text-[40px] md:leading-[40px]  xl:text-[3rem] xl:leading-[3rem]'}`}>
+          className={`font-bold text-white ${locale === 'km' ? 'font-krasar w-[250px] text-[30px] md:text-[40px]  xl:text-[3rem]':'font-gotham w-[150px] text-[30px] leading-[30px] md:text-[40px] md:leading-[40px]  xl:text-[3rem] xl:leading-[3rem]'}`}>
             {locale === "km" ? singleVersion?.titleKm : singleVersion?.titleEn}
           </h1>
         </div>
