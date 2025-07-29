@@ -43,7 +43,7 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
                             version === vs.slug
                                 ? 'bg-[#32CDF0] text-white'
                                 : 'bg-white text-black'
-                        } ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}
+                        } ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
                     >
                         {locale === 'km'? vs.name_km : vs.name_en}
                     </Link>
@@ -72,13 +72,13 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
                                     className="w-[15vh] h-[15vh] md:w-[16vh] md:h-[16vh] xl:w-[20vh] xl:h-[20vh] mx-auto object-contain object-center"
                                 />
                             </div>
-                            <h1 className={`w-fit text-[12px] md:text-[18px] xl:text-[20px] text-[#000] uppercase text-wrap font-bold my-2 ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>
+                            <h1 className={`w-fit text-[12px] md:text-[18px] xl:text-[20px] text-[#000] uppercase text-wrap font-bold my-2 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                                 {locale === 'km' ? cata.name_km : cata.name_en}
                             </h1>
-                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>({locale === 'km' ? cata.type_km :cata.type_en})</p>
-                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>Size: {locale === 'km' ? cata.size_km :cata.size_en}</p>
-                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>UBS Code: {locale === 'km' ? cata.code :cata.code}</p>
-                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-[krasar]':'font-[gotham]'}`}>ISBN: {locale === 'km' ? cata.isbn :cata.isbn}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>({locale === 'km' ? cata.type_km :cata.type_en})</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>Size: {locale === 'km' ? cata.size_km :cata.size_en}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>UBS Code: {locale === 'km' ? cata.code :cata.code}</p>
+                            <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>ISBN: {locale === 'km' ? cata.isbn :cata.isbn}</p>
                         </div>
                     ))
                 )}
