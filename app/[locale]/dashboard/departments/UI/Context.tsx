@@ -291,7 +291,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                                 </div>
                                 <div>
                                     <div className="font-bold">{item.name_en}</div>
-                                    <div className="text-sm opacity-50">{item.name_km}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.name_km}</div>
                                 </div>
                             </div>
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
@@ -373,7 +373,7 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                             value={form.name_km}
                             onChange={handleChange}
                             placeholder="Title Khmer"
-                            className={`input input-bordered w-full`}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
 

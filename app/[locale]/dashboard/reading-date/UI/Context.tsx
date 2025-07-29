@@ -214,7 +214,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                                     <tr key={item.id}>
                                         <td>{index + 1}</td>
                                         <td className="hidden lg:table-cell">{item.title_en}</td>
-                                        <td className="hidden lg:table-cell">{item.title_km}</td>
+                                        <td className="hidden lg:table-cell font-krasar">{item.title_km}</td>
                                         <td className={`dropdown ${readingDate.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                             <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
                                             <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
@@ -259,7 +259,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                             <div className="flex items-center gap-3 mb-2">
                                 <div>
                                     <div className="font-bold">{item.title_en}</div>
-                                    <div className="text-sm opacity-50">{item.title_km}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.title_km}</div>
                                 </div>
                             </div>
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
@@ -344,7 +344,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                             onChange={handleChange}
                            
                             placeholder="Name Khmer"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full font-krasar"
                             disabled={loading}
                             />
                         </div>

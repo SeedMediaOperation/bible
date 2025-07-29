@@ -224,7 +224,7 @@ export default function Context({ books,versions,pagination:initialPagination,on
                                 <tr key={item.id}>
                                     <td>{index + 1}</td>
                                     <td className="hidden sm:table-cell">{item.nameEn}</td>
-                                    <td className="hidden lg:table-cell">{item.nameKm}</td>
+                                    <td className="hidden lg:table-cell font-krasar">{item.nameKm}</td>
                                     <td className={`dropdown ${books.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                         <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
                                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
@@ -267,16 +267,9 @@ export default function Context({ books,versions,pagination:initialPagination,on
                             <div className="flex items-center gap-3 mb-2">
                                 <div>
                                     <div className="font-bold">{item.nameEn}</div>
-                                    <div className="text-sm opacity-50">{item.nameKm}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.nameKm}</div>
                                 </div>
                             </div>
-                            {/* <p className="text-sm">Email: {user.email}</p>
-                            <p className="text-sm">
-                                Verify Email:{' '}
-                                <span className={`w-fit px-5 py-1 rounded-full ${!user.isVerifyEmail ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-600'}`}>
-                                    {user.isVerifyEmail ? 'Yes' : 'No'}
-                                </span>
-                            </p> */}
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
                                 <button tabIndex={0} role="button" className="btn btn-xs btn-outline btn-info">
                                     Details
@@ -369,7 +362,7 @@ export default function Context({ books,versions,pagination:initialPagination,on
                             value={form.nameKm}
                             onChange={handleChange}
                             placeholder="Name Khmer"
-                            className={`input input-bordered w-full`}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
                         

@@ -59,7 +59,7 @@ const AdminLayout = ({ children, profile }: Props) => {
       };
 
     return (
-        <div className="w-full min-h-screen flex flex-col bg-base-100">
+        <div className="w-full min-h-screen flex flex-col bg-base-100 font-gotham">
             {/* Header */}
             <header className="w-full bg-base-300 border-b border-[#575757] z-50 sticky top-0">
                 <div className="flex justify-between items-center gap-3 px-4 py-2">

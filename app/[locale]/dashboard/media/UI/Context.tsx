@@ -316,7 +316,7 @@ export default function Context({ medias, pagination:initialPagination, onDelete
                                 </div>
                                 <div>
                                     <div className="font-bold">{item.pro_name_En}</div>
-                                    <div className="text-sm opacity-50">{item.pro_name_Km}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.pro_name_Km}</div>
                                 </div>
                             </div>
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
@@ -398,7 +398,7 @@ export default function Context({ medias, pagination:initialPagination, onDelete
                             value={form.pro_name_Km}
                             onChange={handleChange}
                             placeholder="Title Khmer"
-                            className={`input input-bordered w-full`}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
 

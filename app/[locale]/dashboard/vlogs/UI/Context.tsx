@@ -320,7 +320,7 @@ export default function Context({ vlog, pagination:initialPagination,onDelete, s
                                 </div>
                                 <div>
                                     <div className="font-bold">{item.title_en}</div>
-                                    <div className="text-sm opacity-50">{item.title_km}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.title_km}</div>
                                 </div>
                             </div>
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
@@ -405,7 +405,7 @@ export default function Context({ vlog, pagination:initialPagination,onDelete, s
                             onChange={handleChange}
                            
                             placeholder="Name Khmer"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full font-krasar"
                             disabled={loading}
                             />
                         </div>
@@ -420,7 +420,7 @@ export default function Context({ vlog, pagination:initialPagination,onDelete, s
                         />
 
                         {/* Rich Text Editor for paragraph_km */}
-                        <label className="block font-medium">Paragraph (Khmer)</label>
+                        <label className="block font-medium font-krasar">Paragraph (Khmer)</label>
                         <ReactQuill
                             value={form.paragraph_km}
                             onChange={(value) => setForm((prev) => ({ ...prev, paragraph_km: value }))}

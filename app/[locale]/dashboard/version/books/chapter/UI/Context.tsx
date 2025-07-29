@@ -377,7 +377,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             value={form.nameKm}
                             onChange={handleChange}
                             placeholder="Name Khmer"
-                            className={`input input-bordered w-full`}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
 
@@ -399,7 +399,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             value={form.titleKm}
                             onChange={handleChange}
                             placeholder="Title Khmer"
-                            className={`input input-bordered w-full`}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
 
@@ -430,7 +430,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                                         type="text"
                                         value={text}
                                         onChange={(e) => handleParagraphChange('paragraphKm', index, e.target.value)}
-                                        className="input input-bordered w-full"
+                                        className="input input-bordered w-full font-krasar"
                                         disabled={loading}
                                         placeholder={`បទ ${index + 1}`}
                                     />

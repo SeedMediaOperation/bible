@@ -204,7 +204,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                                 <tr key={version.id}>
                                     <td>{index + 1}</td>
                                     <td className="hidden sm:table-cell">{version.titleEn}</td>
-                                    <td className="hidden lg:table-cell">{version.titleKm}</td>
+                                    <td className="hidden lg:table-cell font-krasar">{version.titleKm}</td>
                                     <td className={`dropdown ${versions.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                         <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
                                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
@@ -247,7 +247,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                             <div className="flex items-center gap-3 mb-2">
                                 <div>
                                     <div className="font-bold">{item.titleEn}</div>
-                                    <div className="text-sm opacity-50">{item.titleKm}</div>
+                                    <div className="text-sm opacity-50 font-krasar">{item.titleKm}</div>
                                 </div>
                             </div>
                             <div className="text-right mt-2 dropdown dropdown-start dropdown-top">
@@ -329,7 +329,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                             value={form.titleKm}
                             onChange={handleChange}
                             placeholder="Title Khmer"
-                            className={`input input-bordered w-full `}
+                            className={`input input-bordered w-full font-krasar`}
                             disabled={loading}
                         />
 
