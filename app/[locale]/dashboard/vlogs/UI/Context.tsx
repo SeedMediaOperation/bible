@@ -10,7 +10,7 @@ import React, {
     useEffect
 } from "react";
 import ReactQuill from "../../components/ReactQuillWrapper";
-import 'react-quill/dist/quill.snow.css';
+import 'quill/dist/quill.snow.css';
 
 type SortType = 'latest' | 'oldest' | '';
 const ITEMS_PER_PAGE = 8;
