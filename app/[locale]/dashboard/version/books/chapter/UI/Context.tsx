@@ -405,7 +405,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
 
                         {/* Paragraph English */}
                         <div>
-                            <label className="block font-semibold mb-2">Paragraphs (English)</label>
+                            <label className="block font-semibold mb-2">Verses (English)</label>
                             {form.paragraphEn.map((text, index) => (
                                 <div key={index} className="flex gap-2 mb-2">
                                     <input type="text" 
@@ -413,17 +413,17 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                                         onChange={(e) => handleParagraphChange('paragraphEn', index, e.target.value)}
                                         className="input input-bordered w-full"
                                         disabled={loading}
-                                        placeholder={`Paragraph ${index + 1}`}
+                                        placeholder={`Verses ${index + 1}`}
                                     />
                                     <button type="button" className="btn btn-error" onClick={() => removeParagraph('paragraphEn', index)}>✕</button>
                                 </div>
                             ))}
-                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphEn')}>+ Add Paragraph</button>
+                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphEn')}>+ Add Verse</button>
                         </div>
 
                         {/* Paragraph Khmer */}
                         <div className="mt-4">
-                            <label className="block font-semibold mb-2">Paragraphs (Khmer)</label>
+                            <label className="block font-semibold mb-2">Verses (Khmer)</label>
                             {form.paragraphKm.map((text, index) => (
                                 <div key={index} className="flex gap-2 mb-2">
                                     <input
@@ -437,7 +437,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                                     <button type="button" className="btn btn-error" onClick={() => removeParagraph('paragraphKm', index)}>✕</button>
                                 </div>
                             ))}
-                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphKm')}>+ Add Paragraph</button>
+                            <button type="button" className="btn btn-outline btn-sm mt-1" onClick={() => addParagraph('paragraphKm')}>+ Add Verse</button>
                         </div>
                         
                         <button type="submit" className="btn btn-info w-full" disabled={loading}>
