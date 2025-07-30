@@ -7,7 +7,7 @@ import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import {Version} from "@/types/book";
 import {useEffect, useState} from "react";
-import {useLocale, useTranslations} from "use-intl";
+import {useLocale, useTranslations} from "next-intl";
 import { ReadingDate } from "@/types/reading";
 
 export default function Home() {

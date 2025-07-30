@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import {useLocale, useTranslations} from "use-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 const generateOrderId = () => Date.now().toString();
 const MERCHANT_ID = "ec000262";

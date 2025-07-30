@@ -204,9 +204,9 @@ export default function Context({ users , pagination:initialPagination, submit, 
                 <table className="table w-full text-sm md:text-base">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th className="hidden sm:table-cell">Email</th>
-                            <th className="hidden lg:table-cell">Verify Email</th>
+                            <th className="text-white">Name</th>
+                            <th className="hidden sm:table-cell text-white">Email</th>
+                            <th className="hidden lg:table-cell text-white">Verify Email</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -343,7 +343,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -358,7 +358,7 @@ export default function Context({ users , pagination:initialPagination, submit, 
                     );
                 })}
 
-                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
             {/* Modal */}

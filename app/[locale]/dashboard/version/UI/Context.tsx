@@ -189,8 +189,8 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th className="hidden sm:table-cell">Title English</th>
-                            <th className="hidden lg:table-cell">Title Khmer</th>
+                            <th className="hidden sm:table-cell text-gray-100">Title English</th>
+                            <th className="hidden lg:table-cell text-gray-100">Title Khmer</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -282,7 +282,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
 
                         {/* Pagination */}
                         <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn  text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -297,10 +297,10 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
                     );
                 })}
 
-                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
-            <dialog ref={dialogRef} className="modal text-black dark:bg-white">
+            <dialog ref={dialogRef} className="modal text-black dark:text-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -342,7 +342,7 @@ export default function Context({ versions,onDelete, submit,pagination:initialPa
 
             {/* Delete Confirmation Dialog */}
                 {confirmDeleteUserId && (
-                    <dialog open className="modal">
+                    <dialog open className="modal text-black dark:text-white">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
                             <p className="py-4">Are you sure you want to delete this record??</p>

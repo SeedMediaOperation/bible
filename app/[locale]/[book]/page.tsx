@@ -1,3 +1,5 @@
+'use server';
+
 import ReadingPage from '@/app/[locale]/components/ReadingPage';
 import Image from 'next/image';
 import Navbar from "@/app/[locale]/components/Navbar";
@@ -7,6 +9,23 @@ import {apiGet} from "@/utils/apiHelpers";
 
 import type {Book, Chapters, Media, Version} from "@/types/book";
 import { getLocale } from 'next-intl/server';
+
+export async function generateStaticParams() {
+  // Fetch versions (this gives you the valid slugs to generate)
+  const res = await apiGet<{ data: Version[] }>('/api/books/versions');
+  const versions = res.data;
+
+  // Define locales
+  const locales = ['en', 'km']; // Add more if needed
+
+  // Generate all combinations of locale and version.slug
+  return locales.flatMap(locale => {
+    return versions.map(version => ({
+      locale,
+      book: version.slug,
+    }));
+  });
+}
 
 interface Props {
   params: { book: string };

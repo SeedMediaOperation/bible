@@ -350,7 +350,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn dark:text-black text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -365,7 +365,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                     );
                 })}
 
-                <button className="join-item btn dark:text-black text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
             <dialog ref={dialogRef} className="modal text-black dark:text-white">
@@ -559,7 +559,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
 
             {/* Delete Confirmation Dialog */}
                 {confirmDeleteUserId && (
-                    <dialog open className="modal">
+                    <dialog open className="modal text-black dark:text-white">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
                             <p className="py-4">Are you sure you want to delete this record?</p>

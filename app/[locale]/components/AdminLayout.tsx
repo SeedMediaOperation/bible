@@ -161,7 +161,7 @@ const AdminLayout = ({ children, profile }: Props) => {
             </div>
 
             {/* Footer */}
-            <footer className="w-full py-4 bg-gray-900 text-center text-sm">
+            <footer className="w-full py-4 bg-gray-900 text-center text-sm text-white dark:text-gray-900">
                 &copy; {new Date().getFullYear()} Bible Panel
             </footer>
         </div>

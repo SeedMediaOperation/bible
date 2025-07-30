@@ -1,3 +1,6 @@
+'use server';
+
+
 import Image from 'next/image';
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
@@ -6,6 +9,22 @@ import {apiGet} from "@/utils/apiHelpers";
 import {Catalogue, CatalogueBook} from "@/types/catalogue";
 import { Version } from "@/app/[locale]/data/version";
 import { getLocale } from 'next-intl/server';
+
+export async function generateStaticParams() {
+  // Fetch slugs from catalogue
+  const res = await apiGet<{ data: Catalogue[] }>('/api/catalogues');
+  const catalogues = res.data;
+
+  const locales = ['en', 'km']; // Add other supported locales if any
+
+  // Combine each locale with each slug
+  return locales.flatMap((locale) =>
+    catalogues.map((catalogue) => ({
+      locale,
+      slug: catalogue.slug,
+    }))
+  );
+}
 
 const CatalogueMore = async ({ params } : { params: { slug: string } })  => {
   const res = await apiGet<{data:CatalogueBook[]}>(`/api/catalogue-book`);

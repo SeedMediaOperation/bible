@@ -168,7 +168,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                 <label className="input input-bordered flex items-center gap-2 w-fit md:w-auto">
                     <input
                         type="search"
-                        className="grow text-white"
+                        className="grow text-gray-900 dark:text-white"
                         placeholder="Search versions..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -176,7 +176,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                 </label>
                 <div className="flex items-center gap-2">
                 <select
-                        className="select select-bordered text-white"
+                        className="select select-bordered text-gray-900 dark:text-white"
                         value={sort}
                         onChange={(e) => {
                             setPage(1);
@@ -198,8 +198,8 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th className="hidden sm:table-cell">Date Of Reading</th>
-                            <th className="hidden lg:table-cell">Date Of Reading</th>
+                            <th className="hidden sm:table-cell text-gray-100 dark:text-gray-900">Date Of Reading</th>
+                            <th className="hidden lg:table-cell text-gray-100 dark:text-gray-900">Date Of Reading</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -255,7 +255,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                 ) : filteredData.length > 0 ? (
                     filteredData.map((item) => {
                         return(
-                        <div key={item.id} className="bg-base-200 p-4 rounded shadow text-white">
+                        <div key={item.id} className="bg-gray-900 p-4 rounded shadow text-white">
                             <div className="flex items-center gap-3 mb-2">
                                 <div>
                                     <div className="font-bold">{item.title_en}</div>
@@ -294,7 +294,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                <button className="join-item btn text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
 
                 {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
                     const pageNumber = i + 1;
@@ -309,10 +309,10 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
                     );
                 })}
 
-                <button className="join-item btn" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                <button className="join-item btn text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
             </div>
 
-            <dialog ref={dialogRef} className="modal">
+            <dialog ref={dialogRef} className="modal text-gray-900 dark:text-white">
                 <div className="modal-box">
                     <form method="dialog">
                         <button onClick={handleCloseModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -359,7 +359,7 @@ export default function Context({ readingDate, pagination:initialPagination,onDe
 
             {/* Delete Confirmation Dialog */}
                 {confirmDeleteUserId && (
-                    <dialog open className="modal">
+                    <dialog open className="modal text-gray-900 dark:text-white">
                         <div className="modal-box">
                             <h3 className="font-bold text-lg">Confirm Deletion</h3>
                             <p className="py-4">Are you sure you want to delete this record??</p>
