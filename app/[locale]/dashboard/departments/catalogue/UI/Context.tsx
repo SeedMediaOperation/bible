@@ -385,7 +385,6 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             value={form.catalogueId || ""} 
                             onChange={handleChange} 
                             className="w-full select"
-                            required
                         >
                             <option value="" disabled>Select Departments</option>
                             {catalogue?.map((item) => (
@@ -401,7 +400,6 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             value={form.version || ""} 
                             onChange={handleChange} 
                             className="w-full select"
-                            required
                         >
                             <option value="" disabled>Select Versions</option>
                             {Version?.map((item) => (
@@ -416,7 +414,6 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                             name="name_en"
                             type="text"
-                            required
                             value={form.name_en}
                             onChange={handleChange}
                             
@@ -427,7 +424,6 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                             name="name_km"
                             type="text"
-                            required
                             value={form.name_km}
                             onChange={handleChange}
                             
@@ -440,7 +436,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="type_en"
                                 type="text"
-                                required
+
                                 value={form.type_en}
                                 onChange={handleChange}
                                 
@@ -452,7 +448,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="type_km"
                                 type="text"
-                                required
+
                                 value={form.type_km}
                                 onChange={handleChange}
                                 
@@ -465,7 +461,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="size_en"
                                 type="text"
-                                required
+
                                 value={form.size_en}
                                 onChange={handleChange}
                                 
@@ -477,7 +473,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="size_km"
                                 type="text"
-                                required
+
                                 value={form.size_km}
                                 onChange={handleChange}
                                 
@@ -490,7 +486,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="code"
                                 type="text"
-                                required
+
                                 value={form.code}
                                 onChange={handleChange}
                                 
@@ -502,7 +498,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                             <input
                                 name="isbn"
                                 type="text"
-                                required
+
                                 value={form.isbn}
                                 onChange={handleChange}
                                 
