@@ -246,7 +246,7 @@ export default function Home() {
                     className={`${bgColor} w-full h-full p-3`}>
                       <div className="flex flex-col">
                         <div>
-                          <h1 className="text-[12px] xl:text-[30px] text-white">
+                          <h1 className="text-[16px] md:text-[14px] xl:text-[20px] text-white">
                             {locale === 'en' ? category.titleEn : category.titleKm}
                           </h1>
                         </div>

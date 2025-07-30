@@ -5,20 +5,15 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 
 const Experience = [
-  {id:1,year:'1892', content:'1892_content'},
-  {id:2,year:'1899', content:'1899_content'},
-  {id:3,year:'1923', content:'1923_content'},
-  {id:4,year:'1954', content:'1954_content'},
-  {id:5,year:'1962', content:'1962_content'},
-  {id:6,year:'1955', content:'1955_content'},
-  {id:7,year:'1968', content:'1968_content'},
-  {id:8,year:'1975_1992', content:'1975_1992_content'},
+  {id:1,year:'1975_1992', content:'1975_1992_content'},
+  {id:2,year:'1968', content:'1968_content'},
+  {id:3,year:'1962', content:'1962_content'},
+  {id:4,year:'1955', content:'1955_content'},
+  {id:5,year:'1954', content:'1954_content'},
+  {id:6,year:'1923', content:'1923_content'},
+  {id:7,year:'1899', content:'1899_content'},
+  {id:8,year:'1892', content:'1892_content'},
   {id:9,year:'1804', content:'1804_content'},
-  {id:10,year:'year_1', content:'year_1_content'},
-  {id:11,year:'year_2', content:'year_2_content'},
-  {id:12,year:'year_3', content:'year_3_content'},
-  {id:13,year:'year_4', content:'year_4_content'},
-  {id:14,year:'year_5', content:'year_5_content'},
 ]
 
 export default function AboutUs () {
@@ -84,19 +79,20 @@ export default function AboutUs () {
                   <h1 className="text-[16px] md:text-[18px] xl:text-[32px] text-[#000000] font-[700] text-wrap">
                     {t('about_us_title')}
                   </h1>
-                  <p className="text-[12px] md:text-[16px] xl:text-[24px]">
-                  {t('about_us_content')}                  </p>
+                  <p className="text-[12px] md:text-[16px]">
+                    {t('about_us_content')}                  
+                  </p>
               </div>
           </div>
       </div>
 
       <div className='w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto h-full pb-10'>
-        <ul className={`space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap justify-center items-start ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+        <ul className={`space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap items-start ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
           {Experience.map((items, index) =>
             <li key={index} 
             className={`flex flex-col xl:flex-row gap-2 w-full md:w-[48%] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap'>{t(items.year)}</h1>
-              <p className='text-[14px] text-balance'>
+              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap w-[20%] text-end'>{t(items.year)}</h1>
+              <p className='text-[14px] text-balance whitespace-pre-line w-[80%]'>
                   {t(items.content)}
               </p>
             </li>
@@ -121,7 +117,7 @@ export default function AboutUs () {
           </div>
           <div className='w-full md:w-[60%] h-full bg-[#50c9ee]'>
               <div className='flex flex-col gap-3 xl:gap-[5rem] p-3 md:p-10 xl:p-28'>
-                <div className='w-full h-full xl:flex xl:space-x-5'>
+                <div className='w-full h-full xl:flex xl:gap-3'>
                   <span className='w-[20%] 2xl:w-[10%] mx-auto xl:mx-0'>
                   <Image 
                     data-aos="fade-right"
@@ -151,8 +147,8 @@ export default function AboutUs () {
                       </li>
                   </ul>
                 </div>
-                <div className='w-full h-full xl:flex xl:space-x-5'>
-                  <span className='w-[40%] 2xl:w-[20%] mx-auto  xl:mx-0'>
+                <div className='w-full h-full xl:flex xl:gap-3'>
+                  <span className={`w-[20%] ${locale === 'km' ? '2xl:w-[22%]':'2xl:w-[30%]'} mx-auto  xl:mx-0`}>
                   <Image 
                   data-aos="fade-left"
                   data-aos-anchor="#example-anchor"
