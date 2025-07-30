@@ -148,7 +148,7 @@ export default function AboutUs () {
                   </ul>
                 </div>
                 <div className='w-full h-full xl:flex xl:gap-3'>
-                  <span className={`w-[20%] ${locale === 'km' ? '2xl:w-[22%]':'2xl:w-[30%]'} mx-auto  xl:mx-0`}>
+                  <span className={`w-[20%] ${locale === 'km' ? 'lg:w-[42%] 2xl:w-[20%]':'lg:w-[58%] 2xl:w-[30%]'} mx-auto  xl:mx-0`}>
                   <Image 
                   data-aos="fade-left"
                   data-aos-anchor="#example-anchor"
