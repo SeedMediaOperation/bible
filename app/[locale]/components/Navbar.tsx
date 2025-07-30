@@ -81,9 +81,9 @@ const Navbar = () => {
 
   return (
     <nav
-    className='relative w-full h-fit z-[50] xl:fixed top-0 left-0 right-0'>
+    className='relative w-full h-fit z-[50] xl:absolute top-0 left-0 right-0'>
         {/* Desktop && Tablet */}
-        <div className='hidden xl:block w-full fixed top-[1%] left-0 right-0'>
+        <div className='hidden xl:block w-full absolute top-[1%] left-0 right-0'>
             {/* Translate */}
             <div className='my-3'>
             <Translation />

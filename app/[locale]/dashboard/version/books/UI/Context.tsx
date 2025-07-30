@@ -328,9 +328,6 @@ export default function Context({ books,versions,pagination:initialPagination,on
                         }
                         }
 
-                        if (page < totalPages - 3) {
-                        pages.push('...');
-                        }
 
                         // Always show last page if it's not already included
                         if (totalPages > 1) {

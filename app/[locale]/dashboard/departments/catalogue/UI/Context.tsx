@@ -365,7 +365,7 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                         // Always show first page
                         pages.push(1);
 
-                        if (page > 4) {
+                        if (page > 5) {
                         pages.push('...');
                         }
 
@@ -374,10 +374,6 @@ export default function Context({ catabook,catalogue, pagination:initialPaginati
                         if (i > 1 && i < totalPages) {
                             pages.push(i);
                         }
-                        }
-
-                        if (page < totalPages - 3) {
-                        pages.push('...');
                         }
 
                         // Always show last page if it's not already included

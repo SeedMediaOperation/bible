@@ -381,9 +381,6 @@ export default function Context({ vlog, pagination:initialPagination,onDelete, s
                         }
                         }
 
-                        if (page < totalPages - 3) {
-                        pages.push('...');
-                        }
 
                         // Always show last page if it's not already included
                         if (totalPages > 1) {

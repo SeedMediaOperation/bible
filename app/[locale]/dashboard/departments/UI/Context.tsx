@@ -352,10 +352,6 @@ export default function Context({ catalogue,pagination:initialPagination,onDelet
                         }
                         }
 
-                        if (page < totalPages - 3) {
-                        pages.push('...');
-                        }
-
                         // Always show last page if it's not already included
                         if (totalPages > 1) {
                         pages.push(totalPages);
