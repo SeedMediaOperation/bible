@@ -351,22 +351,65 @@ export default function Context({ medias, pagination:initialPagination, onDelete
 
             {/* Pagination */}
             <div className="join w-full inline-flex justify-end mt-4">
-                <button className="join-item btn text-white" disabled={page === 1} onClick={() => onPageChange(page - 1)}>Prev</button>
+                    <button
+                        className="join-item btn text-white"
+                        disabled={page === 1}
+                        onClick={() => onPageChange(page - 1)}
+                    >
+                        Prev
+                    </button>
 
-                {Array.from({ length: pagination?.totalPages || 1 }).map((_, i) => {
-                    const pageNumber = i + 1;
-                    return (
-                        <button
-                            key={pageNumber}
-                            className={`join-item btn ${pageNumber === page ? 'btn-active' : ''}`}
-                            onClick={() => onPageChange(pageNumber)}
-                        >
-                            {pageNumber}
-                        </button>
-                    );
-                })}
+                    {(() => {
+                        const totalPages = pagination?.totalPages || 1;
+                        const pages: (number | string)[] = [];
 
-                <button className="join-item btn text-white" disabled={!pagination?.hasNextPage} onClick={() => onPageChange(page + 1)}>Next</button>
+                        // Always show first page
+                        pages.push(1);
+
+                        if (page > 4) {
+                        pages.push('...');
+                        }
+
+                        // Pages around current
+                        for (let i = page - 1; i <= page + 1; i++) {
+                        if (i > 1 && i < totalPages) {
+                            pages.push(i);
+                        }
+                        }
+
+                        if (page < totalPages - 3) {
+                        pages.push('...');
+                        }
+
+                        // Always show last page if it's not already included
+                        if (totalPages > 1) {
+                        pages.push(totalPages);
+                        }
+
+                        return pages.map((p, index) =>
+                        typeof p === 'number' ? (
+                            <button
+                            key={index}
+                            className={`join-item btn ${p === page ? 'btn-active' : ''}`}
+                            onClick={() => onPageChange(p)}
+                            >
+                            {p}
+                            </button>
+                        ) : (
+                            <span key={index} className="join-item btn btn-disabled">
+                            {p}
+                            </span>
+                        )
+                        );
+                    })()}
+
+                    <button
+                        className="join-item btn text-white"
+                        disabled={!pagination?.hasNextPage}
+                        onClick={() => onPageChange(page + 1)}
+                    >
+                        Next
+                    </button>
             </div>
 
             <dialog ref={dialogRef} className="modal text-gray-900 dark:text-white">
