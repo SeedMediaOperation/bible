@@ -34,7 +34,7 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
     return (
         <div className="w-full h-fit bg-white">
         <div className="w-full max-w-[340px] md:max-w-[720px] lg:max-w-[820px] xl:max-w-[1100px] mx-auto bg-[linear-gradient(85.15deg,_rgba(30,_30,_30,_0.8)_0.43%,_rgba(7,_32,_39,_0.64)_98.29%)] backdrop-blur-[10px] shadow-[0px_50px_50px_-40px_rgba(0,_0,_0,_0.25)] rounded-[30px] border-[2px] border-solid border-[#575757] translate-y-[-12%] md:translate-y-[-23%] p-4">
-            <div className="w-full flex gap-3 pb-2">
+            <div className="w-full flex gap-3 pb-2 justify-center items-center">
                 {versions && versions.map((vs,index) => (
                     <Link
                         key={index}
@@ -43,7 +43,7 @@ export default function CataBook({params, versions,catabook, catalogue}:CataProp
                             version === vs.slug
                                 ? 'bg-[#32CDF0] text-white'
                                 : 'bg-white text-black'
-                        } ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
+                        } ${locale === 'km' ? 'font-krasar':'font-gotham'} text-nowrap`}
                     >
                         {locale === 'km'? vs.name_km : vs.name_en}
                     </Link>
