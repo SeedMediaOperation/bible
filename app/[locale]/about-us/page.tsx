@@ -91,7 +91,7 @@ export default function AboutUs () {
           {Experience.map((items, index) =>
             <li key={index} 
             className={`flex flex-col xl:flex-row gap-2 w-full md:w-[48%] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap w-[20%] text-end'>{t(items.year)}</h1>
+              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap w-[20%] text-start md:text-end'>{t(items.year)}</h1>
               <p className='text-[14px] text-balance whitespace-pre-line w-[80%]'>
                   {t(items.content)}
               </p>
