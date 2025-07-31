@@ -284,64 +284,61 @@ export default function Context({
             </tr>
           </thead>
           <tbody>
-            {loading ? (
-              <tr>
-                <td colSpan={4} className="text-center py-4">
-                  Loading...
-                </td>
-              </tr>
-            ) : filteredData.length > 0 ? (
-              filteredData.map((item, index) => (
-                <tr key={item.id}>
-                  <td>{index + 1}</td>
-                  <td className="hidden sm:table-cell">{item.nameEn}</td>
-                  <td className="hidden lg:table-cell">{item.titleEn}</td>
-                  <td
-                    className={`dropdown ${
-                      books.length > 10
-                        ? "dropdown-top dropdown-end"
-                        : "dropdown-end"
-                    }`}
-                  >
-                    <button
-                      tabIndex={0}
-                      role="button"
-                      className="btn btn-ghost btn-xs"
-                    >
-                      Details
-                    </button>
-                    <ul
-                      tabIndex={0}
-                      className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
-                    >
-                      <li className="w-full">
-                        <button
-                          onClick={() => handleOpenModal("edit", item)}
-                          className="w-full inline-flex text-green-600"
-                        >
-                          Edit
-                        </button>
-                      </li>
-                      <li className="w-full">
-                        <button
-                          onClick={() => setConfirmDeleteUserId(item.id ?? "")}
-                          className="w-full inline-flex text-red-600"
-                        >
-                          Delete
-                        </button>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan={4} className="text-center py-4">
-                  No Verse Number found.
-                </td>
-              </tr>
-            )}
-          </tbody>
+  {loading ? (
+    <tr>
+      <td colSpan={4} className="text-center py-4">Loading...</td>
+    </tr>
+  ) : filteredData.length > 0 ? (
+    // Sort filteredData by nameEn ascending before mapping
+    filteredData
+      .slice() // clone array to avoid mutating original state
+      .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+      .map((item, index) => (
+        <tr key={item.id}>
+          <td>{index + 1}</td>
+          <td className="hidden sm:table-cell">{item.nameEn}</td>
+          <td className="hidden lg:table-cell">{item.titleEn}</td>
+          <td
+            className={`dropdown ${
+              books.length > 10 ? "dropdown-top dropdown-end" : "dropdown-end"
+            }`}
+          >
+            <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">
+              Details
+            </button>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+            >
+              <li className="w-full">
+                <button
+                  onClick={() => handleOpenModal("edit", item)}
+                  className="w-full inline-flex text-green-600"
+                >
+                  Edit
+                </button>
+              </li>
+              <li className="w-full">
+                <button
+                  onClick={() => setConfirmDeleteUserId(item.id ?? "")}
+                  className="w-full inline-flex text-red-600"
+                >
+                  Delete
+                </button>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      ))
+  ) : (
+    <tr>
+      <td colSpan={4} className="text-center py-4">
+        No Verse Number found.
+      </td>
+    </tr>
+  )}
+</tbody>
+
         </table>
       </div>
 
@@ -493,7 +490,7 @@ export default function Context({
             <input
               name="nameEn"
               type="text"
-              required
+              
               value={form.nameEn}
               onChange={handleChange}
               placeholder="Verse Number English"
@@ -504,7 +501,7 @@ export default function Context({
             <input
               name="nameKm"
               type="text"
-              required
+              
               value={form.nameKm}
               onChange={handleChange}
               placeholder="Verse Number Khmer"
@@ -514,7 +511,7 @@ export default function Context({
 
             <textarea
               name="titleEn"
-              required
+              
               value={form.titleEn}
               onChange={handleChange}
               placeholder="Title English"
@@ -524,7 +521,7 @@ export default function Context({
 
             <textarea
               name="titleKm"
-              required
+              
               value={form.titleKm}
               onChange={handleChange}
               placeholder="Title Khmer"

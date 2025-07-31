@@ -357,7 +357,10 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                             </ul>
                             <ul className={`w-full h-fit flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'}
 transition-all duration-500 ease-in-out overflow-y-auto`}>
-                                {chapters.map((item) =>
+                                {chapters
+                                .slice() // clone array to avoid mutating original state
+                                .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+                                .map((item) =>
                                     selectedBookId === item.bookId ?
                                     <li key={item.id}>
                                         <button
@@ -436,7 +439,10 @@ transition-all duration-500 ease-in-out overflow-y-auto`}>
                         <div className={`w-full inline-flex justify-center`}>
                             <ul className={`w-full ${chapters.length < 38 ? '!h-fit':'!h-[44vh'} flex flex-wrap gap-2 justify-center
 transition-all duration-500 ease-in-out overflow-y-auto`}>
-                                {chapters.map((item)=>
+                                {chapters
+                                .slice() // clone array to avoid mutating original state
+                                .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+                                .map((item)=>
                                     selectedBookId === item.bookId ?
                                         <li key={item.id}>
                                             <button

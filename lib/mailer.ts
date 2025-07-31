@@ -16,7 +16,7 @@ export const sendResetEmail = async (to: string, token: string) => {
   const resetLink = `${process.env.NEXT_PUBLIC_BASE_URL}/${routing.defaultLocale}/auth/reset-password?token=${token}`;
 
   await transporter.sendMail({
-    from: `"No Reply" <no-reply@yourdomain.com>`,
+    from: `"No Reply"`,
     to,
     subject: 'Password Reset Request',
     html: `
