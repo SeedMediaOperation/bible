@@ -210,7 +210,10 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                         className="mySwiper"
                         onSlideChange={handleSlideChange}
                         >
-                        {filteredBook.map((p, chapterIndex) => {
+                        {filteredBook
+                        .slice() // clone array to avoid mutating original state
+                        .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+                        .map((p, chapterIndex) => {
                             const matchedBook = books.find((item) => item.id === p.bookId);
                             if (!matchedBook) return null;
 
