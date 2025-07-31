@@ -211,7 +211,7 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                         onSlideChange={handleSlideChange}
                         >
                         {filteredBook
-                        .slice() // clone array to avoid mutating original state
+                        .slice() 
                         .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
                         .map((p, chapterIndex) => {
                             const matchedBook = books.find((item) => item.id === p.bookId);

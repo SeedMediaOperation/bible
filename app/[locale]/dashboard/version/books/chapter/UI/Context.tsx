@@ -347,7 +347,10 @@ export default function Context({
         {loading ? (
           <p>Loading...</p>
         ) : filteredData.length > 0 ? (
-          filteredData.map((item) => (
+          filteredData
+          .slice() 
+          .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+          .map((item) => (
             <div
               key={item.id}
               className="bg-gray-900 p-4 rounded shadow text-white"
