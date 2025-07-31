@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "@/app/[locale]/globals.css";
 import { Instrument_Sans } from 'next/font/google';
 import { ReactNode } from "react";
@@ -15,8 +16,7 @@ const instrumentSans = Instrument_Sans({
   variable: '--font-instrument-sans', // optional (for Tailwind custom properties)
 });
 
-const gotham = localFont({
-  src: '../fonts/gotham-rounded-light.otf',
+const gotham = Inter({
   variable: '--font-gotham-sans',
 });
 
