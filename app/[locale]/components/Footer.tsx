@@ -21,7 +21,7 @@ const Footer = () => {
           <ul className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-4 xl:justify-center xl:items-start xl:gap-[1vw] list-none py-5">
             <li className='space-y-3'>
                 <Image 
-                    src="/images/icons/logo_black.svg"
+                    src="/images/icons/logo_black.png"
                     alt="logo"
                     width={500}
                     height={500}
