@@ -268,7 +268,9 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                         hover:underline hover:decoration-dotted
                                         focus:underline focus:decoration-dotted
                                         active:underline active:decoration-dotted
-                                        outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}
+                                        outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
+                                        whitespace-pre-line
+                                        `}
                                     tabIndex={0}
                                     >
                                       <span className="text-[#50c9ee] mr-1">{verseNumber}</span>
