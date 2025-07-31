@@ -81,58 +81,28 @@ const Footer = () => {
                 </h1>
                 <ul className='flex space-x-2 py-5'>
                     <li>
-                        <Link href="/" className="shadow-sm drop-shadow-lg">
-                            <Image 
-                                src="/images/icons/facebook.svg"
-                                alt="logo"
-                                width={500}
-                                height={500}
-                                    className="w-[24px] h-[24px] mx-auto"
-                                />
+                        <Link href="https://www.youtube.com/@BibleSocietyInCambodia/featured" className="shadow-sm drop-shadow-lg text-white">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="shadow-sm drop-shadow-lg">
-                            <Image 
-                                src="/images/icons/linkin.svg"
-                                alt="logo"
-                                width={500}
-                                height={500}
-                                    className="w-[24px] h-[24px] mx-auto"
-                                />
+                        <Link href="https://www.tiktok.com/@biblesocietyincambodia" className="shadow-sm drop-shadow-lg text-white">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" /></svg>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="shadow-sm drop-shadow-lg">
-                            <Image 
-                                src="/images/icons/x.svg"
-                                alt="logo"
-                                width={500}
-                                height={500}
-                                    className="w-[24px] h-[24px] mx-auto"
-                                />
+                        <Link href="https://www.facebook.com/BibleSocietyInCambodia/" className="shadow-sm drop-shadow-lg text-white">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="shadow-sm drop-shadow-lg">
-                            <Image 
-                                src="/images/icons/ing.svg"
-                                alt="logo"
-                                width={500}
-                                height={500}
-                                    className="w-[24px] h-[24px] mx-auto"
-                                />
+                        <Link href="https://t.me/biblesocietyincambodia" className="shadow-sm drop-shadow-lg text-white">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/" className="shadow-sm drop-shadow-lg">
-                            <Image 
-                                src="/images/icons/telegram.svg"
-                                alt="logo"
-                                width={500}
-                                height={500}
-                                    className="w-[24px] h-[24px] mx-auto"
-                                />
+                        <Link href="https://www.pinterest.com/biblesocietyincambodia" className="shadow-sm drop-shadow-lg text-white">
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-brand-pinterest"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 20l4 -9" /><path d="M10.7 14c.437 1.263 1.43 2 2.55 2c2.071 0 3.75 -1.554 3.75 -4a5 5 0 1 0 -9.7 1.7" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /></svg>
                         </Link>
                     </li>
                 </ul>

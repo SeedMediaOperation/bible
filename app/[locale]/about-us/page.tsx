@@ -5,15 +5,15 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 
 const Experience = [
-  {id:1,year:'1975_1992', content:'1975_1992_content'},
-  {id:2,year:'1968', content:'1968_content'},
-  {id:3,year:'1962', content:'1962_content'},
-  {id:4,year:'1955', content:'1955_content'},
+  {id:1,year:'1804', content:'1804_content'},
+  {id:2,year:'1892', content:'1892_content'},
+  {id:3,year:'1899', content:'1899_content'},
+  {id:4,year:'1923', content:'1923_content'},
   {id:5,year:'1954', content:'1954_content'},
-  {id:6,year:'1923', content:'1923_content'},
-  {id:7,year:'1899', content:'1899_content'},
-  {id:8,year:'1892', content:'1892_content'},
-  {id:9,year:'1804', content:'1804_content'},
+  {id:6,year:'1955', content:'1955_content'},
+  {id:7,year:'1962', content:'1962_content'},
+  {id:8,year:'1968', content:'1968_content'},
+  {id:9,year:'1975_1992', content:'1975_1992_content'},
 ]
 
 export default function AboutUs () {
@@ -91,8 +91,8 @@ export default function AboutUs () {
           {Experience.map((items, index) =>
             <li key={index} 
             className={`flex flex-col xl:flex-row gap-2 w-full md:w-[48%] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap w-[20%] text-start md:text-end'>{t(items.year)}</h1>
-              <p className='text-[14px] text-balance whitespace-pre-line w-[80%]'>
+              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap lg:w-[20%] !text-start xl:!text-end'>{t(items.year)}</h1>
+              <p className='text-[14px] text-balance whitespace-pre-line lg:w-[80%]'>
                   {t(items.content)}
               </p>
             </li>
