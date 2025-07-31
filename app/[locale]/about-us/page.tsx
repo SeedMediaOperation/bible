@@ -1,8 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Navbar from "@/app/[locale]/components/Navbar";
 import Footer from "@/app/[locale]/components/Footer";
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+import { useState } from 'react';
 
 const Experience = [
   {id:1,year:'1804', content:'1804_content'},
@@ -19,6 +22,8 @@ const Experience = [
 export default function AboutUs () {
   const t = useTranslations('about_us');
   const locale = useLocale();
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   return (
     <div>
       <Navbar />
@@ -88,15 +93,31 @@ export default function AboutUs () {
 
       <div className='w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto h-full pb-10'>
         <ul className={`space-y-[1rem] md:space-y-0 md:flex gap-5 flex-wrap items-start ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-          {Experience.map((items, index) =>
-            <li key={index} 
-            className={`flex flex-col xl:flex-row gap-2 w-full md:w-[48%] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-              <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap lg:w-[20%] !text-start xl:!text-end'>{t(items.year)}</h1>
-              <p className='text-[14px] text-balance whitespace-pre-line lg:w-[80%]'>
-                  {t(items.content)}
-              </p>
-            </li>
-          )}
+          {Experience.map((items, index) => {
+            const isExpanded = expandedIndex === index; // only expanded if current index matches
+            return (
+              <li key={index} className='w-full md:w-[48%] flex flex-col items-end'>
+                <div className={`flex flex-col xl:flex-row gap-2  ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+                  <h1 className='text-[#3cc2f8] text-[18px] font-bold text-nowrap lg:w-[20%] !text-start xl:!text-end'>{t(items.year)}</h1>
+                  <p className={`text-[14px] text-balance whitespace-pre-line lg:w-[80%] ${!isExpanded ? 'line-clamp-3' : 'line-clamp-none'}`}>
+                    {t(items.content)}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setExpandedIndex(index)}
+                  className={`w-fit bg-white text-[12px] px-3 py-1 text-black rounded-full mt-2 ${!isExpanded ? 'block' : 'hidden'}`}
+                >
+                  {locale === 'km' ? 'ព័ត៌មានបន្ថែម' : 'Read More'}
+                </button>
+                <button
+                  onClick={() => setExpandedIndex(null)}
+                  className={`w-fit bg-white text-[12px] px-3 py-1 text-black rounded-full mt-2 ${isExpanded ? 'block' : 'hidden'}`}
+                >
+                  {locale === 'km' ? 'បិទព័ត៌មាន' : 'Show Less'}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

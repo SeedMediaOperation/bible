@@ -271,7 +271,7 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                         outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}
                                     tabIndex={0}
                                     >
-                                      <span className="text-blue-600 mr-1">{verseNumber}</span>
+                                      <span className="text-[#50c9ee] mr-1">{verseNumber}</span>
                                       {verseText}
                                     </span>
                                 );
