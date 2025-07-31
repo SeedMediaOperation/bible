@@ -31,7 +31,7 @@ const SearchPage = async () => {
           data-aos-offset="500"
           data-aos-duration={`400`}
             >
-              <span className="text-[14px] md:text-[22px] text-[#4FC9EE] font-light ">សមាគមព្រះគម្ពីរកម្ពុជា</span>
+              <span className="text-[14px] md:text-[22px] text-[#4FC9EE] font-light ">សមាគមព្រះគម្ពីរនៅកម្ពុជា</span>
               <h1 className="text-[30px] leading-[30px] md:text-[50px] md:leading-[50px]  xl:text-[5rem] xl:leading-[5rem] font-bold text-wrap text-[#ffffff]">
                 The Bible Society
               in Cambodia.

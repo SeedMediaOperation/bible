@@ -26,7 +26,7 @@ const ContactUs = () => {
               data-aos-anchor="#example-anchor"
               data-aos-offset="500"
               data-aos-duration={`400`}
-              className={`text-[14px] md:text-[30px] text-[#4FC9EE] font-light font-krasar`}>សមាគមព្រះគម្ពីរកម្ពុជា</p>
+              className={`text-[14px] md:text-[30px] text-[#4FC9EE] font-light font-krasar`}>សមាគមព្រះគម្ពីរនៅកម្ពុជា</p>
               <h1 data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
