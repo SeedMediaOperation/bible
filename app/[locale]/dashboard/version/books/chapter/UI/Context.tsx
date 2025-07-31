@@ -448,7 +448,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             <label className="block font-semibold mb-2">Verses (English)</label>
                             {form.paragraphEn.map((text, index) => (
                                 <div key={index} className="flex gap-2 mb-2">
-                                    <input type="text" 
+                                    <textarea 
                                         value={text}
                                         onChange={(e) => handleParagraphChange('paragraphEn', index, e.target.value)}
                                         className="input input-bordered w-full"
@@ -466,8 +466,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             <label className="block font-semibold mb-2">Verses (Khmer)</label>
                             {form.paragraphKm.map((text, index) => (
                                 <div key={index} className="flex gap-2 mb-2">
-                                    <input
-                                        type="text"
+                                    <textarea
                                         value={text}
                                         onChange={(e) => handleParagraphChange('paragraphKm', index, e.target.value)}
                                         className="input input-bordered w-full font-krasar"
