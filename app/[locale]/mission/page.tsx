@@ -83,14 +83,14 @@ const Mission = () => {
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`400`}
-                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title')}</h1>
+                 className='text-[16px] md:text-[24px] text-[#4FC9EE] font-bold'>{t('title_1')}</h1>
                 <p data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
                 data-aos-offset="500"
                 data-aos-duration={`600`}
                 
                  className='text-[12px] md:text-[18px] text-pretty text-[#fff] whitespace-pre-line w-full h-[14vh] lg:h-[20vh] overflow-y-auto'>
-                  {t('content')}
+                  {t('content_1')}
                 </p>
              </div>
              <div className='w-[30%] md:w-[40%]'>

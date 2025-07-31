@@ -76,7 +76,7 @@ export default function AboutUs () {
                     data-aos-anchor="#example-anchor"
                     data-aos-duration={`600`}
               className="flex flex-col w-full md:w-[50%] h-full gap-[1rem] bg-[linear-gradient(0deg,_#4FC9EE,_#4FC9EE)] p-5 max-sm:rounded-b-[30px] md:rounded-r-[30px]">
-                  <h1 className="text-[16px] md:text-[18px] xl:text-[32px] text-[#000000] font-[700] text-wrap">
+                  <h1 className="text-[16px] md:text-[18px] xl:text-[24px] text-[#000000] font-[700] text-wrap">
                     {t('about_us_title')}
                   </h1>
                   <p className="text-[12px] md:text-[16px]">
@@ -118,22 +118,22 @@ export default function AboutUs () {
           <div className='w-full md:w-[60%] h-full bg-[#50c9ee]'>
               <div className='flex flex-col gap-3 xl:gap-[5rem] p-3 md:p-10 xl:p-28'>
                 <div className='w-full h-full xl:flex xl:gap-3'>
-                  <span className='w-[20%] 2xl:w-[10%] mx-auto xl:mx-0'>
-                  <Image 
-                    data-aos="fade-right"
-                    data-aos-anchor="#example-anchor"
-                    data-aos-offset="500"
-                    data-aos-duration={`400`}
-                    src="/images/icons/ms.svg"
-                    alt="banner"
-                    width={1920}
-                    height={1080}
-                    quality={100}
-                    sizes="100vw"
-                    className="w-[46px] h-[46px] mx-auto xl:mx-0 lg:w-[64px] lg:h-[64px] object-cover object-center"
-                  />
+                  <span className={`w-[20%] mx-auto xl:mx-0`}>
+                    <Image 
+                      data-aos="fade-right"
+                      data-aos-anchor="#example-anchor"
+                      data-aos-offset="500"
+                      data-aos-duration={`400`}
+                      src="/images/icons/ms.svg"
+                      alt="banner"
+                      width={1920}
+                      height={1080}
+                      quality={100}
+                      sizes="100vw"
+                      className="w-[46px] h-[46px] mx-auto xl:mx-0 lg:w-[64px] lg:h-[64px] object-cover object-center"
+                    />
                   </span>
-                  <ul className={`${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+                  <ul className={`w-[80%] mx-auto ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                       <li data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
@@ -141,14 +141,14 @@ export default function AboutUs () {
                         <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center xl:text-start'>
                             {t('our_mission')}
                         </h1>
-                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start'>
+                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start whitespace-pre-line'>
                             {t('our_mission_content')}
                         </p>
                       </li>
                   </ul>
                 </div>
                 <div className='w-full h-full xl:flex xl:gap-3'>
-                  <span className={`w-[20%] ${locale === 'km' ? 'lg:w-[42%] 2xl:w-[20%]':'lg:w-[58%] 2xl:w-[30%]'} mx-auto  xl:mx-0`}>
+                  <span className={`w-[20%]  mx-auto  xl:mx-0`}>
                   <Image 
                   data-aos="fade-left"
                   data-aos-anchor="#example-anchor"
@@ -163,7 +163,7 @@ export default function AboutUs () {
                     className="w-[46px] h-[46px] mx-auto xl:mx-0 lg:w-[64px] lg:h-[64px] object-cover object-center"
                   />
                   </span>
-                  <ul className={`${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+                  <ul className={`w-[80%] mx-auto ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
                       <li data-aos="fade-left"
                     data-aos-anchor="#example-anchor"
                     data-aos-offset="500"
@@ -172,7 +172,7 @@ export default function AboutUs () {
                         <h1 className='text-[16px] md:text-[20px] xl:text-[32px] font-bold text-center xl:text-start'>
                         {t('our_vision')}
                         </h1>
-                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start'>
+                        <p className='text-[14px] md:text-[16px] xl:text-[20px] text-[#fff] text-center xl:text-start whitespace-pre-line'>
                           {t('our_vision_content')}
                         </p>
                       </li>

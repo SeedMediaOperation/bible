@@ -242,7 +242,7 @@ export default function Home() {
                     <li key={index} 
                     data-aos="fade-right"
                     data-aos-offset="500"
-                    data-aos-duration={`${300 + index * 100}`}
+                    data-aos-duration={`${300 + index * 100}`} whitespace-pre-line
                     className={`${bgColor} w-full h-full p-3`}>
                       <div className="flex flex-col">
                         <div>
@@ -311,37 +311,37 @@ export default function Home() {
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`200`} 
-                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                      {t('ofb_content_1')}
                   </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`300`} 
-                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                     {t('ofb_content_2')}                  
                     </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`400`} 
-                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                       {t('ofb_content_3')}
                   </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`500`} 
-                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                       {t('ofb_content_4')}
                       </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`600`} 
-                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="relative w-full text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                       {t('ofb_content_5')}
                       </li>
                   <li data-aos="fade-left"
                 data-aos-offset="500"
                 data-aos-duration={`700`} 
-                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE]">
+                  className="w-full relative text-[12px] xl:text-[16px] before:absolute before:content-[''] before:left-[-10px] before:top-0 before:right-0 before:w-[3px] before:h-full before:rounded-full before:bg-[#4FC9EE] whitespace-pre-line">
                       {t('ofb_content_6')}
                       </li>
                 </ul>
