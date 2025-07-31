@@ -43,7 +43,7 @@ export default function Context({ books,chapters,pagination:initialPagination,on
         dialogRef.current?.close();
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setForm(prev => ({ ...prev, [name]: value }));
     };
@@ -421,9 +421,8 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             disabled={loading}
                         />
 
-                        <input
+                        <textarea
                             name="titleEn"
-                            type="text"
                             required
                             value={form.titleEn}
                             onChange={handleChange}
@@ -432,9 +431,8 @@ export default function Context({ books,chapters,pagination:initialPagination,on
                             disabled={loading}
                         />
 
-                        <input
+                        <textarea
                             name="titleKm"
-                            type="text"
                             required
                             value={form.titleKm}
                             onChange={handleChange}

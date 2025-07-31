@@ -223,8 +223,8 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                 {matchedBookName} {currentChapterName}
                                 </h1>
 
-                                <h1 className={`text-[16px] md:text-[20px] font-[600] my-2 text-balance me-[10rem] mb-5 ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}>
-                                {locale === 'km' ? p.titleKm : p.titleEn}
+                                <h1 className={`text-[16px] md:text-[20px] font-[600] my-2 text-balance me-[10rem] mb-5 ${locale === 'km' ? 'font-krasar' : 'font-gotham'} whitespace-pre-line`}>
+                                    {locale === 'km' ? p.titleKm : p.titleEn}
                                 </h1>
 
                                 {(locale === 'km' ? p.paragraphKm : p.paragraphEn).map((line, index) => {
