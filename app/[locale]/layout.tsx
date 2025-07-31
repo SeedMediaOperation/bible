@@ -17,6 +17,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 const gotham = Inter({
+  subsets: ['latin'],
   variable: '--font-gotham-sans',
 });
 
