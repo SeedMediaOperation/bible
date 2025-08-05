@@ -3,7 +3,7 @@
 import { alertService } from "@/lib/alertServices";
 import { ChapterProps, Chapters } from "@/types/book";
 import React, { useRef, useState, useEffect } from "react";
-type SortType = "latest" | "oldest" | "";
+// type SortType = "latest" | "oldest" | "";
 const ITEMS_PER_PAGE = 5;
 export default function Context({
   books,
@@ -27,7 +27,9 @@ export default function Context({
 
   const [search, setSearch] = useState("");
   const [pagination, setPagination] = useState(initialPagination);
-  const [sort, setSort] = useState<SortType>("");
+  // const [sort, setSort] = useState<SortType>("");
+  const [selectedBookId, setSelectedBookId] = useState<string>("");
+
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [confirmDeleteUserId, setConfirmDeleteUserId] = useState<string | null>(
@@ -162,58 +164,46 @@ export default function Context({
     }
   };
 
-  useEffect(() => {
-    setLoading(true);
+useEffect(() => {
+  setLoading(true);
 
-    const timeout = setTimeout(() => {
-      let data = [...localData];
+  const timeout = setTimeout(() => {
+    let data = [...localData];
 
-      // Filter
-      if (search) {
-        const lowerSearch = search.toLowerCase();
-        const upperSearch = search.toUpperCase();
-        data = data.filter(
-          (item) =>
-            item.nameEn?.toLowerCase().includes(lowerSearch) ||
-            item.nameKm?.toLowerCase().includes(lowerSearch) ||
-            item.nameEn?.toUpperCase().includes(upperSearch) ||
-            item.nameKm?.toUpperCase().includes(upperSearch)
-        );
-      }
+    // Filter by selected book
+    if (selectedBookId) {
+      data = data.filter((item) => item.bookId === selectedBookId);
+    }
 
-      // Sort
-      if (sort === "latest") {
-        data.sort((a, b) => {
-          const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-          const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-          return dateB - dateA;
-        });
-      } else if (sort === "oldest") {
-        data.sort((a, b) => {
-          const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
-          const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
-          return dateA - dateB;
-        });
-      }
+    // Filter by search term
+    if (search) {
+      const lowerSearch = search.toLowerCase();
+      data = data.filter(
+        (item) =>
+          item.nameEn?.toLowerCase().includes(lowerSearch) ||
+          item.nameKm?.toLowerCase().includes(lowerSearch)
+      );
+    }
 
-      // Pagination
-      const currentPage = data.length;
-      const totalPages = Math.ceil(currentPage / ITEMS_PER_PAGE);
-      const start = (page - 1) * ITEMS_PER_PAGE;
-      const end = start + ITEMS_PER_PAGE;
-      const paginated = data.slice(start, end);
+    // Pagination
+    const currentPage = data.length;
+    const totalPages = Math.ceil(currentPage / ITEMS_PER_PAGE);
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    const paginated = data.slice(start, end);
 
-      setFilteredData(paginated);
-      setPagination({
-        currentPage,
-        totalPages,
-        hasNextPage: page < totalPages,
-      });
-      setLoading(false);
-    }, 300); // optional debounce
+    setFilteredData(paginated);
+    setPagination({
+      currentPage,
+      totalPages,
+      hasNextPage: page < totalPages,
+    });
+    setLoading(false);
+  }, 300); // debounce
 
-    return () => clearTimeout(timeout);
-  }, [search, localData, page, sort]);
+  return () => clearTimeout(timeout);
+}, [search, localData, page, selectedBookId]);
+
 
   const moveParagraph = (
     field: "paragraphEn" | "paragraphKm",
@@ -250,20 +240,22 @@ export default function Context({
           />
         </label>
         <div className="flex items-center gap-2">
-          <select
-            className="select select-bordered text-black dark:text-white w-fit"
-            value={sort}
-            onChange={(e) => {
-              setPage(1);
-              setSort(e.target.value as SortType);
-            }}
-          >
-            <option value="" disabled>
-              Sort
-            </option>
-            <option value="latest">Latest</option>
-            <option value="oldest">Oldest</option>
-          </select>
+<select
+  className="select select-bordered text-black dark:text-white w-fit"
+  value={selectedBookId}
+  onChange={(e) => {
+    setPage(1);
+    setSelectedBookId(e.target.value);
+  }}
+>
+  <option value="">All Books</option>
+  {books.map((book) => (
+    <option key={book.id} value={String(book.id)}>
+      {book.nameKm} ({book.nameEn})
+    </option>
+  ))}
+</select>
+
           <button
             onClick={() => handleOpenModal("add")}
             className="btn btn-info"
@@ -280,6 +272,7 @@ export default function Context({
               <th>#</th>
               <th className="hidden sm:table-cell text-white">Verse Number</th>
               <th className="hidden lg:table-cell text-white">Title</th>
+              <th className="hidden lg:table-cell text-white">Books</th>
               <th></th>
             </tr>
           </thead>
@@ -298,6 +291,7 @@ export default function Context({
           <td>{index + 1}</td>
           <td className="hidden sm:table-cell">{item.nameEn}</td>
           <td className="hidden lg:table-cell">{item.titleEn}</td>
+          <td className="hidden lg:table-cell">{books.find((b) => b.id === item.bookId)?.nameEn || "Unknown"}</td>
           <td
             className={`dropdown ${
               books.length > 10 ? "dropdown-top dropdown-end" : "dropdown-end"
