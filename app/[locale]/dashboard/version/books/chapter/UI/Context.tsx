@@ -230,7 +230,7 @@ useEffect(() => {
   return (
     <>
       <div className="flex flex-row justify-between items-start md:items-center gap-4 mb-6">
-        <label className="input input-bordered flex items-center gap-2 w-fit md:w-auto">
+        <label className="input input-bordered hidden md:flex items-center gap-2 w-fit md:w-auto">
           <input
             type="search"
             className="grow text-black dark:text-white"
@@ -240,21 +240,21 @@ useEffect(() => {
           />
         </label>
         <div className="flex items-center gap-2">
-<select
-  className="select select-bordered text-black dark:text-white w-fit"
-  value={selectedBookId}
-  onChange={(e) => {
-    setPage(1);
-    setSelectedBookId(e.target.value);
-  }}
->
-  <option value="">All Books</option>
-  {books.map((book) => (
-    <option key={book.id} value={String(book.id)}>
-      {book.nameKm} ({book.nameEn})
-    </option>
-  ))}
-</select>
+        <select
+          className="select select-bordered text-black dark:text-white w-[70%] md:w-fit"
+          value={selectedBookId}
+          onChange={(e) => {
+            setPage(1);
+            setSelectedBookId(e.target.value);
+          }}
+        >
+          <option value="">All Books</option>
+          {books.map((book) => (
+            <option key={book.id} value={String(book.id)}>
+              {book.nameKm} ({book.nameEn})
+            </option>
+          ))}
+        </select>
 
           <button
             onClick={() => handleOpenModal("add")}
@@ -453,11 +453,11 @@ useEffect(() => {
 
       {/* Modal */}
       <dialog ref={dialogRef} className="modal text-black dark:text-white">
-        <div className="modal-box">
+        <div className="modal-box py-10 md:my-0">
           <form method="dialog">
             <button
               onClick={handleCloseModal}
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-10 sm:top-2"
             >
               ✕
             </button>
@@ -467,7 +467,7 @@ useEffect(() => {
               ? "Add New Verse Number"
               : `Edit Verse Number: ${form.nameEn}`}
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 ">
             <select
               name="bookId"
               value={form.bookId}
@@ -644,7 +644,7 @@ useEffect(() => {
 
             <button
               type="submit"
-              className="btn btn-info w-full"
+              className="btn btn-info w-full mb-20 md:mb-0"
               disabled={loading}
             >
               {loading
