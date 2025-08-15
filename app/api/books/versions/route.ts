@@ -8,7 +8,7 @@ export async function GET(req:NextRequest) {
     // Extract and validate query parameters
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '1000', 10);
+    const limit = parseInt(searchParams.get('limit') || '2000', 10);
 
     // Validate page and limit
     if (isNaN(page) || page < 1) {
@@ -17,7 +17,7 @@ export async function GET(req:NextRequest) {
             { status: 400 }
         );
     }
-    if (isNaN(limit) || limit < 1 || limit > 1000) {
+    if (isNaN(limit) || limit < 1 || limit > 2000) {
         return NextResponse.json(
             { message: 'Invalid limit value (must be between 1 and 100)' },
             { status: 400 }

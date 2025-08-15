@@ -7,7 +7,7 @@ export async function GET(req:NextRequest) {
         // Extract and validate query parameters
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '1000', 10);
+    const limit = parseInt(searchParams.get('limit') || '9999', 10);
 
     // Validate page and limit
     if (isNaN(page) || page < 1) {
@@ -16,9 +16,9 @@ export async function GET(req:NextRequest) {
             { status: 400 }
         );
     }
-    if (isNaN(limit) || limit < 1 || limit > 1000) {
+    if (isNaN(limit) || limit < 1 || limit > 9999) {
         return NextResponse.json(
-            { message: 'Invalid limit value (must be between 1 and 100)' },
+            { message: 'Invalid limit value (must be between 1 and 9999)' },
             { status: 400 }
         );
     }
@@ -49,7 +49,7 @@ export async function GET(req:NextRequest) {
     }
 
     const totalPages = Math.ceil(totalUsers / limit);
-      const skip = (page - 1) * limit;
+    const skip = (page - 1) * limit;
 
       // Validate page range
       if (page > totalPages) {
