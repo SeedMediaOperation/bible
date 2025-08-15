@@ -104,12 +104,29 @@ export async function POST(req: NextRequest) {
       }, { status: 400 });
     }
 
+    // Generate base slug from English name
+    const baseSlug = generateSlug(body.nameEn);
+
+    // First slug always follows name + versionId
+    let slug = `${baseSlug}-v${body.versionId}`;
+    let counter = 1;
+
+    // Check for uniqueness — if exists, append incremented number
+    while (
+      await prisma.book.findFirst({
+        where: { slug }
+      })
+    ) {
+      slug = `${baseSlug}-v${body.versionId}-${counter}`;
+      counter++;
+    }
+
     const newBook = await prisma.book.create({
       data: {
         nameEn: body.nameEn,
         nameKm: body.nameKm,
-        slug: generateSlug(body.nameEn),
-        versionId: body.versionId
+        slug,
+        versionId: body.versionId,
       }
     });
 
@@ -128,3 +145,4 @@ export async function POST(req: NextRequest) {
     }, { status: 500 });
   }
 }
+

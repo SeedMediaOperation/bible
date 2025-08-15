@@ -67,6 +67,7 @@ export interface Chapters {
     bookId:string | number;
     paragraphEn:string[];
     paragraphKm:string[];
+    versionId?: string | number;
     slug?:string;
     message?:string;
     createdAt?:Date;
@@ -79,11 +80,13 @@ export interface ApiResponseChapter {
 }
 
 export interface ChapterProps {
+
     chapters:Chapters[];
     books: Book[];
     pagination?: Pagination;
     submit?: (chapter: Chapters) => Promise<{ msg?: string; result?: Chapters }>;
     onDelete?: (id: string) => Promise<{ msg?: string; result?: Chapters }>; 
+        versions:Version[];
 }
 
 export interface ReadingProps {

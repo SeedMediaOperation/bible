@@ -1,13 +1,16 @@
 import BreadCrumb from "@/app/[locale]/dashboard/components/BreadCrumb";
-import { ApiResponseChapter, Book, Chapters, Pagination } from "@/types/book";
+import { ApiResponseChapter,Version, Book, Chapters, Pagination } from "@/types/book";
 import { apiGet,apiPut,apiPost,apiDelete } from "@/utils/apiHelpers";
 import Context from "./UI/Context";
 
 const Chapter = async () => {
     const res = await apiGet<{data: Chapters[], pagination:Pagination}>('/api/books/chapters');
     const resBook = await apiGet<{data: Book[]}>('/api/books');
+    const resVersion = await apiGet<{data: Version[]}>('/api/books/versions');
+    
     const allChapters = res.data;
     const allBooks = resBook.data;
+    const allVersion = resVersion.data;
     const pagination = res.pagination;
     // ✅ Add or update
     const submit = async (chapter: Chapters): Promise<{msg?:string,result?:Chapters}> => {
@@ -48,7 +51,7 @@ const Chapter = async () => {
                     </div>
                     <div className="flex flex-row">
                         <div className="w-full px-3">
-                            <Context books={allBooks} chapters={allChapters} submit={submit} onDelete={remove} pagination={pagination}/>
+                            <Context books={allBooks} chapters={allChapters} versions={allVersion} submit={submit} onDelete={remove} pagination={pagination}/>
                         </div>
                     </div>
                 </div>

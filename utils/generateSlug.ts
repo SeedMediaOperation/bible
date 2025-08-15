@@ -15,16 +15,3 @@ export function generateSlug(text: string): string {
       .replace(/\s+/g, "-")                   // Replace spaces with dashes
       .replace(/-+/g, "-");                   // Collapse multiple dashes
   }
-
-  
-
-//   ✅ Example Usage
-// ts
-// Copy
-// Edit
-// import { generateSlug } from '@/utils/generateSlug';
-
-// const productName = "Premium Coffee Beans 100% Arabica";
-// const slug = generateSlug(productName);
-
-// console.log(slug); 
