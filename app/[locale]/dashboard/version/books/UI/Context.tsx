@@ -167,7 +167,7 @@ export default function Context({ books, versions, pagination: initialPagination
         <>
             {/* Filters */}
             <div className="flex flex-row justify-between items-start md:items-center gap-4 mb-6">
-                <label className="input input-bordered flex md:items-center gap-2 w-fit md:w-auto">
+                <label className="input input-bordered md:items-center gap-2 w-fit md:w-auto hidden md:flex">
                     <input
                         type="search"
                         className="grow text-black dark:text-white"
@@ -185,7 +185,7 @@ export default function Context({ books, versions, pagination: initialPagination
                     >
                         <option value="">All Versions</option>
                         {versions?.map(v => (
-                            <option key={v.id} value={v.slug}>{v.titleEn}</option>
+                            <option key={v.id} value={v.slug}>{v.titleEn} ({v.titleKm})</option>
                         ))}
                     </select>
 
@@ -227,7 +227,7 @@ export default function Context({ books, versions, pagination: initialPagination
                                 <td>{index + 1}</td>
                                 <td className="hidden sm:table-cell">{item.nameEn}</td>
                                 <td className="hidden lg:table-cell font-krasar">{item.nameKm}</td>
-                                <td>{versions.find(v => v.slug === item.versionId)?.titleEn || item.versionId}</td>
+                                <td>{versions.find(v => v.slug === item.versionId)?.titleEn}</td>
                                 <td className={`dropdown ${books.length > 10 ? 'dropdown-top dropdown-end' : 'dropdown-end'}`}>
                                     <button tabIndex={0} role="button" className="btn btn-ghost btn-xs">Details</button>
                                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">

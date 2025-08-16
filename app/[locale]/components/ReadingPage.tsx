@@ -358,24 +358,34 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                 </li>
                                 }
                             </ul>
-                            <ul className={`w-full !h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'}
-transition-all duration-500 ease-in-out overflow-y-auto`}>
+                            <ul
+                                className={`w-full !h-[44vh] flex flex-wrap gap-2 justify-center ${
+                                    showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'
+                                } transition-all duration-500 ease-in-out overflow-y-auto`}
+                                >
                                 {chapters
-                                .slice() // clone array to avoid mutating original state
-                                .sort((a, b) => Number(a.nameEn) - Number(b.nameEn))
+                                .slice() // clone array
+                                .sort((a, b) =>
+                                locale === 'km'
+                                    ? Number(a.nameKm) - Number(b.nameKm)
+                                    : Number(a.nameEn) - Number(b.nameEn)
+                                )
                                 .map((item) =>
-                                    selectedBookId === item.bookId ?
+                                selectedBookId === item.bookId ? (
                                     <li key={item.id}>
-                                        <button
+                                    <button
                                         onClick={() => handleSelectBook(item)}
-                                        className={`w-full h-full bg-[#000]/60 backdrop-blur-[50px] hover:bg-[#32CDF0] text-white px-4 py-2 rounded-[10px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
-                                        >
-                                        {locale === 'km' ? item.nameKm : item.nameEn }
-                                        </button>
+                                        className={`w-full h-fit bg-[#000]/60 backdrop-blur-[50px] hover:bg-[#32CDF0] text-white px-4 py-2 rounded-[10px] ${
+                                        locale === 'km' ? 'font-krasar' : 'font-gotham'
+                                        }`}
+                                    >
+                                        {locale === 'km' ? item.nameKm : item.nameEn}
+                                    </button>
                                     </li>
-                                : null
-                                )}
-                            </ul>
+                                ) : null
+                                )}  
+                            </ul>                                                                   
+
                         </div>
                     </div>
                 </div>
