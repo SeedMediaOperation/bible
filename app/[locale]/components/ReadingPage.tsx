@@ -358,7 +358,7 @@ const ReadingPage = ({versions, books, chapters,singleVersion}:ReadingProps) => 
                                 </li>
                                 }
                             </ul>
-                            <ul className={`w-full h-fit flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'}
+                            <ul className={`w-full !h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'}
 transition-all duration-500 ease-in-out overflow-y-auto`}>
                                 {chapters
                                 .slice() // clone array to avoid mutating original state
@@ -440,7 +440,7 @@ transition-all duration-500 ease-in-out overflow-y-auto`}>
                             </button>
                         </div>
                         <div className={`w-full inline-flex justify-center`}>
-                            <ul className={`w-full ${chapters.length < 38 ? '!h-fit':'!h-[44vh'} flex flex-wrap gap-2 justify-center
+                            <ul className={`w-full ${chapters.length < 38 ? '!h-fit':'!h-[44vh]'} flex flex-wrap gap-2 justify-center
 transition-all duration-500 ease-in-out overflow-y-auto`}>
                                 {chapters
                                 .slice() // clone array to avoid mutating original state
