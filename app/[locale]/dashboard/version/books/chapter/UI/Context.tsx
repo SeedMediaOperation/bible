@@ -187,13 +187,13 @@ export default function Context({
           placeholder="Search books..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="input input-bordered hidden md:flex w-fit"
+          className="input input-bordered hidden lg:flex w-fit"
         />
         <div className="flex gap-2 items-center">
           <select
             value={selectedVersionId}
             onChange={(e) => { setSelectedVersionId(e.target.value); setSelectedBookId(""); setPage(1); }}
-            className="select select-bordered w-[70%] md:w-fit hidden md:block"
+            className="select select-bordered w-[50%] lg:w-fit hidden md:block dark:text-[#fff] text-[#000]"
           >
             <option value="">All Versions</option>
             {versions?.map(v => <option key={v.slug} value={v.slug}>{v.titleEn} ({v.titleKm})</option>)}
@@ -202,7 +202,7 @@ export default function Context({
           <select
             value={selectedVersionId}
             onChange={(e) => { setSelectedVersionId(e.target.value); setSelectedBookId(""); setPage(1); }}
-            className="select select-bordered w-[70%] md:w-fit md:hidden"
+            className="select select-bordered w-[70%] md:w-fit md:hidden dark:text-[#fff] text-[#000]"
           >
             <option value="">All Versions</option>
             {versions?.map(v => <option key={v.slug} value={v.slug}>{v.titleKm}</option>)}
@@ -210,7 +210,7 @@ export default function Context({
           <select
             value={selectedBookId}
             onChange={(e) => { setSelectedBookId(e.target.value); setPage(1); }}
-            className="select select-bordered w-[70%] md:w-fit"
+            className="select select-bordered w-[70%] md:w-fit dark:text-[#fff] text-[#000]"
           >
             <option value="">All Books</option>
             {filteredBooks.map(b => <option key={b.id} value={b.id}>{b.nameEn} ({b.nameKm})</option>)}
@@ -260,11 +260,11 @@ export default function Context({
       {/* Mobile Cards */}
       <div className="md:hidden space-y-4">
         {loading ? <p>Loading...</p> :
-          filteredData.length > 0 ? filteredData.map((item, index) => (
-            <div key={item.id} className="bg-gray-900 p-4 rounded shadow text-white">
+          filteredData.length > 0 ? filteredData.map((item) => (
+            <div key={item.id} className="bg-gray-900 p-0 lg:p-4 rounded shadow text-white">
               <div className="flex items-center gap-3 mb-2">
                 <div>
-                  <div className="font-bold">{(page - 1) * ITEMS_PER_PAGE + index + 1}. {item.nameEn}</div>
+                  <div className="font-bold">{item.nameEn}</div>
                   <div className="text-sm opacity-50">{item.titleEn}</div>
                 </div>
               </div>
