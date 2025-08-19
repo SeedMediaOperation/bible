@@ -6,7 +6,7 @@ import Script from "next/script";
 import {useLocale, useTranslations} from "next-intl";
 
 const generateOrderId = () => Date.now().toString();
-const MERCHANT_ID = "ec000262";
+const MERCHANT_ID = "ec461475";
 const getPaywayApiUrl =
   "https://checkout-sandbox.payway.com.kh/api/payment-gateway/v1/payments/purchase";
   
@@ -17,9 +17,9 @@ const DonationForm = () => {
     tran_id: "",
     merchant_id: MERCHANT_ID,
     amount: 0,
-    firstname: "to",
-    lastname: "la",
-    email: "tola@gmail.com",
+    firstname: "tenghuy",
+    lastname: "ly",
+    email: "tenghuyly23@gmail.com",
     type: "pre-auth",
     payment_option: "wechat",
     currency: "USD",
