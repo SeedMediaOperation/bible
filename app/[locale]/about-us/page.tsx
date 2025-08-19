@@ -297,17 +297,15 @@ export default function AboutUs () {
           </p>
       </div>
 
-      <div className='w-full'>
-        <Image 
-            src="/images/Banners/about_4.png"
-          alt="banner"
-          width={1920}
-          height={1080}
-          quality={100}
-          sizes="100vw"
-          className="w-full h-full object-cover object-center"
-          />  
+      {/* <div className='w-full bg-fixed'> 
+        <Image src="/images/Banners/about_4.png" alt="banner" width={1920} height={1080} quality={100} sizes="100vw" className="w-full h-full object-cover object-center" /> 
+      </div> */}
+      <div
+        className="w-full h-[1024px] bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url('/images/Banners/about_4.png')" }}
+      >
       </div>
+
 
       <div className={`w-full max-w-[420px] md:max-w-[720px] xl:max-w-[1200px] mx-auto p-3 md:p-8 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
           <h1 data-aos="fade-right"
@@ -326,7 +324,7 @@ export default function AboutUs () {
           </p>
       </div>
 
-      <div className='w-full'>
+      {/* <div className='w-full'>
         <Image 
             src="/images/Banners/about_3.png"
           alt="banner"
@@ -336,6 +334,11 @@ export default function AboutUs () {
           sizes="100vw"
           className="w-full h-full object-cover object-center"
           />  
+      </div> */}
+      <div
+        className="w-full h-[1024px] bg-fixed bg-center bg-cover"
+        style={{ backgroundImage: "url('/images/Banners/about_3.png')" }}
+      >
       </div>
       <Footer />
     </div>

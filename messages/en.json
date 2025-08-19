@@ -7,6 +7,9 @@
     "contact": "Contact Us",
     "vlogs": "Vlogs"
   },
+  "btn" : {
+    "buy_now": "Order Now"
+  },
   "home":{
     "welcome":"The Bible\nSociety\nin Cambodia.",
     "quote":"GOD’S WORD Living Hope for All.",

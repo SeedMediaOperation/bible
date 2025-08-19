@@ -35,7 +35,7 @@ const krasar = localFont({
 
 export const metadata: Metadata = {
   title: "The Bible Society in Cambodia",
-  description: "Develop by Mr.Tola",
+  description: "Develop by Seed Media Team",
   icons: {
     icon: '/logo.svg',
   },
