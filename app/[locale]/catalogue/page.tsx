@@ -17,7 +17,7 @@ const CataloguePage = async () => {
   return (
     <div>
       <Navbar />
-        <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[5rem] md:py-[10rem] xl:py-[15rem] z-1">
+        <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[10rem] md:py-[10rem] xl:py-[15rem] z-1">
           <Image 
             src="/images/Banners/cata_banner.png"
             alt="banner"

@@ -10,7 +10,7 @@ const Mission = () => {
   return (
     <div>
       <Navbar />
-      <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[5rem] md:py-[10rem] xl:py-[20rem] 2xl:py-[28rem] z-1">
+      <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[10rem] md:py-[10rem] xl:py-[20rem] 2xl:py-[28rem] z-1">
         <Image 
           src="/images/Banners/ms_banner.png"
           alt="banner"

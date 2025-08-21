@@ -27,7 +27,7 @@ export default function AboutUs () {
   return (
     <div>
       <Navbar />
-      <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[6rem] md:py-[10rem] xl:py-[14rem]">
+      <div className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[10rem] md:py-[10rem] xl:py-[14rem]">
         <Image 
           src="/images/Banners/aboutus.png"
           alt="banner"

@@ -84,7 +84,7 @@ const Book = async ({ params }: Props) => {
       </div>
 
       {/* Reading Page */}
-      <div className="w-full max-w-[350px] md:max-w-[520px] lg:max-w-[820px]  mx-auto">
+      <div className="w-full md:max-w-[520px] lg:max-w-[820px] mx-auto overflow-hidden">
         <ReadingPage
             versions={versions}
             singleVersion={singleVersion}

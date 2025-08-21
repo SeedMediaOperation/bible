@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <section id="home" className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[6rem] md:py-[10rem] xl:py-[14rem] z-1">
+      <section id="home" className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden px-3 py-[10rem] md:py-[10rem] xl:py-[14rem] z-1">
         <Image
           src="/images/Banners/banner.png"
           alt="banner"

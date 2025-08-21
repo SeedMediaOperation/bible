@@ -16,7 +16,7 @@ const Vlogs = async () => {
   return (
     <div>
       <Navbar />
-      <div className="relative flex flex-col justify-center w-full h-full overflow-hidden px-3 py-[5rem] md:py-[14rem] xl:py-[15rem] z-1">
+      <div className="relative flex flex-col justify-center w-full h-full overflow-hidden px-3 py-[10rem] md:py-[14rem] xl:py-[15rem] z-1">
           <Image 
             src="/images/Banners/read_banner.png"
             alt="banner"

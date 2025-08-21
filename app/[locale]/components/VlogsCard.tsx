@@ -31,7 +31,7 @@ const VlogsCard = ({vlog}:VlogProps) => {
 
     return (
     <div className='w-full h-full max-w-[386px] md:max-w-[720px] xl:max-w-[1200px] mx-auto translate-y-[-12%] md:translate-y-[-22%] lg:translate-y-[-18%] overflow-y-auto overflow-x-hidden px-3'>
-        <div className='w-full h-full grid grid-cols-2 xl:grid-cols-3 gap-3 py-4'>
+        <div className='w-full h-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 py-4'>
             {vlog.map((vlog, index) => {
                 const videoId = vlog.video_Url ? getYoutubeVideoId(vlog.video_Url) : null;
                 const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '/images/default-thumbnail.jpg';
