@@ -101,7 +101,8 @@
     "title":"Help where it is needed most",
     "usd":"USD",
     "khr":"KHR",
-    "amount":"Enter amount"
+    "amount":"Enter amount",
+    "donate": "Donation Now"
   },
   "footer":{
     "actnow":"Act Now",
