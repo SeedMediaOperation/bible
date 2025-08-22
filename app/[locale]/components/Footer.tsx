@@ -31,7 +31,7 @@ const Footer = () => {
                     {footer('actnow')}
                 </h1>
                 <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[3rem] w-fit mx-auto  bg-[#ffffff] rounded-full justify-between items-center ps-3 pe-2 py-1'>
-                    <span className={`text-[16px] text-[#4FC9EE] text-center font-bold ms-3 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
+                    <span className={`w-full text-[16px] text-[#4FC9EE] text-center font-bold ms-1 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
                     <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
                         <svg width="24" height="24" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_1_148)">

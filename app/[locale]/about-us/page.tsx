@@ -301,7 +301,7 @@ export default function AboutUs () {
         <Image src="/images/Banners/about_4.png" alt="banner" width={1920} height={1080} quality={100} sizes="100vw" className="w-full h-full object-cover object-center" /> 
       </div> */}
       <div
-        className="w-full h-[1024px] bg-fixed bg-center bg-cover"
+        className="w-full h-[250px] md:h-[400px] xl:h-[1024px] xl:bg-fixed bg-center bg-cover"
         style={{ backgroundImage: "url('/images/Banners/about_4.png')" }}
       >
       </div>
@@ -336,7 +336,7 @@ export default function AboutUs () {
           />  
       </div> */}
       <div
-        className="w-full h-[1024px] bg-fixed bg-center bg-cover"
+        className="w-full h-[250px] md:h-[400px] xl:h-[1024px] xl:bg-fixed bg-center bg-cover"
         style={{ backgroundImage: "url('/images/Banners/about_3.png')" }}
       >
       </div>
