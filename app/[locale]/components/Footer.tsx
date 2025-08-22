@@ -61,7 +61,7 @@ const Footer = () => {
                     <br/>
                     {footer('date_2')}
                 </p>
-                <Link href="https://biblecambodia.org/id.html" className='text-[12px] underline'>ព័ន្ធកិច្ចរបស់សមាគមព្រះគម្ពីរនៅព្រះរាជាណាចក្រកម្ពុជា</Link>
+                {/* <Link href="https://biblecambodia.org/id.html" className='text-[12px] underline'>ព័ន្ធកិច្ចរបស់សមាគមព្រះគម្ពីរនៅព្រះរាជាណាចក្រកម្ពុជា</Link> */}
             </li>
             <li className='space-y-2 list-none'>
             <h1 className="text-[20px] text-[#000] text-start font-bold my-1">
