@@ -100,7 +100,7 @@
   "donation":{
     "title":"Help where it is needed most",
     "usd":"USD",
-    "real":"KHR",
+    "khr":"KHR",
     "amount":"Enter amount"
   },
   "footer":{

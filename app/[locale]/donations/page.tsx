@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Script from "next/script";
-import {useLocale, useTranslations} from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const generateOrderId = () => Date.now().toString();
 const MERCHANT_ID = "ec000262";
 const getPaywayApiUrl =
   "https://checkout-sandbox.payway.com.kh/api/payment-gateway/v1/payments/purchase";
-  
+
 
 const DonationForm = () => {
   const [form, setForm] = useState({
@@ -22,7 +22,7 @@ const DonationForm = () => {
     email: "tola@gmail.com",
     type: "pre-auth",
     payment_option: "wechat",
-    currency: "USD",
+    currency: "usd",
     return_params: "Hello World",
   });
 
@@ -42,7 +42,7 @@ const DonationForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-  };  
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission
@@ -94,7 +94,7 @@ const DonationForm = () => {
         paymentForm.submit();
         document.body.removeChild(paymentForm);
       }
-      
+
       if (typeof AbaPayway !== "undefined") {
         AbaPayway.checkout();
       } else {
@@ -119,32 +119,28 @@ const DonationForm = () => {
       <form onSubmit={handleSubmit} className="w-full md:flex md:gap-2">
         <div className="w-full md:w-[60%]">
           <div className="flex items-center justify-center space-x-2">
-          {["usd", "real"].map((option) => (
-            <label
-              key={option}
-              className={`w-full p-2 md:p-3 rounded-full cursor-pointer transition-all ${
-                form.currency === option ? "bg-[#4FC9EE]" : "bg-white"
-              }`}
-            >
-              <h1
-                className={`text-[15px] xl:text-[24px] font-[600] text-center ${
-                  form.currency === option ? "text-white" : "text-[#4FC9EE]"
-                }                       
-                ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
+            {["usd", "khr"].map((option) => (
+              <label
+                key={option}
+                className={`w-full p-2 md:p-3 rounded-full cursor-pointer transition-all ${form.currency === option ? "bg-[#4FC9EE]" : "bg-white"
+                  }`}
               >
-                {t(option)}
-              </h1>
-              <input
-                type="radio"
-                name="currency"
-                value={option} // ✅ FIXED
-                onChange={handleChange}
-                className="hidden"
-                checked={form.currency === option}
-              />
-            </label>
-          ))}
-
+                <h1
+                  className={`text-[15px] xl:text-[24px] font-[600] text-center ${form.currency === option ? "text-white" : "text-[#4FC9EE]"
+                    } ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}
+                >
+                  {t(option)}
+                </h1>
+                <input
+                  type="radio"
+                  name="currency"
+                  value={option}
+                  onChange={handleChange}
+                  className="hidden"
+                  checked={form.currency === option}
+                />
+              </label>
+            ))}
           </div>
 
           <input
@@ -161,7 +157,7 @@ const DonationForm = () => {
             onChange={handleChange}
             className="hidden"
           />
-           <input
+          <input
             type="text"
             name="merchant_id"
             value={form.merchant_id}
@@ -221,7 +217,7 @@ const DonationForm = () => {
               required
               min={1}
               className={`w-full xl:text-[30px] py-2 rounded-full text-white placeholder:text-white bg-[#4FC9EE] px-6 outline-none
-                      ${locale === 'km' ? 'font-krasar':'font-gotham'}
+                      ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
                 `}
             />
           </div>
@@ -235,14 +231,19 @@ const DonationForm = () => {
           {loading ? (
             <span className="text-white font-bold">Processing...</span>
           ) : (
-            <Image
-              src="/donate.svg"
-              alt="Donate"
-              width={1920}
-              height={1080}
-              quality={100}
-              className="w-[50px] h-[48px] md:w-[300px] md:h-[60px] mx-auto object-contain"
-            />
+            <div className="flex items-center justify-center space-x-4 h-[48px] md:h-[60px]">
+              <div>
+                <Image
+                  src="/donate.svg"
+                  alt="Donate"
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  className="w-[50px] mx-auto object-contain"
+                />
+              </div>
+              <p className="text-[20px] text-white font-[400] tracking-normal">Donation</p>
+            </div>
           )}
         </button>
       </form>
