@@ -242,7 +242,7 @@ const DonationForm = () => {
                   className="w-[50px] mx-auto object-contain"
                 />
               </div>
-              <p className="text-[20px] text-white font-[400] tracking-normal">Donation</p>
+              <p className={`xl:text-[30px] text-white font-[400] tracking-normal ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}>{t('donate')}</p>
             </div>
           )}
         </button>
