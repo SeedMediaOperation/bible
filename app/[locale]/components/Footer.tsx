@@ -30,9 +30,9 @@ const Footer = () => {
                 <h1 className="text-[20px] text-[#ffffff] text-center font-bold my-1">
                     {footer('actnow')}
                 </h1>
-                <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[3rem] w-fit mx-auto  bg-[#ffffff] rounded-full justify-between items-center ps-3 pe-2 py-1'>
-                    <span className={`w-full text-[16px] text-[#4FC9EE] text-center font-bold ms-1 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
-                    <span className='w-full h-full bg-[#4FC9EE] rounded-full p-2'>
+                <Link href={`/${routing.defaultLocale}/#home`} className='flex space-x-[3rem] w-[50%] md:w-fit mx-auto  bg-[#ffffff] rounded-full justify-between items-center ps-3 pe-2 py-1'>
+                    <span className={`w-fit text-[16px] text-[#4FC9EE] text-center font-bold ms-1 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>{locale === 'km' ? 'បរិច្ចាក':'Donate'}</span>
+                    <span className='w-[40px] h-[40px] md:w-full md:h-full bg-[#4FC9EE] rounded-full p-2'>
                         <svg width="24" height="24" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_1_148)">
                             <path d="M7.83925 5.63095C8.35246 6.06624 8.41765 6.12675 8.64351 6.32125C8.80899 6.17931 8.95098 6.05019 9.55282 5.54548C10.6574 4.61796 11.4555 3.94826 11.4555 2.95899C11.4555 2.02119 10.7666 1.28662 9.88714 1.28662C9.29638 1.28662 8.90439 1.61994 8.65827 1.95942C8.4252 1.61891 8.04623 1.28662 7.45377 1.28662C6.57433 1.28662 5.88574 2.02121 5.88574 2.95899C5.88572 3.97333 6.66289 4.63273 7.83925 5.63095Z" fill="#FEFBF8"/>
