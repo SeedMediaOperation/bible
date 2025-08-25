@@ -108,6 +108,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
         setActiveChapterIndex(swiper.activeIndex);
     };
 
+
     const handleShare = () => {
         const textToShare = selectedHighlightTarget
             ? `${selectedBookName} ${selectedHighlightTarget.chapterId}:${selectedHighlightTarget.lineIndex + 1} - "${getSelectedVerseText()}"`
@@ -250,9 +251,9 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                 nextEl: ".swiper-button-next-custom-read",
                                 prevEl: ".swiper-button-prev-custom-read",
                             }}
-                            autoHeight={true}
+                            // autoHeight={true}
                             modules={[Navigation]}
-                            className="mySwiper h-fit"
+                            className="mySwiper"
                             onSlideChange={handleSlideChange}
                         >
                             {filteredBook
@@ -266,7 +267,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                     const currentChapterName = locale === 'km' ? currentChapter?.nameKm : currentChapter?.nameEn;
 
                                     return (
-                                        <SwiperSlide key={chapterIndex} className="h-auto">
+                                        <SwiperSlide key={chapterIndex}>
                                             {/* Chapter Title */}
                                             <h1 className={`text-[14px] md:text-[20px] text-center font-bold my-2 ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}>
                                                 {matchedBookName} {currentChapterName}
@@ -318,12 +319,12 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                                             textDecorationStyle: isSelected ? 'dotted' : undefined,
                                                         }}
                                                         className={`text-[14px] md:text-[18px] mb-1 cursor-pointer
-                                    hover:underline hover:decoration-dotted
-                                    focus:underline focus:decoration-dotted
-                                    active:underline active:decoration-dotted
-                                    outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
-                                    whitespace-pre-line
-                                    `}
+                                                            hover:underline hover:decoration-dotted
+                                                            focus:underline focus:decoration-dotted
+                                                            active:underline active:decoration-dotted
+                                                            outline-none ${locale === 'km' ? 'font-krasar' : 'font-gotham'}
+                                                            whitespace-pre-line
+                                                            `}
                                                         tabIndex={0}
                                                     >
                                                         <span className="text-[#50c9ee] mr-1">{verseNumber}</span>
