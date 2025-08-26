@@ -23,6 +23,8 @@ export default function CataBook({ params, versions, catabook, catalogue }: Cata
   const [selectedBook, setSelectedBook] = useState<{name: string, type: string} | null>(null);
   const [phone, setPhone] = useState('');
   const [location, setLocation] = useState('');
+  const [showDetails, setShowDetails] = useState<null | typeof catabook[0]>(null);
+
 
   useEffect(() => {
     if (!version && params?.slug) {
@@ -233,7 +235,8 @@ export default function CataBook({ params, versions, catabook, catalogue }: Cata
                   data-aos-anchor="#example-anchor"
                   data-aos-offset="500"
                   data-aos-duration={`${300 + index * 100}`}
-                  className="w-full bg-white shadow drop-shadow-lg p-4 rounded-[20px] flex flex-col justify-between md:min-h-[22rem] lg:min-h-[28rem]"
+                  // className="w-full bg-white shadow drop-shadow-lg p-4 rounded-[20px] flex flex-col justify-between md:min-h-[22rem] lg:min-h-[28rem]"
+                  className="w-full bg-white shadow drop-shadow-lg p-4 rounded-[20px] flex flex-col justify-between"
                 >
                   <div className="w-full h-fit mx-auto bg-[#E4E4E4] p-3 rounded-[20px]">
                     <Image
@@ -247,28 +250,35 @@ export default function CataBook({ params, versions, catabook, catalogue }: Cata
                     />
                   </div>
 
-                  <h1 className={`text-[12px] md:text-[18px] xl:text-[20px] text-[#000] uppercase font-bold ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
-                      {name}
-                    </h1>
+                  <h1 className={`text-[16px] md:text-[18px] xl:text-[20px] text-[#000] uppercase font-bold mt-4 ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+                    {name}
+                  </h1>
 
-                    <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>({type})</p>
-                    <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>Size: {locale === 'km' ? cata.size_km ?? "-" : cata.size_en ?? "-"}</p>
+                    {/* <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>({type})</p> */}
+                    {/* <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>Size: {locale === 'km' ? cata.size_km ?? "-" : cata.size_en ?? "-"}</p>
                     <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>UBS Code: {cata.code ?? "-"}</p>
-                    <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>ISBN: {cata.isbn ?? "-"}</p>
+                    <p className={`text-[14px] md:text-[16px] ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>ISBN: {cata.isbn ?? "-"}</p> */}
 
-                  <button
-                    onClick={() => { setSelectedBook({ name, type }); setShowForm(true); }}
-                    className={`w-full px-6 py-2 bg-[#32CDF0] text-white mt-3 rounded-md ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
-                  >
-                    {t('buy_now')}
-                  </button>
+                  <div className="flex flex-row gap-2 mt-1">
+                      <button
+                        onClick={() => { setSelectedBook({ name, type }); setShowForm(true); }}
+                        className={`w-full px-6 py-2 bg-[#32CDF0] text-white mt-3 rounded-md ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
+                      >
+                        {t('buy_now')}
+                      </button>
+                      <button
+                        onClick={() => setShowDetails(cata)}
+                        className={`w-full px-6 py-2 bg-[#32CDF0] text-white mt-3 rounded-md ${locale === 'km' ? 'font-krasar':'font-gotham'}`}
+                      >
+                        {locale === 'km' ? 'ព័ត៌មានលម្អិត' : 'Details'}
+                      </button>
+                  </div>
+
                 </div>
               );
             })
           )}
         </div>
-
-
 
         {/* Modal Form */}
         {showForm && selectedBook && (
@@ -316,6 +326,30 @@ export default function CataBook({ params, versions, catabook, catalogue }: Cata
           </div>
         )}
 
+        {showDetails && (
+          <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+            <div className={`bg-white p-6 rounded-xl text-[14px] md:text-[16px] w-[95%] max-w-md relative ${locale === 'km' ? 'font-krasar':'font-gotham'}`}>
+              <h2 className="text-lg font-bold mb-4">
+                {locale === 'km' ? 'ព័ត៌មានលម្អិតសៀវភៅ' : 'Book Details'}
+              </h2>
+
+              <p className="mb-2">{locale === 'km' ? 'ឈ្មោះសៀវភៅ' : 'Book Name'}: <b>{locale === 'km' ? showDetails.name_km : showDetails.name_en}</b></p>
+              <p className="mb-2">{locale === 'km' ? 'ប្រភេទ' : 'Type'}: {locale === 'km' ? showDetails.type_km : showDetails.type_en}</p>
+              <p className="mb-2">Size: {locale === 'km' ? showDetails.size_km ?? "-" : showDetails.size_en ?? "-"}</p>
+              <p className="mb-2">UBS Code: {showDetails.code ?? "-"}</p>
+              <p className="mb-2">ISBN: {showDetails.isbn ?? "-"}</p>
+
+              <div className="flex justify-end gap-2 mt-4">
+                <button
+                  onClick={() => setShowDetails(null)}
+                  className="px-4 py-2 bg-gray-400 text-white rounded"
+                >
+                  {locale === 'km' ? 'បិទ' : 'Close'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
     </div>

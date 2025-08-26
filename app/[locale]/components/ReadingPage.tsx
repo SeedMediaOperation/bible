@@ -344,7 +344,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                     <div className={`fixed z-10 inset-0 w-[95%] sm:w-[90%] md:w-[50%] md:translate-x-[-47%] translate-y-[10%] mx-auto h-[60vh] flex items-center justify-center 
                             transition-all duration-500 ease-in-out overflow-hidden
                             ${showBookPopup ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}`}>
-                        <div className="bg-black/80 backdrop-blur-[50px] rounded-[20px] p-4 shadow-lg w-full h-full overflo-y-hidden">
+                        <div className="bg-black/80 backdrop-blur-[50px] rounded-[20px] p-4 shadow-lg w-full h-full overflow-y-hidden">
                             <div className="flex justify-between items-center">
                                 {!showChapterPopup ?
                                     <h2 className="text-lg font-bold mb-4 text-[#fff]">{locale === 'km' ? 'គម្ពីរ' : 'Book'}</h2>
@@ -409,8 +409,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                         </li>
                                     }
                                 </ul>
-                                <ul
-                                    className={`w-full !h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'
+                                <ul className={`w-full h-fit max-h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'
                                         } transition-all duration-500 ease-in-out overflow-y-auto`}
                                 >
                                     {chapters
@@ -499,7 +498,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                 </button>
                             </div>
                             <div className={`w-full inline-flex justify-center`}>
-                                <ul className={`w-full ${chapters.length < 38 ? '!h-fit' : '!h-[44vh]'} flex flex-wrap gap-2 justify-center
+                                <ul className={`w-full ${chapters.length < 38 ? '!h-fit' : '!max-h-[44vh]'} flex flex-wrap gap-2 justify-center
                                     transition-all duration-500 ease-in-out overflow-y-auto`}>
                                     {chapters
                                         .slice()
