@@ -173,10 +173,14 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
         ? selectedBook.filter((item: Chapters) => item.bookId === selectedBookId)
         : chapters;
 
+    const normalizeKhmer = (text: string) =>
+    text?.normalize("NFC").replace(/\u200B/g, '').replace(/\s+/g, '').trim();
+
     const filteredBookBtn = books.filter((book) =>
-        book.nameEn?.toLowerCase().includes(search.toLowerCase()) ||
-        book.nameKm?.toLowerCase().includes(search.toLowerCase())
+    normalizeKhmer(book.nameEn || '').toLowerCase().includes(normalizeKhmer(search).toLowerCase()) ||
+    normalizeKhmer(book.nameKm || '').includes(normalizeKhmer(search))
     );
+
 
     return (
         <>
@@ -365,13 +369,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                     <li>
                                         <label className="input w-full">
                                             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                <g
-                                                    strokeLinejoin="round"
-                                                    strokeLinecap="round"
-                                                    strokeWidth="2.5"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                >
+                                                <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
                                                     <circle cx="11" cy="11" r="8"></circle>
                                                     <path d="m21 21-4.3-4.3"></path>
                                                 </g>
@@ -381,21 +379,18 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                                 name="search"
                                                 value={search}
                                                 onChange={(e) => setSearch(e.target.value)}
-                                                className="grow text-white"
-                                                placeholder="Search"
+                                                className={`grow text-white ${locale === 'km' ? 'font-krasar' : 'font-gotham'}`}
+                                                placeholder={locale === 'km' ? "ស្វែងរក" : "Search"} 
                                             />
                                         </label>
                                     </li>
-                                    {!search ?
-                                        filteredBookBtn.map((item) =>
+
+                                    {filteredBookBtn.length > 0 ? (
+                                        filteredBookBtn.map((item) => (
                                             <li key={item.id}>
                                                 <button
                                                     onClick={() => {
-                                                        if (locale === 'km' && item.nameKm) {
-                                                            setSelectedBookName(item.nameKm);
-                                                        } else if (item.nameEn) {
-                                                            setSelectedBookName(item.nameEn);
-                                                        }
+                                                        setSelectedBookName(locale === 'km' ? item.nameKm ?? null : item.nameEn ?? null);
                                                         setSelectedBookId(item.id);
                                                         setShowChapterPopup(true);
                                                     }}
@@ -403,13 +398,14 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                                                 >
                                                     {locale === 'km' ? item.nameKm : item.nameEn}
                                                 </button>
-                                            </li>) :
-                                        <li className="text-white text-center">
-                                            No Data record.
-                                        </li>
-                                    }
-                                </ul>
-                                <ul className={`w-full h-fit max-h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <li className="text-white text-center">No Data record.</li>
+                                    )}
+                                </ul>   
+                                <ul
+                                    className={`w-full h-fit !max-h-[44vh] flex flex-wrap gap-2 justify-center ${showChapterPopup ? '!translate-x-0 opacity-100' : '!translate-x-[120%] opacity-0 !w-0'
                                         } transition-all duration-500 ease-in-out overflow-y-auto`}
                                 >
                                     {chapters
