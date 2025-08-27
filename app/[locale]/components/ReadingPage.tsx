@@ -73,6 +73,7 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
         }
     }, [highlightedLines]);
 
+
     useEffect(() => {
         if (!selectedVersionName) return;
 
@@ -167,19 +168,26 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
         return parseInt(numStr, 10) || 0;
     }
 
-
-
     const filteredBook = selectedBook
         ? selectedBook.filter((item: Chapters) => item.bookId === selectedBookId)
         : chapters;
+
+    useEffect(() => {
+        const prevBtn = document.querySelector('.swiper-button-prev-custom-read');
+        const nextBtn = document.querySelector('.swiper-button-next-custom-read');
+
+        if (prevBtn) prevBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
+        if (nextBtn) nextBtn.classList.remove('swiper-button-disabled', 'swiper-button-lock');
+    }, [filteredBook]);
 
     const normalizeKhmer = (text: string) =>
     text?.normalize("NFC").replace(/\u200B/g, '').replace(/\s+/g, '').trim();
 
     const filteredBookBtn = books.filter((book) =>
-    normalizeKhmer(book.nameEn || '').toLowerCase().includes(normalizeKhmer(search).toLowerCase()) ||
-    normalizeKhmer(book.nameKm || '').includes(normalizeKhmer(search))
+        normalizeKhmer(book.nameEn || '').toLowerCase().includes(normalizeKhmer(search).toLowerCase()) ||
+        normalizeKhmer(book.nameKm || '').includes(normalizeKhmer(search))
     );
+    
 
 
     return (
@@ -233,16 +241,16 @@ const ReadingPage = ({ versions, books, chapters, singleVersion }: ReadingProps)
                 </div>
 
                 <div className="w-full relative">
-                    <div className="text-[#000] px-1 md:px-5 pb-10 relative">
+                    <div className="text-[#000] px-4 md:px-5 pb-10 relative">
                         {/* Navigation Buttons */}
-                        <div className="swiper-button-prev-custom-read hidden md:flex absolute top-1/2 -left-[1.5rem] -translate-y-1/2 p-2 rounded-full z-40 cursor-pointer text-gray-400">
+                        <div className="swiper-button-prev-custom-read absolute top-1/2 -left-[1.5rem] -translate-y-1/2 p-2 rounded-full z-40 cursor-pointer text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#000" className="icon icon-tabler icon-tabler-caret-left">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M13.883 5.007l.058 -.005h.118l.058 .005l.06 .009l.052 .01l.108 .032l.067 .027l.132 .07l.09 .065l.081 .073l.083 .094l.054 .077l.054 .096l.017 .036l.027 .067l.032 .108l.01 .053l.01 .06l.004 .057l.002 .059v12c0 .852 -.986 1.297 -1.623 .783l-.084 -.076l-6 -6a1 1 0 0 1 -.083 -1.32l.083 -.094l6 -6l.094 -.083l.077 -.054l.096 -.054l.036 -.017l.067 -.027l.108 -.032l.053 -.01l.06 -.01z" />
                             </svg>
                         </div>
 
-                        <div className="swiper-button-next-custom-read hidden md:flex absolute top-1/2 -right-[1.5rem] -translate-y-1/2 p-2 rounded-full z-40 cursor-pointer text-gray-400">
+                        <div className="swiper-button-next-custom-read absolute top-1/2 -right-[1.5rem] -translate-y-1/2 p-2 rounded-full z-40 cursor-pointer text-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#000" className="icon icon-tabler icon-tabler-caret-right">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M9 6c0 -.852 .986 -1.297 1.623 -.783l.084 .076l6 6a1 1 0 0 1 .083 1.32l-.083 .094l-6 6l-.094 .083l-.077 .054l-.096 .054l-.036 -.017l-.067 -.027l-.108 -.032l-.053 -.01l-.06 -.01l-.057 .004l-.059 .002l-.059 -.002l-.058 -.005l-.06 -.009l-.052 -.01l-.108 -.032l-.067 -.027l-.132 -.07l-.09 -.065l-.081 -.073l-.083 -.094l-.054 -.077l-.054 -.096l-.017 -.036l-.027 -.067l-.032 -.108l-.01 -.053l-.01 -.06l-.004 -.057l-.002 -12.059z" />
